@@ -1,0 +1,29 @@
+<div class="jumbotron" style="height: 800px;">
+    <h1>User register</h1>
+    <form #userForm="ngForm" class="bs-component" style="margin-top: 2%;" (ngSubmit)="addUser(userForm)">
+          <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="userService.selectedUser._id">
+          <div class="form-group col-lg-12">
+              <input type="text" class="form-control" name="firtsname"  #firtsname="ngModel" [(ngModel)]="userService.selectedUser.firtsname" placeholder="Enter your Firtsname">
+          </div>
+          <div class="form-group col-lg-12">
+              <input type="text" class="form-control" name="lastname" #lastname="ngModel" [(ngModel)]="userService.selectedUser.lastname" placeholder="Enter your Lastname">
+          </div>
+          <div class="form-group col-lg-12">
+              <input type="text" class="form-control" name="email" #email="ngModel" [(ngModel)]="userService.selectedUser.email" placeholder="Enter your Email">
+          </div>
+          <div class="form-group col-lg-12">
+              <input type="text" class="form-control" name="password" #password="ngModel" [(ngModel)]="userService.selectedUser.password" placeholder="Enter your Password">
+          </div>
+          <div class="form-group col-lg-12">
+              <select class="form-control" id="permiso" name="permiso" #permiso="ngModel" [(ngModel)]="userService.selectedUser.permiso">
+                      <option value="" disabled selected>Select your option</option>
+                      <option value="Admin">Administrator</option>
+                      <option value="normal">Normal user</option>
+              </select>
+          </div>
+          <div class="bs-component mx-auto text-center">
+              <button class="btn btn-primary" style="margin-right: 2%;">Save</button>
+              <button class="btn btn-primary" (click)="resetForm(userForm)">Clean</button>
+          </div>
+    </form>
+</div>

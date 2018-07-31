@@ -1,0 +1,41 @@
+<div class="jumbotron" style="height: 800px;">
+    <div class="row">
+        <div class="col-lg-12">
+            <a class="btn btn-secondary" style="float:right;" href="/register" routterLink="/register">New</a>
+        </div>
+    </div>
+    <div>
+        <table class="table table-hover" style="margin-top: 2%;">
+                <thead>
+                    <tr class="table-light">
+                        <th>Firtsname</th>
+                        <th>Lastname</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>Permission</th>
+                        <th>Operations</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr class="table-primary" *ngFor="let user of userService.users">
+                    <td>{{ user.firtsname }}</td>
+                    <td>{{ user.lastname }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.password }}</td>
+                    <td>{{ user.permiso }}</td>
+                    <td>
+                    <a (click)="editUser(user)">
+                        <i class="material-icons">mode_edit</i>
+                    </a>
+                    <a (click)="deleteUser(user._id, userForm)">
+                        <i class="material-icons">delete</i>
+                    </a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+    </div>
+</div>
+
+<app-register-page></app-register-page>
+

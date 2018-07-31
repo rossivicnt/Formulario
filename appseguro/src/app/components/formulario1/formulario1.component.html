@@ -1,0 +1,71 @@
+<div class="jumbotron" style="height: 100%;">
+  <h1>Informe medico tratante obesidad</h1>
+  <form #form1Form="ngForm" class="bs-component" style="margin-top: 2%;" (ngSubmit)="addForm(form1Form)">
+        <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="form1Service.selectedForm1._id">
+        <div class="form-group col-lg-12">
+            <input type="text" class="form-control" name="NombrePaciente" #NombrePaciente="ngModel" [(ngModel)]="form1Service.selectedForm1.NombrePaciente" placeholder="Enter your Firtsname">
+        </div>
+        <div class="form-group col-lg-12">
+            <input type="text" class="form-control" name="Rut" #Rut="ngModel" [(ngModel)]="form1Service.selectedForm1.Rut" placeholder="Enter your RUT">
+        </div>
+        <div class="form-group col-lg-12">
+            <input type="text" class="form-control" name="Solicitud" #Solicitud="ngModel" [(ngModel)]="form1Service.selectedForm1.Solicitud" placeholder="Enter your request">
+        </div>
+        <div class="form-group col-lg-12">
+            <input type="text" class="form-control" name="Poliza" #Poliza="ngModel" [(ngModel)]="form1Service.selectedForm1.Poliza" placeholder="Enter your Poliza">
+        </div>
+        <div class="form-group col-lg-12">
+            <input type="text" class="form-control" name="Diagnostico" #Diagnostico="ngModel" [(ngModel)]="form1Service.selectedForm1.Diagnostico" placeholder="Enter your diagnosis made">
+        </div>
+        <div class="form-group col-lg-12">
+            <label>Enter the date of the first diagnosis of obesity</label>
+            <input type="date" class="form-control" name="fechaDiagnostico" #fechaDiagnostico="ngModel" [(ngModel)]="form1Service.selectedForm1.fechaDiagnostico">
+        </div>
+        <div class="form-group col-lg-12">
+            <label>Enter the date of the first diagnosis of obesity</label>
+            <input type="date" class="form-control" name="fechaDiagnostico" #fechaDiagnostico="ngModel" [(ngModel)]="form1Service.selectedForm1.fechaDiagnostico">
+        </div>
+        <div class="form-group col-lg-12">
+            <input type="text" class="form-control" name="Metodo" #Metodo="ngModel" [(ngModel)]="form1Service.selectedForm1.Metodo" placeholder="Enter your diagnostic method">
+        </div>
+        <div class="form-group col-lg-12">
+            <input type="text" class="form-control" name="fechaPeso" #fechaPeso="ngModel" [(ngModel)]="form1Service.selectedForm1.fechaPeso" placeholder="Indicate month and year when you start to gain weight">
+        </div>
+        <div class="row col-lg-12">
+          <div class="form-group col-lg-4 row">
+            <div class="col-lg-8">
+                <label>I was dealing with drugs:</label>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-check disabled">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-control" name="Farmacos" #Farmacos="ngModel" [(ngModel)]="form1Service.selectedForm1.Farmacos">
+                  Yes
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group col-lg-8">
+             <input type="text" class="form-control" name="Tiempo" #Tiempo="ngModel" [(ngModel)]="form1Service.selectedForm1.Tiempo" placeholder="for how longs">
+          </div>
+        </div>
+        <div class="row col-lg-12">
+          <div class="form-group col-lg-4">
+            <input type="text" class="form-control" name="Peso" #Peso="ngModel" [(ngModel)]="form1Service.selectedForm1.Peso" placeholder="weight">       
+          </div>
+          <div class="form-group col-lg-4">
+            <input type="text" class="form-control" name="Talla" #Talla="ngModel" [(ngModel)]="form1Service.selectedForm1.Talla" placeholder="size">       
+          </div>
+          <div class="form-group col-lg-4">
+            <input type="text" class="form-control" name="IMC" #IMC="ngModel" [(ngModel)]="form1Service.selectedForm1.IMC" placeholder="IMC">       
+          </div>
+        </div>
+        <div class="form-group col-lg-12">
+            <input type="text" class="form-control" name="Tratamiento" #Tratamiento="ngModel" [(ngModel)]="form1Service.selectedForm1.Tratamiento" placeholder="treatment performed">
+        </div>
+        <div class="bs-component mx-auto text-center">
+            <button class="btn btn-primary" style="margin-right: 2%;">Save</button>
+            <button class="btn btn-primary" (click)="resetForm(userForm)">Clean</button>
+        </div>
+  </form>
+</div>
