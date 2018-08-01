@@ -1,4 +1,4 @@
-<div id="content" #content>
+<div id="contentToConvert">
 <div>
     <h2><b>INFORME DE MÉDICO TRATANTE</b></h2>
   </div>
@@ -23,7 +23,7 @@
     <td>
       <b>Favor de consignar todas las preguntas:</b><br>
       <br>
-      Diagnóstico efectuado: <input type="text"size="120" name="diag"><br>
+      Diagnóstico efectuado: <input type="text"size="110" name="diag"><br>
       <br>
       <b>Fecha de primer diagnóstico de Obesidad (precisar día, mes y año): <input type="text" size="50" name="fecha_diag"></b><br>
       <br>
@@ -61,6 +61,6 @@
   </tr>
 </table>
 </div> 
-<div class="mx-auto text-center mt-2">   
+<div class="mx-auto text-center mt-2" id="content" #content>   
     <button class="btn btn-primary" (click)="onClick()">Generar</button>  
-</div> 
+</div>  
