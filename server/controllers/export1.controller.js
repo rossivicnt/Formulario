@@ -9,11 +9,10 @@ export1Ctrl.getExports = async (req, res) => {
 
 export1Ctrl.createExport = async (req, res) => {
     const forms= new formulario1 ({
-        firtsname: req.body.firtsname,
-        lastname: req.body.lastname,
-        email: req.body.email,
-        password: req.body.password,
-        permiso: req.body.permiso
+        usuario: req.body.usuario,
+        date: req.body.date,
+        File: req.body.File,
+        formulario1: req.body.formulario1
     });
     await forms.save();
     res.json({
@@ -29,11 +28,10 @@ export1Ctrl.getExport = async (req, res) => {
 export1Ctrl.editExport = async (req, res) => {
     const { id } = req.params;
     const forms= {
-        firstname: req.body.firstname,
-        lastname: req.body.lastname,
-        email: req.body.email,
-        password: req.body.password,
-        permiso: req.body.permiso
+        usuario: req.body.usuario,
+        date: req.body.date,
+        File: req.body.File,
+        formulario1: req.body.formulario1
     }
     await formulario1.findByIdAndUpdate(id, {$set: forms}, {new: true});
     res.json({

@@ -15,9 +15,9 @@ export class AuthGuard implements CanActivate {
     private authService: AuthService
   ){}
   canActivate(
-    next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    return this.authService.afAuth.authState
+    /*next: ActivatedRouteSnapshot,
+  state: RouterStateSnapshot*/)/*: Observable<boolean> | Promise<boolean> | boolean */{
+   /* return this.authService.afAuth.authState
     .pipe(take(1),
           map(authState=>!!authState),
           tap(authenticated=>{
@@ -25,6 +25,11 @@ export class AuthGuard implements CanActivate {
               this.router.navigate(['/login']);
             }
           })
-        )
+        )*/
+        if (!this.authService.isLoggedIn()) {
+          this.router.navigateByUrl('/');
+          return false;
+        }
+        return true;
   }
 }

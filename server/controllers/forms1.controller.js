@@ -9,11 +9,20 @@ form1Ctrl.getformularios1 = async (req, res) => {
 
 form1Ctrl.createformulario1 = async (req, res) => {
     const forms= new formulario1 ({
-        firtsname: req.body.firtsname,
-        lastname: req.body.lastname,
-        email: req.body.email,
-        password: req.body.password,
-        permiso: req.body.permiso
+        NombrePaciente: req.body.NombrePaciente,
+        Rut: req.body.Rut,
+        Solicitud: req.body.Solicitud,
+        Poliza: req.body.Poliza,
+        Diagnostico: req.body.Diagnostico,
+        fechaDiagnostico: req.body.fechaDiagnostico,
+        Metodo: req.body.Metodo,
+        fechaPeso: req.body.fechaPeso,
+        Farmacos: req.body.Farmacos,
+        Tiempo: req.body.Tiempo,
+        Peso: req.body.Peso,
+        Talla: req.body.Talla,
+        IMC: req.body.IMC,
+        Tratamiento: req.body.Tratamiento
     });
     await forms.save();
     res.json({
@@ -29,11 +38,20 @@ form1Ctrl.getformulario1 = async (req, res) => {
 form1Ctrl.editformulario1 = async (req, res) => {
     const { id } = req.params;
     const forms= {
-        firstname: req.body.firstname,
-        lastname: req.body.lastname,
-        email: req.body.email,
-        password: req.body.password,
-        permiso: req.body.permiso
+        NombrePaciente: req.body.NombrePaciente,
+        Rut: req.body.Rut,
+        Solicitud: req.body.Solicitud,
+        Poliza: req.body.Poliza,
+        Diagnostico: req.body.Diagnostico,
+        fechaDiagnostico: req.body.fechaDiagnostico,
+        Metodo: req.body.Metodo,
+        fechaPeso: req.body.fechaPeso,
+        Farmacos: req.body.Farmacos,
+        Tiempo: req.body.Tiempo,
+        Peso: req.body.Peso,
+        Talla: req.body.Talla,
+        IMC: req.body.IMC,
+        Tratamiento: req.body.Tratamiento
     }
     await formulario1.findByIdAndUpdate(id, {$set: forms}, {new: true});
     res.json({

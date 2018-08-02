@@ -8,23 +8,27 @@ userCtrl.getUsers = async (req, res) => {
 };
 
 userCtrl.createUser = async (req, res) => {
-    const user= new User ({
-        firtsname: req.body.firtsname,
-        lastname: req.body.lastname,
-        email: req.body.email,
-        password: req.body.password,
-        permiso: req.body.permiso
-    });
-    await user.save();
-    res.json({
-        status: 'user saved'
-    })
+    const user= new User ();
+        user.firtsname= req.body.firtsname;
+        user.lastname= req.body.lastname;
+        user.email= req.body.email;
+        user.permiso= req.body.permiso;
+        user.setPassword(req.body.password);
+        await user.save(function(err) {
+            var token;
+            token = user.generateJwt();
+            res.status(200);
+            res.json({
+            "token" : token
+            });
+        });
 };
 
 userCtrl.getUser = async (req, res) => {
     const user = await User.findById(req.params.id);
     res.json(user);
 };
+
 userCtrl.editUser = async (req, res) => {
     const { id } = req.params;
     const user= {

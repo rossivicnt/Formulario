@@ -12,11 +12,6 @@ import { Router } from  '@angular/router';
 })
 
 export class UsuariosComponent implements OnInit {
-  public firtsname: String;
-  public lastname : String;
-  public email : String;
-  public password : String;
-  public permiso : String;
 
   constructor(private userService: UserService,public router: Router) { }
 
