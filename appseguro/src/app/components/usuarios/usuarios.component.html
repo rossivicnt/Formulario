@@ -8,18 +8,16 @@
         <table class="table table-hover" style="margin-top: 2%;">
                 <thead>
                     <tr class="table-light">
-                        <th>Firtsname</th>
-                        <th>Lastname</th>
+                        <th>Nombre</th>
                         <th>Email</th>
                         <th>Password</th>
-                        <th>Permission</th>
-                        <th>Operations</th>
+                        <th>Permiso</th>
+                        <th>Operaciones</th>
                     </tr>
                 </thead>
                 <tbody>
                 <tr class="table-primary" *ngFor="let user of userService.users">
-                    <td>{{ user.firtsname }}</td>
-                    <td>{{ user.lastname }}</td>
+                    <td>{{ user.name }}</td>
                     <td>{{ user.email }}</td>
                     <td>{{ user.password }}</td>
                     <td>{{ user.permiso }}</td>

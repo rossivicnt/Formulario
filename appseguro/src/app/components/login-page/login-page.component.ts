@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService, TokenPayload } from '../../services/auth.service';
+import { AuthService } from '../../services/auth.service';
 import { Router } from  '@angular/router';
 import { NgForm } from '@angular/forms';
 
@@ -10,10 +10,8 @@ import { NgForm } from '@angular/forms';
   providers: [AuthService]
 })
 export class LoginPageComponent implements OnInit {
-  credentials: TokenPayload = {
-    email: '',
-    password: ''
-  };
+  public email: string;
+  public password: string;
 
   constructor(
     public authService: AuthService,
@@ -24,29 +22,14 @@ export class LoginPageComponent implements OnInit {
   }
 
   OnSubmitLogin(form?: NgForm){
-    /*this.authService.loginEmail(this.email, this.password)
+    this.authService.loginEmail(this.email, this.password)
     .then((res)=>{
       this.router.navigate(['/privado']);
     }).catch((err)=>{
       console.log(err);
       this.router.navigate(['/login']);
-    })*/
-    /*console.log(form.value);
-    if(form.value.email && form.value.password) {
-  		this.authService.validateLogin(form.value).then((res)=>{
-        this.router.navigate(['/privado']);
-      }).catch((err)=>{
-        console.log(err);
-        this.router.navigate(['/login']);
-      })
-  	} else {
-  		alert('Ingrese su email y password');
-    }*/
-    this.authService.login(this.credentials).subscribe(() => {
-      this.router.navigateByUrl('/privado');
-    }, (err) => {
-      console.error(err);
-    }); 
+    })
+  
   }
 
 }
