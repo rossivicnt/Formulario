@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Formulario1Service } from '../../services/formulario1.service';
-import { UserService } from '../../services/user.service';
 import { NgForm } from '@angular/forms';
 import { Formulario1 } from '../../models/formulario1';
 import { Router } from  '@angular/router';
+import { Export1 } from '../../models/export1';
 
 @Component({
   selector: 'app-formulario1',
@@ -22,6 +22,7 @@ export class Formulario1Component implements OnInit {
     if (form) {
       form.reset();
       this.formService.selectedForm1 = new Formulario1();
+      this.formService.selectedExoport1= new Export1();
     }
   }
 
@@ -30,16 +31,22 @@ export class Formulario1Component implements OnInit {
     if(form.value._id) {
       this.formService.putForm(form.value)
         .subscribe(res => {
-          this.resetForm(form);
-          this.getForms();
-          this.router.navigate(['/usuarios']);
+          this.formService.putExport(form.value)
+          .subscribe(res => {
+            this.resetForm(form);
+            this.getForms();
+            this.router.navigate(['/privado']);
+          });
         });
     } else {
       this.formService.postForm(form.value)
       .subscribe(res => {
-        this.getForms();
-        this.resetForm(form);
-        this.router.navigate(['/usuarios']);
+        this.formService.postExport(form.value)
+        .subscribe(res => {
+          this.getForms();
+          this.resetForm(form);
+          this.router.navigate(['/privado']);
+        });
       });
     }
     
@@ -50,6 +57,13 @@ export class Formulario1Component implements OnInit {
       .subscribe(res => {
         this.formService.Forms1 = res as Formulario1[];
       });
+  }
+
+  getExport(){
+    this.formService.getExport1()
+    .subscribe(res=>{
+      this.formService.Export1 = res as Export1[];
+    });
   }
 
 }

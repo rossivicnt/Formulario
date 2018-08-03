@@ -1,65 +1,65 @@
 <div id="contentToConvert">
-<div>
-    <h2><b>INFORME DE MÉDICO TRATANTE</b></h2>
-  </div>
+  <div>
+      <h2><b>INFORME DE MÉDICO TRATANTE</b></h2>
+    </div>
 
-  <div style="background:#7F7F7F">DATOS DEL PACIENTE</div>
+    <div style="background:#7F7F7F">DATOS DEL PACIENTE</div>
+    <br>
+
+    <table id="tb_1">
+      <tr>
+        <td colspan="3"> <br>Nombre del paciente: <input type="text" size="40" id="NombrePaciente" name="NombrePaciente"><br><br> </td>
+      </tr>
+      <tr>
+        <td><br>Rut: <input type="text" size="35" id="Rut" name="Rut"><br><br> </td>
+        <td><br>Solicitud: <input type="text" size="35" id="Solicitud" name="Solicitud"><br><br> </td>
+        <td><br>Póliza: <input type="text" size="35" name="poliza" id="Poliza" name="Poliza"><br><br> </td>
+    </tr>
+  </table>
   <br>
 
-  <table id="tb_1">
+  <table id="tb_2">
     <tr>
-      <td colspan="3"> <br>Nombre del paciente: <input type="text" size="40" id="NombrePaciente" name="NombrePaciente"><br><br> </td>
+      <td>
+        <b>Favor de consignar todas las preguntas:</b><br>
+        <br>
+        Diagnóstico efectuado: <input type="text"size="110" name="diag"><br>
+        <br>
+        <b>Fecha de primer diagnóstico de Obesidad (precisar día, mes y año): <input type="text" size="50" name="fecha_diag"></b><br>
+        <br>
+        Método de diagnóstico: <input type="text" size="80" name="metodo_diag"><br>
+        <br>
+        <b>Indicar mes y año en que comienza a subir de peso: <input type="text" name="fecha_peso"></b><br>
+        <br>
+        Se trató con farmacos: Sí<input name="Si" type="checkbox" /> No <input name="No" type="checkbox" />
+        Por cuanto tiempo: <input type="text" name="tiempo"><br>
+        <br>
+        <b>Peso: <input type="text" name="peso">  Talla: <input type="text" name="talla">  IMC: <input type="text" name="imc">  </b><br>
+        <br>
+        Tratamiento indicado o realizado: <input type="text" size="110" name="tratamiento"><br>
+        <br>
+        <b>Tiene alguna patología asociada al diagnóstico principal. (Indique patología y fecha de diagnóstico): <br> <textarea name="patologia" rows="7" cols="110"></textarea></b><br><br>
+        El paciente condultó anteriormente, con otro profesional, por patología relacionada a la que se está tratando ahora:<br>
+        Sí <input type="checkbox" name="si"/> No <input type="checkbox" name="no"> Fecha: <input type="text" size="40" name="fecha_consul"> <br>
+        <br>
+        Indique nombre y especialidad del médico que lo derivó: <input type="text" size="90" name="med_deriv"> <br><br>
+      </td>
     </tr>
+  </table>
+  <br>
+  <table id="tb_3">
     <tr>
-       <td><br>Rut: <input type="text" size="35" id="Rut" name="Rut"><br><br> </td>
-       <td><br>Solicitud: <input type="text" size="35" id="Solicitud" name="Solicitud"><br><br> </td>
-       <td><br>Póliza: <input type="text" size="35" name="poliza" id="Poliza" name="Poliza"><br><br> </td>
-  </tr>
-</table>
-<br>
-
-<table id="tb_2">
-  <tr>
-    <td>
-      <b>Favor de consignar todas las preguntas:</b><br>
-      <br>
-      Diagnóstico efectuado: <input type="text"size="110" name="diag"><br>
-      <br>
-      <b>Fecha de primer diagnóstico de Obesidad (precisar día, mes y año): <input type="text" size="50" name="fecha_diag"></b><br>
-      <br>
-      Método de diagnóstico: <input type="text" size="80" name="metodo_diag"><br>
-      <br>
-      <b>Indicar mes y año en que comienza a subir de peso: <input type="text" name="fecha_peso"></b><br>
-      <br>
-      Se trató con farmacos: Sí<input name="Si" type="checkbox" /> No <input name="No" type="checkbox" />
-      Por cuanto tiempo: <input type="text" name="tiempo"><br>
-      <br>
-      <b>Peso: <input type="text" name="peso">  Talla: <input type="text" name="talla">  IMC: <input type="text" name="imc">  </b><br>
-      <br>
-      Tratamiento indicado o realizado: <input type="text" size="110" name="tratamiento"><br>
-      <br>
-      <b>Tiene alguna patología asociada al diagnóstico principal. (Indique patología y fecha de diagnóstico): <br> <textarea name="patologia" rows="7" cols="110"></textarea></b><br><br>
-      El paciente condultó anteriormente, con otro profesional, por patología relacionada a la que se está tratando ahora:<br>
-      Sí <input type="checkbox" name="si"/> No <input type="checkbox" name="no"> Fecha: <input type="text" size="40" name="fecha_consul"> <br>
-      <br>
-      Indique nombre y especialidad del médico que lo derivó: <input type="text" size="90" name="med_deriv"> <br><br>
-    </td>
-  </tr>
-</table>
-<br>
-<table id="tb_3">
-  <tr>
-    <td id="tb_3_td_1">
-    <br>Nombre del médico: <input type="text" size="40" name="nom_medico"><br><br>
-    Inscripción número colegio: <input type="text" size="30" name="insNroCol">   Teléfono: <input type="text" size="30" name="tlfn"><br><br>
-    Fecha del informe: <input type="text" size="35" name="fecha_informe"><br><br>
-    </td>
-    <td>
-      <p align="center">____________________</p>
-      <p align="center">Firma:</p>
-    </td>
-  </tr>
-</table>
+      <td id="tb_3_td_1">
+      <br>Nombre del médico: <input type="text" size="40" name="nom_medico"><br><br>
+      Inscripción número colegio: <input type="text" size="30" name="insNroCol">   Teléfono: <input type="text" size="30" name="tlfn"><br><br>
+      Fecha del informe: <input type="text" size="35" name="fecha_informe"><br><br>
+      </td>
+      <td>
+        <p align="center">____________________</p>
+        <p align="center">Firma:</p>
+      </td>
+    </tr>
+  </table>
 </div> 
 <div class="mx-auto text-center mt-2" id="content" #content>   
     <button class="btn btn-primary" (click)="onClick()">Generar</button>  
