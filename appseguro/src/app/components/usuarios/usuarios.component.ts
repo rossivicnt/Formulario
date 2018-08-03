@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild, ElementRef } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { NgForm } from '@angular/forms';
 import { User } from '../../models/user';
@@ -13,10 +13,22 @@ import { Router } from  '@angular/router';
 
 export class UsuariosComponent implements OnInit {
 
-  constructor(private userService: UserService,public router: Router) { }
+  @ViewChild('addPost') addBtn: ElementRef;
+
+  constructor(private userService: UserService,public router: Router) {
+    this.userService.postEdit_Observable.subscribe(res => {
+      this.addBtn.nativeElement.click();
+		});
+
+   }
 
   ngOnInit() {
     this.getUsers();
+
+    this.userService.postAdded_Observable.subscribe(res => {
+      console.log("entro");
+      this.getUsers();
+    });
   }
 
   getUsers() {
@@ -27,8 +39,7 @@ export class UsuariosComponent implements OnInit {
   }
 
   editUser(user: User) {
-    this.userService.selectedUser = user;
-    this.router.navigate(['/register']);
+    this.userService.setPostToEdit(user);
   }
 
   deleteUser(_id: string, form: NgForm) {

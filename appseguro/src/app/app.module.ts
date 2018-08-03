@@ -21,6 +21,8 @@ import { RegisterPageComponent } from './components/register-page/register-page.
 import { HttpClientModule } from '@angular/common/http';
 import { Exportform1Component } from './components/exportform1/exportform1.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UserService } from './services/user.service';
+import { SeleccionComponent } from './components/seleccion/seleccion.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     Formulario1Component,
     Formulario2Component,
     RegisterPageComponent,
-    Exportform1Component
+    Exportform1Component,
+    SeleccionComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +49,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
   ],
-  providers: [AuthService,AuthGuard],
+  providers: [AuthService, AuthGuard, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

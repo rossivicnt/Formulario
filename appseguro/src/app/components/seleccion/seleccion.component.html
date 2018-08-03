@@ -1,0 +1,30 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">Elije un formulario</h4>
+            <button type="button" #closeBtn class="close" aria-label="Close" data-dismiss="modal">
+                <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="dateOfBirth">Form</label>
+                <div class="input-group">
+                  <select class="form-control" id="form" name="form" id="form" [(ngModel)]="form">
+                    <option value="" disabled selected>Select your option</option>
+                    <option value="Formulario1">Informe medico tratante obesidad</option>
+                    <option value="Formulario2">Informe medico tratante</option>
+                    <option value="Formulario3">Solicitud de incorporacion seguros de vida y salud colectivos</option>
+                  </select>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-outline-dark" (click)="OnSubmitFormulario()" >New</button>
+              </div>
+            </form>
+          </div>
+    </div>
+  </div>
+</div>
