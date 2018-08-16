@@ -27,8 +27,7 @@ userCtrl.getUser = async (req, res) => {
 userCtrl.editUser = async (req, res) => {
     const { id } = req.params;
     const user= {
-        firstname: req.body.firstname,
-        lastname: req.body.lastname,
+        firstname: req.body.name,
         email: req.body.email,
         password: req.body.password,
         permiso: req.body.permiso

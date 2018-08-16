@@ -4,6 +4,8 @@ import { NgForm } from '@angular/forms';
 import { User } from '../../models/user';
 import { Router } from  '@angular/router';
 
+declare var $:any;
+
 @Component({
   selector: 'app-usuarios',
   templateUrl: './usuarios.component.html',
@@ -13,12 +15,10 @@ import { Router } from  '@angular/router';
 
 export class UsuariosComponent implements OnInit {
 
-  @ViewChild('addPost') addBtn: ElementRef;
+ public papers: User = new User();
+  public listPeriodico: User[];
 
   constructor(private userService: UserService,public router: Router) {
-    this.userService.postEdit_Observable.subscribe(res => {
-      this.addBtn.nativeElement.click();
-		});
 
    }
 
@@ -33,12 +33,39 @@ export class UsuariosComponent implements OnInit {
 
   getUsers() {
     this.userService.getUsers()
-      .subscribe(res => {
-        this.userService.users = res as User[];
+      .subscribe((res:any) => {
+        console.log(res);
+        this.listPeriodico = res;
       });
   }
 
+  resetForm(form?: NgForm) {
+    if (form) {
+      form.reset();
+      this.userService.selectedUser = new User();
+    }
+  }
+
+  addUser(form?: NgForm) {
+    console.log(form.value);
+    if(form.value){
+      if(form.value._id){
+        this.userService.putUser(form.value).subscribe(res =>{
+        this.userService.notifyPostAddition();
+        });
+      } else {
+        this.userService.postUser(form.value).subscribe(res =>{
+        this.userService.notifyPostAddition();
+        });
+      }
+    } else {
+      alert('Valores requeridos');
+    }
+  }
+
   editUser(user: User) {
+    this.papers = user;
+    this.abrirModal();
     this.userService.setPostToEdit(user);
   }
 
@@ -50,5 +77,8 @@ export class UsuariosComponent implements OnInit {
         });
     }
   }
-
+  
+  abrirModal(){
+    $("#modalEdit").modal();
+  }
 }

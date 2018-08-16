@@ -1,6 +1,6 @@
 <ng-template #content let-c="close" let-d="dismiss">
   <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Choose a form</h4>
+    <h4 class="modal-title" id="modal-basic-title">Elija un formulario</h4>
     <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
       <span aria-hidden="true">&times;</span>
     </button>
@@ -11,7 +11,7 @@
         <label for="dateOfBirth">Form</label>
         <div class="input-group">
           <select class="form-control" id="form" name="form" id="form" [(ngModel)]="form">
-            <option value="" disabled selected>Select your option</option>
+            <option value="" disabled selected>Seleccione su opción</option>
             <option value="Formulario1">Informe medico tratante obesidad</option>
             <option value="Formulario2">Informe medico tratante</option>
             <option value="Formulario3">Solicitud de incorporacion seguros de vida y salud colectivos</option>
@@ -19,7 +19,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-outline-dark">New</button>
+        <button type="submit" class="btn btn-outline-dark">Nuevo</button>
       </div>
     </form>
   </div>
@@ -31,20 +31,20 @@
       <div class="mt-4 col-lg-6" style="margin-left: 2%;">
           <form class="form-inline my-2 my-lg-0">
               <input class="form-control mr-sm-2" type="text" placeholder="Search">
-              <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+              <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
           </form>
       </div>
       <div class="mt-4 col-lg-5">
-          <button type="button" class="btn btn-secondary" style="float:right;" (click)="open(content)">New</button>
+          <button type="button" class="btn btn-secondary" style="float:right;" (click)="open(content)">Nuevo</button>
       </div>
   </div>
   <table class="table table-hover" style="margin-top: 2%;">
     <thead>
       <tr class="table-light">
-        <th scope="col">Name</th>
-        <th scope="col">Date</th>
-        <th scope="col">File</th>
-        <th scope="col">Actions</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Archivo</th>
+        <th scope="col">Acciones</th>
       </tr>
     </thead>
     <tbody>

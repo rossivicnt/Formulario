@@ -51,11 +51,4 @@ export class RegisterPageComponent implements OnInit {
     }
   }
 
-  getUsers() {
-    this.userService.getUsers()
-      .subscribe(res => {
-        this.userService.users = res as User[];
-      });
-  }
-
 }

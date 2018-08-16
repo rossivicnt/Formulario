@@ -28,16 +28,14 @@
             ],
             "styles": [
               "src/styles.scss",
-              "./node_modules/bootstrap/dist/css/bootstrap.css",
-              "./node_modules/bootswatch/dist/cosmo/bootstrap.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/bootswatch/dist/cosmo/bootstrap.min.css",
               "./node_modules/font-awesome/css/font-awesome.css"
             ],
             "scripts": [
-              "./node_modules/jquery/dist/jquery.js",
-              "./node_modules/popper.js/dist/umd/popper.js",
-              "./node_modules/bootstrap/dist/js/bootstrap.js",
-              "./node_modules/@ng-bootstrap/ng-bootstrap/bundles/ng-bootstrap.js",
-              "./node_modules/materialize-css/dist/js/materialize.min.js",
+              "./node_modules/jquery/dist/jquery.min.js",
+              "./node_modules/popper.js/dist/umd/popper.min.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js",
               "./node_modules/jspdf/dist/jspdf.min.js"
             ]
           },
