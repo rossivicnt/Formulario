@@ -12,6 +12,10 @@ import { Export1 } from '../../models/export1';
   providers: [Formulario1Service]
 })
 export class Formulario1Component implements OnInit {
+  public papers: Formulario1 = new Formulario1();
+  public papers2: Export1 = new Export1();
+  public listPeriodico: Formulario1[];
+  public list: Export1[];
 
   constructor(private formService: Formulario1Service,public router: Router) { }
 
@@ -54,15 +58,17 @@ export class Formulario1Component implements OnInit {
 
   getForms() {
     this.formService.getForms1()
-      .subscribe(res => {
-        this.formService.Forms1 = res as Formulario1[];
-      });
+    .subscribe((res:any) => {
+      console.log(res);
+      this.listPeriodico = res;
+    });
   }
 
   getExport(){
     this.formService.getExport1()
-    .subscribe(res=>{
-      this.formService.Export1 = res as Export1[];
+    .subscribe((res:any) => {
+      console.log(res);
+      this.list = res;
     });
   }
 
