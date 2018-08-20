@@ -31,7 +31,13 @@ form1Ctrl.createformulario1 = async (req, res) => {
 };
 
 form1Ctrl.getformulario1 = async (req, res) => {
-    const forms = await formulario1.findById(req.params.id);
+    
+    const rut= {
+        Rut: req.params.Rut
+    }
+
+    console.log(rut);
+    const forms = await formulario1.find(rut);
     res.json(forms);
 };
 

@@ -1,13 +1,15 @@
 export class Export1 {
-    constructor(_id = '', usuario = '', file='',formulario1 = '') {
+    constructor(_id = '', usuario = '', date= new Date(), file='',formulario = '') {
         this._id = _id;
         this.usuario = usuario;
+        this.date = date;
         this.file =file;
-        this.formulario1 = formulario1;
+        this.formulario = formulario;
     }
 
     _id: string;
     usuario:  string;
+    date: Date;
     file: string;
-    formulario1:  string;
+    formulario:  string;
 }

@@ -35,6 +35,10 @@ export class Formulario1Service {
     return this.http.get(this.URL_AP2);
   }
 
+  getId(Rut: String){
+    return this.http.get(this.URL_API + `/${Rut}`)
+  }
+
   postForm(form1: Formulario1) {
     return this.http.post(this.URL_API, {
       NombrePaciente : form1.NombrePaciente,
@@ -54,11 +58,13 @@ export class Formulario1Service {
     });  
   }
   
-  postExport( export1: Export1){
+  postExport( usuario: string, date: Date, file: string, formulario: string ){
+    console.log(usuario, date, file, formulario);
     return this.http.post(this.URL_AP2, {
-      usuario :export1.usuario,
-      file :export1.file,
-      formulario1 :export1.formulario1
+      usuario: usuario,
+      date: date,
+      file: file,
+      formulario: formulario
     });
   }
 
@@ -82,12 +88,12 @@ export class Formulario1Service {
     });
   }
 
-  putExport(export1: Export1){
-    return this.http.put(this.URL_AP2 + `/${export1._id}`, {
-      id: export1._id,
-      usuario :export1.usuario,
-      file :export1.file,
-      formulario1 :export1.formulario1
+  putExport(_id: string, usuario: string, date: string, file: string, formulario: string){
+    return this.http.put(this.URL_AP2 + `/${_id}`, {
+      usuario: usuario,
+      date: date,
+      file: file,
+      formulario1:formulario
     });
   }
 

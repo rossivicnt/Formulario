@@ -16,6 +16,9 @@ export class Formulario1Component implements OnInit {
   public papers2: Export1 = new Export1();
   public listPeriodico: Formulario1[];
   public list: Export1[];
+  public today: Date = new Date();
+  id: string;
+
 
   constructor(private formService: Formulario1Service,public router: Router) { }
 
@@ -32,25 +35,27 @@ export class Formulario1Component implements OnInit {
 
   addForm(form?: NgForm) {
     console.log(form.value);
+  
     if(form.value._id) {
       this.formService.putForm(form.value)
         .subscribe(res => {
-          this.formService.putExport(form.value)
-          .subscribe(res => {
-            this.resetForm(form);
-            this.getForms();
-            this.router.navigate(['/privado']);
-          });
-        });
-    } else {
-      this.formService.postForm(form.value)
-      .subscribe(res => {
-        this.formService.postExport(form.value)
-        .subscribe(res => {
-          this.getForms();
           this.resetForm(form);
+          this.getForms();
           this.router.navigate(['/privado']);
         });
+    } else {
+     this.formService.postForm(form.value)
+        .subscribe(res => {
+          this.formService.getId(form.value.Rut).subscribe((res:any) => {
+            console.log(res[0]._id);
+            this.id = res[0]._id;
+          });
+         this.formService.postExport("5b7b04f1fced2a13b0f90940", this.today ,"Informe medico tratante obesidad" , this.id)
+          .subscribe(res => {
+            this.getForms();
+            this.resetForm(form);
+            this.router.navigate(['/privado']);
+          });
       });
     }
     

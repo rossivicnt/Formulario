@@ -1,72 +1,66 @@
 <div class="jumbotron" style="height: 100%;">
   <h1>Informe medico tratante obesidad</h1>
   <form #form1Form="ngForm" class="bs-component" style="margin-top: 2%;" (ngSubmit)="addForm(form1Form)">
-        <input type="hidden" name="usuario" #usuario="ngModel" [(ngModel)]="formService.selectedExoport1.usuario" value="5b62bd301eefb80c28e0ade4">
-        <input type="hidden" name="file" #file="ngModel" [(ngModel)]="formService.selectedExoport1.file" value="Informe medico tratante obesidad">
-        <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="formService.selectedForm1._id">
+        <input type="hidden" name="_id"  [(ngModel)]="papers._id">
         <div class="form-group col-lg-12">
-            <input type="text" class="form-control" name="NombrePaciente" #NombrePaciente="ngModel" [(ngModel)]="formService.selectedForm1.NombrePaciente" placeholder="Enter your Firtsname">
+            <input type="text" class="form-control" name="NombrePaciente" [(ngModel)]="papers.NombrePaciente" placeholder="Ingrese nombre del paciente">
         </div>
         <div class="form-group col-lg-12">
-            <input type="text" class="form-control" name="Rut" #Rut="ngModel" [(ngModel)]="formService.selectedForm1.Rut" placeholder="Enter your RUT">
+            <input type="text" class="form-control" name="Rut"  [(ngModel)]="papers.Rut" placeholder="Ingrese su RUT">
         </div>
         <div class="form-group col-lg-12">
-            <input type="text" class="form-control" name="Solicitud" #Solicitud="ngModel" [(ngModel)]="formService.selectedForm1.Solicitud" placeholder="Enter your request">
+            <input type="text" class="form-control" name="Solicitud"  [(ngModel)]="papers.Solicitud" placeholder="Ingrese su solicitud">
         </div>
         <div class="form-group col-lg-12">
-            <input type="text" class="form-control" name="Poliza" #Poliza="ngModel" [(ngModel)]="formService.selectedForm1.Poliza" placeholder="Enter your Poliza">
+            <input type="text" class="form-control" name="Poliza"  [(ngModel)]="papers.Poliza" placeholder="Ingrese su Poliza">
         </div>
         <div class="form-group col-lg-12">
-            <input type="text" class="form-control" name="Diagnostico" #Diagnostico="ngModel" [(ngModel)]="formService.selectedForm1.Diagnostico" placeholder="Enter your diagnosis made">
+            <input type="text" class="form-control" name="Diagnostico" [(ngModel)]="papers.Diagnostico" placeholder="Ingrese su diagnóstico efectuado">
         </div>
         <div class="form-group col-lg-12">
-            <label>Enter the date of the first diagnosis of obesity</label>
-            <input type="date" class="form-control" name="fechaDiagnostico" #fechaDiagnostico="ngModel" [(ngModel)]="formService.selectedForm1.fechaDiagnostico">
+            <label>Ingrese la fecha del primer diagnóstico de obesidad</label>
+            <input type="date" class="form-control" name="fechaDiagnostico"  [(ngModel)]="papers.fechaDiagnostico">
         </div>
         <div class="form-group col-lg-12">
-            <label>Enter the date of the first diagnosis of obesity</label>
-            <input type="date" class="form-control" name="fechaDiagnostico" #fechaDiagnostico="ngModel" [(ngModel)]="formService.selectedForm1.fechaDiagnostico">
+            <input type="text" class="form-control" name="Metodo" [(ngModel)]="papers.Metodo" placeholder="Ingrese su método de diagnóstico">
         </div>
         <div class="form-group col-lg-12">
-            <input type="text" class="form-control" name="Metodo" #Metodo="ngModel" [(ngModel)]="formService.selectedForm1.Metodo" placeholder="Enter your diagnostic method">
-        </div>
-        <div class="form-group col-lg-12">
-            <input type="text" class="form-control" name="fechaPeso" #fechaPeso="ngModel" [(ngModel)]="formService.selectedForm1.fechaPeso" placeholder="Indicate month and year when you start to gain weight">
+            <input type="text" class="form-control" name="fechaPeso" [(ngModel)]="papers.fechaPeso" placeholder="Indique el mes y el año en que comienza a aumentar de peso">
         </div>
         <div class="row col-lg-12">
           <div class="form-group col-lg-4 row">
             <div class="col-lg-8">
-                <label>I was dealing with drugs:</label>
+                <label>Se trato con farmacos:</label>
             </div>
             <div class="col-lg-4">
               <div class="form-check disabled">
                 <label class="form-check-label">
-                  <input type="checkbox" class="form-control" name="Farmacos" #Farmacos="ngModel" [(ngModel)]="formService.selectedForm1.Farmacos">
-                  Yes
+                  <input type="checkbox" class="form-control" name="Farmacos" [(ngModel)]="papers.Farmacos">
+                  Si
                 </label>
               </div>
             </div>
           </div>
           <div class="form-group col-lg-8">
-             <input type="text" class="form-control" name="Tiempo" #Tiempo="ngModel" [(ngModel)]="formService.selectedForm1.Tiempo" placeholder="for how longs">
+             <input type="text" class="form-control" name="Tiempo" [(ngModel)]="papers.Tiempo" placeholder="Por cuanto tiempo?">
           </div>
         </div>
         <div class="row col-lg-12">
           <div class="form-group col-lg-4">
-            <input type="text" class="form-control" name="Peso" #Peso="ngModel" [(ngModel)]="formService.selectedForm1.Peso" placeholder="weight">       
+            <input type="text" class="form-control" name="Peso" [(ngModel)]="papers.Peso" placeholder="Peso">       
           </div>
           <div class="form-group col-lg-4">
-            <input type="text" class="form-control" name="Talla" #Talla="ngModel" [(ngModel)]="formService.selectedForm1.Talla" placeholder="size">       
+            <input type="text" class="form-control" name="Talla" [(ngModel)]="papers.Talla" placeholder="Talla">       
           </div>
           <div class="form-group col-lg-4">
-            <input type="text" class="form-control" name="IMC" #IMC="ngModel" [(ngModel)]="formService.selectedForm1.IMC" placeholder="IMC">       
+            <input type="text" class="form-control" name="IMC"  [(ngModel)]="papers.IMC" placeholder="IMC">       
           </div>
         </div>
         <div class="form-group col-lg-12">
-            <input type="text" class="form-control" name="Tratamiento" #Tratamiento="ngModel" [(ngModel)]="formService.selectedForm1.Tratamiento" placeholder="treatment performed">
+            <input type="text" class="form-control" name="Tratamiento" [(ngModel)]="papers.Tratamiento" placeholder="Tratamiento realizado">
         </div>
         <div class="bs-component mx-auto text-center">
-            <button class="btn btn-primary" style="margin-right: 2%;" #addExport >Save</button>
+            <button class="btn btn-primary" style="margin-right: 2%;">Save</button>
             <button class="btn btn-primary" (click)="resetForm(userForm)">Clean</button>
         </div>
   </form>

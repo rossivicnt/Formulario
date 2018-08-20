@@ -48,10 +48,10 @@
       </tr>
     </thead>
     <tbody>
-        <tr class="table-primary" >
-            <td>loco</td>
-            <td>muy loco</td>
-            <td>demasiado loco</td>
+        <tr class="table-primary" *ngFor="let form of listForm" >
+            <td>{{form.usuario}}</td>
+            <td>{{form.date}}</td>
+            <td>{{form.file}}</td>
             <td>
             <a (click)="editUser(user)">
                 <i class="material-icons">mode_edit</i>
