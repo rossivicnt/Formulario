@@ -59,9 +59,74 @@
         <div class="form-group col-lg-12">
             <input type="text" class="form-control" name="Tratamiento" [(ngModel)]="papers.Tratamiento" placeholder="Tratamiento realizado">
         </div>
-        <div class="bs-component mx-auto text-center">
+        <div id="contentToConvert" style="display: none">
+            <div>
+                <h2><b>INFORME DE MÉDICO TRATANTE</b></h2>
+              </div>
+          
+              <div style="background:#7F7F7F">DATOS DEL PACIENTE</div>
+              <br>
+          
+              <table id="tb_1">
+                <tr>
+                  <td colspan="3"> <br>Nombre del paciente: <input type="text" size="40" id="NombrePaciente" name="NombrePaciente" [(ngModel)]="papers.NombrePaciente"><br><br> </td>
+                </tr>
+                <tr>
+                  <td><br>Rut: <input type="text" size="35" id="Rut" name="Rut" [(ngModel)]="papers.Rut"><br><br> </td>
+                  <td><br>Solicitud: <input type="text" size="35" id="Solicitud" name="Solicitud" [(ngModel)]="papers.Solicitud"><br><br> </td>
+                  <td><br>Póliza: <input type="text" size="35" name="poliza" id="Poliza" name="Poliza" [(ngModel)]="papers.Poliza"><br><br> </td>
+              </tr>
+            </table>
+            <br>
+          
+            <table id="tb_2">
+              <tr>
+                <td>
+                  <b>Favor de consignar todas las preguntas:</b><br>
+                  <br>
+                  Diagnóstico efectuado: <input type="text"size="110" name="Diagnostico" [(ngModel)]="papers.Diagnostico"><br>
+                  <br>
+                  <b>Fecha de primer diagnóstico de Obesidad (precisar día, mes y año): <input type="text" size="50" name="fechaDiagnostico" [(ngModel)]="papers.fechaDiagnostico"></b><br>
+                  <br>
+                  Método de diagnóstico: <input type="text" size="80" name="Metodo" [(ngModel)]="papers.Metodo"><br>
+                  <br>
+                  <b>Indicar mes y año en que comienza a subir de peso: <input type="text" name="fechaPeso" [(ngModel)]="papers.fechaPeso"></b><br>
+                  <br>
+                  Se trató con farmacos: Sí<input type="checkbox" class="form-control" name="Farmacos" [(ngModel)]="papers.Farmacos">
+                  Por cuanto tiempo: <input type="text" name="Tiempo" [(ngModel)]="papers.Tiempo"><br>
+                  <br>
+                  <b>Peso: <input type="text" name="Peso" [(ngModel)]="papers.Peso">  Talla: <input type="text" name="Talla" [(ngModel)]="papers.Talla">  IMC: <input type="text" name="IMC" [(ngModel)]="papers.IMC">  </b><br>
+                  <br>
+                  Tratamiento indicado o realizado: <input type="text" size="110" name="tratamiento" [(ngModel)]="papers.Tratamiento"><br>
+                  <br>
+                  <b>Tiene alguna patología asociada al diagnóstico principal. (Indique patología y fecha de diagnóstico): <br> <textarea name="patologia" rows="7" cols="110"></textarea></b><br><br>
+                  El paciente condultó anteriormente, con otro profesional, por patología relacionada a la que se está tratando ahora:<br>
+                  Sí <input type="checkbox" name="si"/> No <input type="checkbox" name="no"> Fecha: <input type="text" size="40" name="fecha_consul"> <br>
+                  <br>
+                  Indique nombre y especialidad del médico que lo derivó: <input type="text" size="90" name="med_deriv"> <br><br>
+                </td>
+              </tr>
+            </table>
+            <br>
+            <table id="tb_3">
+              <tr>
+                <td id="tb_3_td_1">
+                <br>Nombre del médico: <input type="text" size="40" name="nom_medico"><br><br>
+                Inscripción número colegio: <input type="text" size="30" name="insNroCol">   Teléfono: <input type="text" size="30" name="tlfn"><br><br>
+                Fecha del informe: <input type="text" size="35" name="fecha_informe"><br><br>
+                </td>
+                <td>
+                  <p align="center">____________________</p>
+                  <p align="center">Firma:</p>
+                </td>
+              </tr>
+            </table>
+          </div> 
+        <div class="bs-component mx-auto text-center" id="content" #content>
             <button class="btn btn-primary" style="margin-right: 2%;">Save</button>
             <button class="btn btn-primary" (click)="resetForm(userForm)">Clean</button>
         </div>
   </form>
 </div>
+
+

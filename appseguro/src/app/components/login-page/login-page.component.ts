@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
+import { AuthService , TokenPayload} from '../../services/auth.service';
 import { Router } from  '@angular/router';
 import { NgForm } from '@angular/forms';
 
@@ -10,8 +10,12 @@ import { NgForm } from '@angular/forms';
   providers: [AuthService]
 })
 export class LoginPageComponent implements OnInit {
-  public email: string;
-  public password: string;
+  //public email: string;
+  //public password: string;
+  credentials: TokenPayload = {
+    email: '',
+    password: ''
+  };
 
   constructor(
     public authService: AuthService,
@@ -21,7 +25,7 @@ export class LoginPageComponent implements OnInit {
   ngOnInit() {
   }
 
-  OnSubmitLogin(form?: NgForm){
+  /*OnSubmitLogin(form?: NgForm){
     this.authService.loginEmail(this.email, this.password)
     .then((res)=>{
       this.router.navigate(['/privado']);
@@ -30,6 +34,14 @@ export class LoginPageComponent implements OnInit {
       this.router.navigate(['/login']);
     })
   
+  }*/
+
+  login() {
+    this.authService.login(this.credentials).subscribe(() => {
+      this.router.navigateByUrl('/privado');
+    }, (err) => {
+      console.error(err);
+    }); 
   }
 
 }
