@@ -1,3 +1,175 @@
-<p>
-  formulario2 works!
-</p>
+<div class="jumbotron" style="height: 100%;">
+  <h1>Informe medico tratante</h1>
+  <form #form2Form="ngForm" class="bs-component" style="margin-top: 2%;" (ngSubmit)="addForm(form2Form)">
+        <input type="hidden" name="_id"  [(ngModel)]="papers._id">
+        <div class="form-group col-lg-12">
+            <input type="text" class="form-control" name="NombrePaciente" [(ngModel)]="papers.NombrePaciente" placeholder="Ingrese nombre del paciente">
+        </div>
+        <div class="form-group col-lg-12">
+            <input type="text" class="form-control" name="Rut"  [(ngModel)]="papers.Rut" placeholder="Ingrese su RUT">
+        </div>
+        <div class="form-group col-lg-12">
+            <input type="text" class="form-control" name="Solicitud"  [(ngModel)]="papers.Solicitud" placeholder="Ingrese su solicitud">
+        </div>
+        <div class="form-group col-lg-12">
+            <input type="text" class="form-control" name="Poliza"  [(ngModel)]="papers.Poliza" placeholder="Ingrese su Poliza">
+        </div>
+        <div class="form-group col-lg-12">
+            <input type="text" class="form-control" name="Diagnostico" [(ngModel)]="papers.Diagnostico" placeholder="Ingrese su diagnóstico efectuado">
+        </div>
+        <div class="form-group col-lg-12">
+            <label>Fecha de Diagnostico</label>
+            <input type="date" class="form-control" name="fechaDiagnostico"  [(ngModel)]="papers.fechaDiagnostico" >
+        </div>
+        <div class="form-group col-lg-12">
+            <input type="text" class="form-control" name="Metodo" [(ngModel)]="papers.Metodo" placeholder="Ingrese su método de diagnóstico empleado">
+        </div>
+        <div class="form-group col-lg-12">
+            <input type="text" class="form-control" name="sintomas" [(ngModel)]="papers.sintomas" placeholder="Describir primero síntomas presentados">
+        </div>
+        <div class="form-group col-lg-12">
+            <input type="text" class="form-control" name="Tiempo" [(ngModel)]="papers.Tiempo" placeholder="Fecha que presento primeros síntomas(Precisar mes y año)">
+        </div>
+        <div class="form-group col-lg-12">
+            <input type="text" class="form-control" name="Peso" [(ngModel)]="papers.Peso" placeholder="Examenes realizados que fundamentan el diagnóstico">       
+        </div>
+        <div class="form-group col-lg-12">
+            <input type="text" class="form-control" name="Tratamiento" [(ngModel)]="papers.Tratamiento" placeholder="Tratamiento indicado y objetivo de este">
+        </div>
+        <div class="form-group col-lg-12">
+            <input type="text" class="form-control" name="patologia" [(ngModel)]="papers.patologia"placeholder="Estimación de tratamiento">
+        </div>
+        <div class="form-group col-lg-12">
+            <input type="text" class="form-control" name="med_deriv" [(ngModel)]="papers.med_deriv"  placeholder="Breve historia clinica">
+        </div>
+        <div class="form-group col-lg-12">
+            <input type="text" class="form-control" name="nom_medico" [(ngModel)]="papers.nom_medico"  placeholder="Nombre del médico">
+        </div>
+        <div class="form-group col-lg-12">
+            <input type="text" class="form-control" name="insNroCol" [(ngModel)]="papers.insNroCol"  placeholder="Inscripción número colegio">
+        </div>
+        <div class="form-group col-lg-12">
+            <input type="text" class="form-control" name="tlfn" [(ngModel)]="papers.tlfn"  placeholder="Teléfono">
+        </div>
+        <div class="form-group col-lg-12">
+            <label>Fecha del informe</label>
+            <input type="date" class="form-control" name="fecha_informe" [(ngModel)]="papers.fecha_informe"  placeholder="Teléfono">
+        </div>
+        <div id="oculto">
+          <div id="contentToConvert" >
+            <div class="row div">
+              <div class="col-lg-8 div">
+                  <h2><b>INFORME DE MÉDICO TRATANTE</b></h2>
+              </div>
+              <div class="col-lg-4">
+                <img id="imagen" src="../../../assets/logo.png">
+              </div>
+            </div>
+            <div class="div">
+                <div id="border" class="div" style="background:#7F7F7F"> <h3 >DATOS DEL PACIENTE</h3> </div>
+            </div>
+            <br>
+            <div class="row div">
+              <table id="tb_1">
+                  <tr>
+                    <td colspan="3"><label class="margin"><br>Nombre del paciente: </label><input type="text" size="40" id="NombrePaciente" name="NombrePaciente" [(ngModel)]="papers.NombrePaciente"><br><br> </td>
+                  </tr>
+                  <tr style="border-top: 2px solid black;" >
+                    <td class="dere"><br><label class="margin">Rut:</label> <input type="text" size="35" id="Rut" name="Rut" [(ngModel)]="papers.Rut"><br><br> </td>
+                    <td class="dere"><br><label class="margin">Solicitud:</label><input type="text" size="35" id="Solicitud" name="Solicitud" [(ngModel)]="papers.Solicitud"><br><br> </td>
+                    <td><br><label class="margin">Póliza:</label> <input type="text" size="35" name="poliza" id="Poliza" name="Poliza" [(ngModel)]="papers.Poliza"><br><br> </td>
+                </tr>
+              </table>
+              <table id="tb_2">
+                <tr>
+                    <td>
+                        <b>  Favor de consignar todas las preguntas:</b>
+                        <br>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <br>
+                      <label class="margin">Diagnóstico efectuado: </label><input type="text"size="110" id="diag" name="Diagnostico" [(ngModel)]="papers.Diagnostico">
+                      <br>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                        <br>
+                        <b>Fecha de diagnostico: </b>
+                        <input type="text" size="50" id="fecha_diag_1" name="fechaDiagnostico" [(ngModel)]="papers.fechaDiagnostico">
+                        <br>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                        <br>
+                        <label class="margin">Método diagnóstico empleado:</label> <input type="text" size="80" id="metodo_diag" name="Metodo" [(ngModel)]="papers.Metodo"><br>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                        <br>
+                        <b>Describir primeros síntomas presentados: <input type="text" id="fecha_peso" name="sintomas" [(ngModel)]="papers.sintomas"></b><br>  
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <br>
+                      <label class="margin">Fecha que presentó los primeros Síntomas (Precisar mes y año):</label> <input type="text" id="tiempo" name="Tiempo" [(ngModel)]="papers.Tiempo"><br>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                        <br>
+                      <label class="margin">Exámenes realizados que fundamentan el diagnóstico:</label><input type="text" id="peso" name="Peso" [(ngModel)]="papers.Peso"><br>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                        <br>
+                        <label class="margin">Tratamiento indicado y objetivo de este:</label> <input type="text" size="110" id="tratamiento_1" name="tratamiento" [(ngModel)]="papers.Tratamiento">
+                        <br>    
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                        <br>
+                        <label class="margin">Estimación de tratamiento: 
+                        </label><br>
+                        <input id="patologia" rows="7" cols="110" name="patologia" [(ngModel)]="papers.patologia"><br>
+                    </td>
+                  </tr>
+                  <tr>         
+                    <td>
+                      <br>
+                      <label class="margin"> Breve historia clínica: </label><input type="text" size="90" id="med_deriv" name="med_deriv" [(ngModel)]="papers.med_deriv">  <br><br>
+                    </td>
+                  </tr>
+              </table>
+              <br>
+              <table id="tb_3">
+                  <tr>
+                    <td colspan="3">
+                    <br><label class="margin">Nombre del médico:</label> <input type="text" size="40" id="nom_medico" name="nom_medico" [(ngModel)]="papers.nom_medico"><br><br>
+                    <label class="margin">Inscripción número colegio: </label><input type="text" size="30" id="insNroCol" name="insNroCol" [(ngModel)]="papers.insNroCol"> <label class="margin">  Teléfono: </label><input type="text" size="30" id="tlfn" name="tlfn" [(ngModel)]="papers.tlfn"><br><br>
+                    <label class="margin">Fecha del informe: </label><input type="text" size="35" id="fecha_informe" name="fecha_informe" [(ngModel)]="papers.fecha_informe"><br><br>
+                    </td>
+                    <td style="text-align:  center;">
+                      <input id="firma" type="text" size="15">
+                      <p align="center">Firma:</p>
+                    </td>
+                  </tr>
+                </table>
+            </div>
+          </div> 
+        </div>
+        <div class="bs-component mx-auto text-center" id="content" #content>
+            <button class="btn btn-primary" style="margin-right: 2%;">Save</button>
+            <button class="btn btn-primary" (click)="resetForm(form2Form)">Clean</button>
+        </div>
+  </form>
+</div>
+
+

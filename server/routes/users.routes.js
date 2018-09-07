@@ -5,7 +5,7 @@ var passport = require('passport');
 
 const user = require ('../controllers/users.controller');
 
-router.get('/users', isValidUser ,function(req,res,next){
+router.get('/', isValidUser ,function(req,res,next){
     return res.status(200).json(req.user);
   });
 
@@ -51,7 +51,7 @@ router.get('/logout',isValidUser, function(req,res,next){
 
 router.put('/:id',user.editUser);
 router.delete('/:id',user.deleteUser);
-router.get('/' ,user.getUser);
+router.get('/users' ,user.getUser);
 
 function isValidUser(req,res,next){
     if(req.isAuthenticated()) next();

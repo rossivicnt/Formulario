@@ -46,8 +46,8 @@ export class Formulario1Component implements OnInit {
 
 
   addName(data){
-    console.log(data[0]._id);
-    this.username = data[0]._id;
+    console.log(data._id);
+    this.username = data._id;
   }
 
   resetForm(form?: NgForm) {

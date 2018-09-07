@@ -31,7 +31,7 @@ export class PrivadoPageComponent implements OnInit{
     }
 
     addName(data){
-      this.username = data[0]._id;
+      this.username = data._id;
     }
 
   open(content) {
@@ -53,9 +53,12 @@ export class PrivadoPageComponent implements OnInit{
   }
 
   OnSubmitFormulario(){
-    alert("entro");
     if(this.form=='Formulario1'){
       this._router.navigate(['/formulario1']);
+    }else{
+      if(this.form=='Formulario2'){
+        this._router.navigate(['/formulario2']);
+      }
     }
   }
 
@@ -83,6 +86,10 @@ export class PrivadoPageComponent implements OnInit{
     console.log("click en editar");
     if (user.file=='Informe medico tratante obesidad'){
       this._router.navigate(['/formulario1', user.formulario]);
+    }else{
+      if (user.file=='Informe medico tratante'){
+        this._router.navigate(['/formulario2', user.formulario]);
+      }
     }
   }
   

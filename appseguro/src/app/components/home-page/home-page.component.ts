@@ -20,8 +20,8 @@ export class HomePageComponent implements OnInit {
   }
 
   addName(data){
-    console.log(data[0]._id);
-    this.username =data[0].name;
+    console.log(data.name);
+    this.username =data.name;
   }
 
   ngOnInit() {

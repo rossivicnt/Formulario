@@ -14,7 +14,6 @@ import { Formulario1Component } from './components/formulario1/formulario1.compo
 import { Formulario2Component } from './components/formulario2/formulario2.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
-import { Exportform1Component } from './components/exportform1/exportform1.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserService } from './services/user.service';
 import { SeleccionComponent } from './components/seleccion/seleccion.component';
@@ -30,7 +29,6 @@ import { SeleccionComponent } from './components/seleccion/seleccion.component';
     UsuariosComponent,
     Formulario1Component,
     Formulario2Component,
-    Exportform1Component,
     SeleccionComponent
   ],
   imports: [

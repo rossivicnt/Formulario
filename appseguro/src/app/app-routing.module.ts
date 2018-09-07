@@ -6,7 +6,7 @@ import { PrivadoPageComponent } from './components/privado-page/privado-page.com
 import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { Formulario1Component } from './components/formulario1/formulario1.component';
-import { Exportform1Component } from './components/exportform1/exportform1.component';
+import { Formulario2Component } from './components/formulario2/formulario2.component';
 
 const routes: Routes = [
   {path: '', redirectTo:'login', pathMatch:'full'},
@@ -15,7 +15,8 @@ const routes: Routes = [
   {path: 'usuarios', component: UsuariosComponent},
   {path: 'formulario1', component: Formulario1Component},
   {path: 'formulario1/:id', component: Formulario1Component},
-  {path: 'export1', component: Exportform1Component},
+  {path: 'formulario2', component: Formulario2Component},
+  {path: 'formulario2/:id', component: Formulario2Component},
   {path: 'privado', component: PrivadoPageComponent},
   {path: '**', component: NotFoundPageComponent}
 ];
