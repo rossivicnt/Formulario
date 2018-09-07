@@ -15,7 +15,15 @@ const formulario1Schema = new Schema({
     Peso: { type: String, required:true },
     Talla: { type: String, required:true },
     IMC: { type: String, required:true },
-    Tratamiento: { type: String, required:true }
+    Tratamiento: { type: String, required:true },
+    patologia:{ type: String, required:true },
+    consulto:{ type: String, required:true },
+    fecha_consul: { type: Date, required:true },
+    med_deriv:{ type: String, required:true },
+    nom_medico:{ type: String, required:true },
+    insNroCol:{ type: String, required:true },
+    tlfn:{ type: String, required:true },
+    fecha_informe: { type: Date, required:true }
 });
 
 module.exports = mongoose.model('Formulario1', formulario1Schema);

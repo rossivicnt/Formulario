@@ -31,15 +31,24 @@ export class Formulario1Service {
     return this.http.get(this.URL_API);
   }
 
-  getExport1(){
+  getExport1T(){
     return this.http.get(this.URL_AP2);
+  }
+
+  getExport1(_id: string){
+    return this.http.get(this.URL_AP2 + `/${_id}`);
   }
 
   getId(Rut: String){
     return this.http.get(this.URL_API + `/${Rut}`)
   }
 
+  getForm1(_id: String){
+    return this.http.get('http://localhost:3000/api/form1/id' + `/${_id}`)
+  }
+
   postForm(form1: Formulario1) {
+    console.log(form1);
     return this.http.post(this.URL_API, {
       NombrePaciente : form1.NombrePaciente,
       Rut : form1.Rut,
@@ -54,7 +63,15 @@ export class Formulario1Service {
       Peso: form1.Peso,
       Talla: form1.Talla,
       IMC: form1.IMC,
-      Tratamiento: form1.Tratamiento
+      Tratamiento: form1.Tratamiento,
+      patologia: form1.patologia,
+      consulto: form1.consulto,
+      fecha_consul: form1.fecha_consul,
+      med_deriv : form1.med_deriv,
+      nom_medico: form1.nom_medico,
+      insNroCol: form1.insNroCol,
+      tlfn: form1.tlfn,
+      fecha_informe: form1.fecha_informe
     });  
   }
   
@@ -84,7 +101,15 @@ export class Formulario1Service {
       Peso: form1.Peso,
       Talla: form1.Talla,
       IMC: form1.IMC,
-      Tratamiento: form1.Tratamiento
+      Tratamiento: form1.Tratamiento, 
+      patologia: form1.patologia,
+      consulto: form1.consulto,
+      fecha_consul: form1.fecha_consul,
+      med_deriv : form1.med_deriv,
+      nom_medico: form1.nom_medico,
+      insNroCol: form1.insNroCol,
+      tlfn: form1.tlfn,
+      fecha_informe: form1.fecha_informe
     });
   }
 

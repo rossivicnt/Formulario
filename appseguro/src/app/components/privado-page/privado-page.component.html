@@ -53,10 +53,10 @@
             <td>{{form.date}}</td>
             <td>{{form.file}}</td>
             <td>
-            <a (click)="editUser(user)">
+            <a (click)="editUser(form)">
                 <i class="material-icons">mode_edit</i>
             </a>
-            <a (click)="deleteUser(user._id, userForm)">
+            <a (click)="deleteUser(form._id, form.formulario)">
                 <i class="material-icons">delete</i>
             </a>
             </td>

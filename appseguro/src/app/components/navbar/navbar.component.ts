@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
-import { auth } from '../../../../node_modules/firebase/app';
+import { UserService } from '../../services/user.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-navbar',
@@ -8,26 +9,21 @@ import { auth } from '../../../../node_modules/firebase/app';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  public isLogin: boolean;
-  public nombreUsuario: string;
-  public emailUsuario: string;
+  isLogin: Boolean;
+  
 
-  constructor(public authService: AuthService) { }
+  constructor(public authService: UserService, private _router: Router) { }
 
   ngOnInit() {
-    this.authService.getAuth().subscribe(auth=>{
-      if (auth){
-        this.isLogin= true;
-        this.nombreUsuario= auth.displayName;
-        this.emailUsuario= auth.email;
-      }else{
-        this.isLogin= false;
-      }
-    })
   }
 
-  onClickLogout(){
-    this.authService.logout();
+  logout(){
+    this.authService.logout()
+    .subscribe(
+      data=>{console.log(data);
+      this._router.navigate(['/login'])},
+      error=>console.error(error)
+    )
   }
 
 }

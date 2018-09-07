@@ -1,5 +1,6 @@
 import { Component, OnInit,ViewChild, ElementRef } from '@angular/core';
 import { UserService } from '../../services/user.service';
+import { AuthService } from '../../services/auth.service';
 import { NgForm } from '@angular/forms';
 import { User } from '../../models/user';
 import { Router } from  '@angular/router';
@@ -15,70 +16,84 @@ declare var $:any;
 
 export class UsuariosComponent implements OnInit {
 
- public papers: User = new User();
-  public listPeriodico: User[];
+  public papers: User = new User();
+  public listUser: User[];
+  username:String='';
 
-  constructor(private userService: UserService,public router: Router) {
-
-   }
+  constructor(private _user: UserService, private auth: AuthService,public _router: Router) { 
+    this._user.user()
+    .subscribe(
+      data=>this.addName(data),
+      error=>this._router.navigate(['/login'])
+    ) 
+  }
 
   ngOnInit() {
-    this.getUsers();
+    this.getUser();
 
-    this.userService.postAdded_Observable.subscribe(res => {
-      console.log("entro");
-      this.getUsers();
+    this.auth.postAdded_Observable.subscribe(res => {
+      this.getUser();
     });
   }
 
-  getUsers() {
-    this.userService.getUsers()
+  addName(data){
+    this.username = data.username;
+  }
+
+  getUser() {
+    this.auth.getUser()
       .subscribe((res:any) => {
         console.log(res);
-        this.listPeriodico = res;
+        this.listUser = res;
       });
   }
 
-  resetForm(form?: NgForm) {
-    if (form) {
-      form.reset();
-      this.userService.selectedUser = new User();
-    }
+  editUser(user: User) {
+    console.log("click en editar")
+    this.papers = user;
+    this.abrirModal();
+    this.auth.setPostToEdit(user);
   }
-
+  
   addUser(form?: NgForm) {
-    console.log(form.value);
     if(form.value){
       if(form.value._id){
-        this.userService.putUser(form.value).subscribe(res =>{
-        this.userService.notifyPostAddition();
+        this.auth.putUser(form.value).subscribe(res =>{
+          this.auth.notifyPostAddition();
         });
       } else {
-        this.userService.postUser(form.value).subscribe(res =>{
-        this.userService.notifyPostAddition();
+        this._user.register(form.value).subscribe(res =>{
+        this.auth.notifyPostAddition();
         });
       }
     } else {
       alert('Valores requeridos');
     }
   }
-
-  editUser(user: User) {
-    this.papers = user;
-    this.abrirModal();
-    this.userService.setPostToEdit(user);
+  
+  
+  resetForm(form?: NgForm) {
+    if (form) {
+      form.reset();
+      this.auth.selectedUser = new User();
+    }
   }
-
-  deleteUser(_id: string, form: NgForm) {
+  
+  newUser(){
+    this.papers = new User();
+    this.abrirModal();
+  }
+  
+  deleteUser(_id: string) {
     if(confirm('Are you sure you want to delete it?')) {
-      this.userService.deleteUser(_id)
+      this.auth.deleteUser(_id)
         .subscribe(res => {
-          this.getUsers();
+          this.getUser();
         });
     }
   }
   
-  abrirModal(){
-    $("#modalEdit").modal();
-  }
+    abrirModal(){
+      $("#modalEdit").modal();
+    }
 }

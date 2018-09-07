@@ -1,0 +1,142 @@
+.div{
+    width: 80%;
+    margin: 0;
+}
+#tb_1,#tb_2,#tb_3{
+    margin-left: 2%;
+    margin-right: 0 ;
+    margin-bottom : 2%;
+    margin-top: 1%;
+    width: 94%;
+    border: 2px solid black;
+}
+#tb_3_td_1{
+    border: 0px;
+    table-layout:fixed;
+}
+.dere{
+    border-right: 2px solid black;
+}
+#imagen{
+    width: 100%;
+}
+#firma{
+    border-bottom: 1px solid black;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+}
+#border{
+    padding-left : 15px;
+    padding-right: 15px;
+    margin-left: 18px;
+    margin-right: 18px;
+    width: 96%;
+    margin-top: 10px;
+}
+#Rut, #Nombre, #Poliza, #Solicitud{
+    width: 96%;
+    margin-left: 1%;
+}
+#NombrePaciente,#Rut, #Nombre, #Poliza, #Solicitud{
+    border: none;
+}
+.bo{
+    border-bottom:2px solid black;
+}
+h3{
+    color: white;
+}
+#diag{
+    width: 76%;
+    border-bottom: 1px solid black;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+}
+#metodo_diag, #fecha_peso{
+    width: 75%;
+    border-bottom: 1px solid black;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+}
+#fecha_diag_1{
+    width: 40%;
+    border-bottom: 1px solid black;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+}
+#fecha_peso{
+    width: 52%;
+    border-bottom: 1px solid black;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    margin-left:1%;
+}
+#tiempo{
+    width: 56%;
+    border-bottom: 1px solid black;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+}
+#peso,#talla,#imc{
+    border-bottom: 1px solid black;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+}
+#tratamiento_1{
+    width: 65%;
+    border-bottom: 1px solid black;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    margin-left:1%;
+}
+#patologia{
+    border:1px solid black;
+    width: 95%;
+    margin-left: 1%;
+}
+#fecha_consul{
+    width: 79%;
+    border-bottom: 1px solid black;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    margin-left:1%;
+}
+#med_deriv{
+    width: 46%;
+    border-bottom: 1px solid black;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    margin-left:1%;  
+}
+#nom_medico,#insNroCol,#fecha_informe,#tlfn{
+    border-bottom: 1px solid black;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+}
+#nom_medico{
+    width: 74%;
+}
+#insNroCol,#tlfn{
+    width: 28%;
+}
+#fecha_informe{
+    width: 45%;
+}
+.margin, b{
+    margin:1%;
+}
+#oculto{
+    overflow: hidden;
+    height: 0;
+}

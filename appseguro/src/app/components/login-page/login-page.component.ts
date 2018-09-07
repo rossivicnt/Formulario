@@ -1,47 +1,40 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService , TokenPayload} from '../../services/auth.service';
+import { UserService} from '../../services/user.service';
 import { Router } from  '@angular/router';
-import { NgForm } from '@angular/forms';
+import { FormGroup,FormControl,Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.scss'],
-  providers: [AuthService]
+  providers: [UserService]
 })
 export class LoginPageComponent implements OnInit {
-  //public email: string;
-  //public password: string;
-  credentials: TokenPayload = {
-    email: '',
-    password: ''
-  };
+  loginForm : FormGroup=new FormGroup({
+    email:new FormControl(null,[Validators.email,Validators.required]),
+    password:new FormControl(null, Validators.required)
+  });
 
   constructor(
-    public authService: AuthService,
-    public router: Router
+    private _user:UserService,
+    private _router: Router
   ) { } 
 
   ngOnInit() {
   }
 
-  /*OnSubmitLogin(form?: NgForm){
-    this.authService.loginEmail(this.email, this.password)
-    .then((res)=>{
-      this.router.navigate(['/privado']);
-    }).catch((err)=>{
-      console.log(err);
-      this.router.navigate(['/login']);
-    })
-  
-  }*/
+  login(){
+    if(!this.loginForm.valid){
+      console.log('Invalid');return;
+    }
 
-  login() {
-    this.authService.login(this.credentials).subscribe(() => {
-      this.router.navigateByUrl('/privado');
-    }, (err) => {
-      console.error(err);
-    }); 
+    // console.log(JSON.stringify(this.loginForm.value));
+    this._user.login(JSON.stringify(this.loginForm.value))
+    .subscribe(
+      data=>{console.log(data);
+      this._router.navigate(['/user']);} ,
+      error=>console.error(error)
+    )
   }
 
 }
