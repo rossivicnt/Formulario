@@ -37,6 +37,7 @@ export class PrivadoPageComponent implements OnInit{
   open(content) {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
+      this.OnSubmitFormulario();
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
@@ -58,6 +59,10 @@ export class PrivadoPageComponent implements OnInit{
     }else{
       if(this.form=='Formulario2'){
         this._router.navigate(['/formulario2']);
+      }else{
+        if(this.form=='Formulario3'){
+          this._router.navigate(['/formulario3']);
+        }
       }
     }
   }
@@ -89,6 +94,10 @@ export class PrivadoPageComponent implements OnInit{
     }else{
       if (user.file=='Informe medico tratante'){
         this._router.navigate(['/formulario2', user.formulario]);
+      }else{
+        if (user.file=='Solicitud de incorporacion seguros de vida y salud colectivos'){
+          this._router.navigate(['/formulario3', user.formulario]);
+        }
       }
     }
   }

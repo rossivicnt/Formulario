@@ -1,0 +1,943 @@
+<div class="" style="height: 100%;">
+  <h1>SOLICITUD DE INCORPORACIÓN SEGUROS DE VIDA Y SALUD COLECTIVOS</h1>
+  <form #form3Form="ngForm" class="bs-component" style="margin-top: 2%;" (ngSubmit)="addForm(form3Form)">
+      <input type="hidden" name="_id"  [(ngModel)]="papers._id">
+      <div class="form-group col-lg-12">
+        <label>Ingrese la fecha de Recepción de Compañía: </label>
+        <input type="date" class="form-control" name="fechaRecepcion"  [(ngModel)]="papers.fechaRecepcion">
+      </div>
+      <div class="form-group col-lg-12">
+        <div class="custom-control custom-checkbox">
+          <input class="custom-control-input" id="customCheck1"  name="inicial"  [(ngModel)]="papers.inicial" type="checkbox" (click)="ver()">
+          <label class="custom-control-label" for="customCheck1">Solicitud Inicial Asegurable Titular</label>
+        </div>
+        <div class="custom-control custom-checkbox">
+          <input class="custom-control-input" id="customCheck2"  name="incorporacion" [(ngModel)]="papers.incorporacion" type="checkbox" (click)="ver()">
+          <label class="custom-control-label" for="customCheck2">Incorporación de Carga</label>
+        </div>
+        <div class="custom-control custom-checkbox">
+          <input class="custom-control-input" id="customCheck3"  name="modificacion" [(ngModel)]="papers.modificacion" type="checkbox" (click)="ver()">
+          <label class="custom-control-label" for="customCheck3">Modificación de Beneficiarios</label>
+        </div>
+      </div>
+      <div class="col-lg-12">
+        <legend>Coberturas</legend>
+        <div class="form-group col-lg-12">
+          <label>Marque las opciones correspondientes:</label><br>
+          <div class="custom-control custom-checkbox">
+            <input class="custom-control-input" id="complementario"  name="complementario" [(ngModel)]="papers.complementario" type="checkbox">
+            <label class="custom-control-label" for="complementario">Complementario Salud</label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input class="custom-control-input" id="ampliacion" name="ampliacion" [(ngModel)]="papers.ampliacion" type="checkbox">
+            <label class="custom-control-label" for="ampliacion">Ampliacion Cobertura Salud</label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input class="custom-control-input" id="adicional" name="adicional" [(ngModel)]="papers.adicional" type="checkbox">
+            <label class="custom-control-label" for="adicional">Adicional Cobertura Dental</label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input class="custom-control-input" id="vida" name="vida" [(ngModel)]="papers.vida" type="checkbox">
+            <label class="custom-control-label" for="vida">Vida</label>
+          </div>
+        </div>
+      </div>
+      <div class="form-group col-lg-12">
+        <input type="text" class="form-control" name="NombreContratante" [(ngModel)]="papers.NombreContratante" placeholder="Ingrese nombre del contratante">
+      </div>
+      <div class="form-group col-lg-12">
+          <input type="text" class="form-control" name="Rut"  [(ngModel)]="papers.Rut" placeholder="Ingrese su RUT">
+      </div>
+      <div class="form-group col-lg-12">
+          <input type="text" class="form-control" name="Poliza"  [(ngModel)]="papers.Poliza" placeholder="Ingrese su Poliza">
+      </div>
+      <div class="form-group col-lg-12">
+          <input type="text" class="form-control" name="Grupo"  [(ngModel)]="papers.Grupo" placeholder="Ingrese su Grupo">
+      </div>
+      <div class="col-lg-12">
+          <legend>Asegurable titular</legend>
+          <div class="form-group col-lg-12">
+              <input type="text" class="form-control" name="Rut2"  [(ngModel)]="papers.Rut2" placeholder="Ingrese su RUT">
+          </div>
+          <div class="form-group col-lg-12">
+              <input type="text" class="form-control" name="ApellidoPaterno" [(ngModel)]="papers.ApellidoPaterno" placeholder="Ingrese su Apellido Paterno">
+          </div>
+          <div class="form-group col-lg-12">
+              <input type="text" class="form-control" name="ApellidoMaterno" [(ngModel)]="papers.ApellidoMaterno" placeholder="Ingrese su Apellido Materno">
+          </div>
+          <div class="form-group col-lg-12">
+              <input type="text" class="form-control" name="NombreTitular" [(ngModel)]="papers.NombreTitular" placeholder="Ingrese nombre del Asegurable Titular">
+          </div>
+          <div class="form-group col-lg-12">
+              <label>Ingrese la fecha de Nacimiento: </label>
+              <input type="date" class="form-control" name="FechaNacimiento"  [(ngModel)]="papers.FechaNacimiento">
+          </div>
+          <div class="form-group col-lg-12">
+              <input type="text" class="form-control" name="Sexo" [(ngModel)]="papers.Sexo" placeholder="Ingrese el sexo">
+          </div>
+          <div class="form-group col-lg-12">
+              <input type="text" class="form-control" name="EstadoCivil" [(ngModel)]="papers.EstadoCivil" placeholder="Ingrese el Estado Civil">
+          </div>
+          <div class="form-group col-lg-12">
+              <input type="text" class="form-control" name="SistemPrevSalud" [(ngModel)]="papers.SistemPrevSalud" placeholder="Ingrese Sistema Previcional de Salud">
+          </div>
+          <div class="form-group col-lg-12">
+              <input type="text" class="form-control" name="Actividad" [(ngModel)]="papers.Actividad" placeholder="Ingrese Actividad">
+          </div>
+          <div class="form-group col-lg-12">
+              <textarea rows="2" cols="75" class="form-control" name="DireccionParticular" [(ngModel)]="papers.DireccionParticular" placeholder="Ingrese Dirección Particular"></textarea>
+          </div>
+          <div class="form-group col-lg-12">
+              <input type="text" class="form-control" name="Numero" [(ngModel)]="papers.Numero" placeholder="Ingrese Número">
+          </div>
+          <div class="form-group col-lg-12">
+              <input type="text" class="form-control" name="Departamento" [(ngModel)]="papers.Departamento" placeholder="Ingrese Departamento">
+          </div>
+          <div class="form-group col-lg-12">
+              <input type="text" class="form-control" name="Sector" [(ngModel)]="papers.Sector" placeholder="Ingrese Sector">
+          </div>
+          <div class="form-group col-lg-12">
+              <input type="text" class="form-control" name="Comuna" [(ngModel)]="papers.Comuna" placeholder="Ingrese Comuna">
+          </div>
+          <div class="form-group col-lg-12">
+              <input type="text" class="form-control" name="Ciudad" [(ngModel)]="papers.Ciudad" placeholder="Ingrese Ciudad">
+          </div>
+          <div class="form-group col-lg-12">
+              <input type="text" class="form-control" name="CuentaCorriente" [(ngModel)]="papers.CuentaCorriente" placeholder="Ingrese Cuenta Corriente">
+          </div>
+          <div class="form-group col-lg-12">
+              <input type="text" class="form-control" name="TelefonoCelular" [(ngModel)]="papers.TelefonoCelular" placeholder="Ingrese Teléfono Celular">
+          </div>
+          <div class="form-group col-lg-12">
+              <input type="text" class="form-control" name="Peso" [(ngModel)]="papers.Peso" placeholder="Ingrese Peso en Kg.">
+          </div>
+          <div class="form-group col-lg-12">
+              <input type="text" class="form-control" name="Estatura" [(ngModel)]="papers.Estatura" placeholder="Ingrese Estatura en mts.">
+          </div>
+          <div class="form-group col-lg-12">
+              <input type="text" class="form-control" name="Email" [(ngModel)]="papers.Email" placeholder="Ingrese su E-mail">
+          </div>
+          <div class="form-group col-lg-12">
+              <input type="text" class="form-control" name="Banco" [(ngModel)]="papers.Banco" placeholder="Ingrese Banco">
+          </div>
+          <div class="form-group col-lg-12">
+              <input type="text" class="form-control" name="TelefonoFijo" [(ngModel)]="papers.TelefonoFijo" placeholder="Ingrese Teléfono Fijo">
+          </div>
+          <div class="form-group col-lg-12">
+              <label>Ingrese la fecha de Vigencia: </label>
+              <input type="date" class="form-control" name="FechaVigencia"  [(ngModel)]="papers.FechaVigencia">
+          </div>
+          <div class="form-group col-lg-12">
+              <label>Ingrese la fecha de Ingreso a Empresa: </label>
+              <input type="date" class="form-control" name="FechaIgresoEmpresa"  [(ngModel)]="papers.FechaIngresoEmpresa">
+          </div>
+          <div class="form-group col-lg-12">
+              <input type="text" class="form-control" name="CapitalUF" [(ngModel)]="papers.CapitalUF" placeholder="Ingrese Capital U.F.">
+          </div>
+          <div class="form-group col-lg-12">
+              <input type="text" class="form-control" name="Renta" [(ngModel)]="papers.Renta" placeholder="Ingrese Renta">
+          </div>
+      </div>
+      <div class="col-lg-12">
+        <legend>Asegurables adicionales</legend>
+        <div class="bs-component">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Nombre Completo <br><br></th>
+                <th scope="col">R.U.T. <br> <br></th>
+                <th scope="col">Fecha de <br>Nacimiento</th>
+                <th scope="col">Relación <br> Parentesco <br></th>
+                <th scope="col">Sistema Previcional <br> de Salud <br></th>
+                <th scope="col">Peso (Kg.) <br><br></th>
+                <th scope="col">Estatura (mts.) <br></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                  <td><input type="text" size="25" class="form-control" name="AdNom1" [(ngModel)]="papers.AdNom1"> </td>
+                  <td><input type="text" size="18" class="form-control" name="AdRut1" [(ngModel)]="papers.AdRut1"></td>
+                  <td><input type="date" class="form-control" name="AdFN1" [(ngModel)]="papers.AdFN1"></td>
+                  <td><input type="text" class="form-control" name="AdParen1" [(ngModel)]="papers.AdParen1"></td>
+                  <td><input type="text" class="form-control" name="AdSPS1" [(ngModel)]="papers.AdSPS1"></td>
+                  <td><input type="text" size="5" class="form-control" name="AdPeso1" [(ngModel)]="papers.AdPeso1"></td>
+                  <td><input type="text" size="5" class="form-control" name="AdEstatura1" [(ngModel)]="papers.AdEstatura1"></td>
+              </tr>
+              <tr>
+                  <td><input type="text" size="25" class="form-control" name="AdNom2" [(ngModel)]="papers.AdNom2"> </td>
+                  <td><input type="text" size="18" class="form-control" name="AdRut2" [(ngModel)]="papers.AdRut2"></td>
+                  <td><input type="date" class="form-control" name="AdFN2" [(ngModel)]="papers.AdFN2"></td>
+                  <td><input type="text" class="form-control" name="AdParen2" [(ngModel)]="papers.AdParen2"></td>
+                  <td><input type="text" class="form-control" name="AdSPS2" [(ngModel)]="papers.AdSPS2"></td>
+                  <td><input type="text" size="5" class="form-control" name="AdPeso2" [(ngModel)]="papers.AdPeso2"></td>
+                  <td><input type="text" size="5" class="form-control" name="AdEstatura2" [(ngModel)]="papers.AdEstatura2"></td>
+              </tr>
+              <tr>
+                  <td><input type="text" size="25" class="form-control" name="AdNom3" [(ngModel)]="papers.AdNom3"> </td>
+                  <td><input type="text" size="18" class="form-control" name="AdRut3" [(ngModel)]="papers.AdRut3"></td>
+                  <td><input type="date" class="form-control" name="AdFN3" [(ngModel)]="papers.AdFN3"></td>
+                  <td><input type="text" class="form-control" name="AdParen3" [(ngModel)]="papers.AdParen3"></td>
+                  <td><input type="text" class="form-control" name="AdSPS3" [(ngModel)]="papers.AdSPS3"></td>
+                  <td><input type="text" size="5" class="form-control" name="AdPeso3" [(ngModel)]="papers.AdPeso3"></td>
+                  <td><input type="text" size="5" class="form-control" name="AdEstatura3" [(ngModel)]="papers.AdEstatura3"></td>
+              </tr>
+              <tr>
+                  <td><input type="text" size="25" class="form-control" name="AdNom4" [(ngModel)]="papers.AdNom4"> </td>
+                  <td><input type="text" size="18" class="form-control" name="AdRut4" [(ngModel)]="papers.AdRut4"></td>
+                  <td><input type="date" class="form-control" name="AdFN4" [(ngModel)]="papers.AdFN4"></td>
+                  <td><input type="text" class="form-control" name="AdParen4" [(ngModel)]="papers.AdParen4"></td>
+                  <td><input type="text" class="form-control" name="AdSPS4" [(ngModel)]="papers.AdSPS4"></td>
+                  <td><input type="text" size="5" class="form-control" name="AdPeso4" [(ngModel)]="papers.AdPeso4"></td>
+                  <td><input type="text" size="5" class="form-control" name="AdEstatura4" [(ngModel)]="papers.AdEstatura4"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-lg-12">
+        <legend>Declaración de salud (Datos obligatorios)</legend>
+        <div class="form-group col-lg-12">
+          <label>a) ¿Usted o alguien de su grupo familiar padece o ha padecido alguna de las enfermedades, situaciones o condiciones de salud que se detallas en el Listado Genérico,
+              está embarazada o actualmente se encuentra sometido a un diagnóstico en estudio para alguna patología?</label>
+          <div class="custom-control custom-checkbox">
+            <input class="custom-control-input" id="ckSi1"  name="ckSi1" [(ngModel)]="papers.ckSi1" type="checkbox" (click)="ver3()">
+            <label class="custom-control-label" for="ckSi1">Si</label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input class="custom-control-input" id="ckNo1"  name="ckNo1" [(ngModel)]="papers.ckNo1" type="checkbox" (click)="ver3()">
+            <label class="custom-control-label" for="ckNo1">No</label>
+          </div>
+        </div>
+        <div class="form-group col-lg-12">
+          <label>b) ¿Usted ha tenido un cambio o malestar físico en los ultimos tres (3) meses sin consulta médica o diagnóstico?</label>  
+          <div class="custom-control custom-checkbox">
+            <input class="custom-control-input" id="ckSi2"  name="ckSi2" [(ngModel)]="papers.ckSi2" type="checkbox" (click)="ver2()">
+            <label class="custom-control-label" for="ckSi2">Si</label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input class="custom-control-input" id="ckNo2"  name="ckNo2" [(ngModel)]="papers.ckNo2" type="checkbox" (click)="ver2()">
+            <label class="custom-control-label" for="ckNo2">No</label>
+          </div> 
+        </div>
+      </div>
+      <div class="col-lg-12">
+        <div class="bs-component">
+          <table class="table table-hover">
+            <thead>
+              <th colspan="4">Listado Genérico (Código)</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  1. Tumores.
+                  2. Cáncer.
+                  3. Enfermedades Cerebro Vasculares.
+                  4. Enfermedades Sistema Respiratorio.
+                  5. Enfermedades Sistema Cardiovascular.
+                  6. Enfermedades del Corazón.
+                  7. Enfermedades Sistema Circulatorio.
+                  8. Efermedades Sistema Digestivo.
+                  9. Enfermedades Renales.
+                </td>
+                <td>
+                  10. Enfermedades Sistema Genitourinario.
+                  11. Enfermedades Sistema Endocrino.
+                  12. Enfermedades Nutricionales.
+                  13. Enfermedades Metabólicas.
+                  14. Enfermedades Sistema Nervioso.
+                  15. Enfermedades Infecciosas.
+                  16. Enfermedades Parasitarias.
+                  17. Enfermedades de las Articulaciones.
+                  18. Enfermedades Musculares.
+                </td>
+                <td>
+                  19. Enfermedades de la Piel.
+                  20. Enfermedades Raumatológicas.
+                  21. Enfermedades de la sangre.
+                  22. Enfermedades de los Ganglios.
+                  23. Enfermedades Linfáticas.
+                  24. Enfermedades Mentales.
+                  25. Enfermedades Psiquiátricas.
+                  26. Enfermedades de Oído.
+                  27. Enfermedades de la Naríz.
+                </td>
+                <td>
+                  28. Efermedades de la Boca.
+                  29. Enfermedades de laGarganta.
+                  30. Enfermedades de los Ojos.
+                  31. Enfermedades Sistema Oseo.
+                  32. Obesidad.
+                  33. Embarazo.
+                  34. Licencias Médicas Reiteradas o mayor a un mes.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    <div class="col-lg-12">
+      <label>Si las respuestas en a) y/o b) son afirmativas, por favor complete el siguiente recuadro:</label>
+      <div class="bs-component">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Nombre Completo</th>
+              <th scope="col">Código</th>
+              <th scope="col">Enfermedas y/o Situación de Saludy/o Sintomatología</th>
+              <th scope="col">Fecha de Diagnóstico</th>
+              <th scope="col">Condición Actual</th>
+              <th scope="col">Tratamiento (Especificar cuál(es))</th>
+              <th scope="col">Otros Antecedentes</th>
+              <th scope="col">USO EXCLUSIVO DE CNS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="text" size="20" class="form-control" name="PNom1" [(ngModel)]="papers.PNom1"> </td>
+              <td><input type="text" size="7" class="form-control" name="PCod1" [(ngModel)]="papers.PCod1"></td>
+              <td><input type="text" size="20" class="form-control" name="PEnfer1" [(ngModel)]="papers.PEnfer1"></td>
+              <td><input type="date" size="10" class="form-control" name="PFechaD1" [(ngModel)]="papers.PFechaD1"></td>
+              <td><input type="text" size="10" class="form-control" name="PCond1" [(ngModel)]="papers.PCond1"></td>
+              <td><input type="text" size="10" class="form-control" name="PTrata1" [(ngModel)]="papers.PTrata1"></td>
+              <td><input type="text" size="10" class="form-control" name="POtros1" [(ngModel)]="papers.POtros1"></td>
+              <td><input type="text" size="20" class="form-control" name="PCNS1" [(ngModel)]="papers.PCNS1"></td>
+            </tr>
+            <tr>
+              <td><input type="text" size="20" class="form-control" name="PNom2" [(ngModel)]="papers.PNom2"> </td>
+              <td><input type="text" size="7" class="form-control" name="PCod2" [(ngModel)]="papers.PCod2"></td>
+              <td><input type="text" size="20" class="form-control" name="PEnfer2" [(ngModel)]="papers.PEnfer2"></td>
+              <td><input type="date" size="10" class="form-control" name="PFechaD2" [(ngModel)]="papers.PFechaD2"></td>
+              <td><input type="text" size="10" class="form-control" name="PCond2" [(ngModel)]="papers.PCond2"></td>
+              <td><input type="text" size="10" class="form-control" name="PTrata2" [(ngModel)]="papers.PTrata2"></td>
+              <td><input type="text" size="10" class="form-control" name="POtros2" [(ngModel)]="papers.POtros2"></td>
+              <td><input type="text" size="20" class="form-control" name="PCNS2" [(ngModel)]="papers.PCNS2"></td>
+            </tr>
+            <tr>
+              <td><input type="text" size="20" class="form-control" name="PNom3" [(ngModel)]="papers.PNom3"> </td>
+              <td><input type="text" size="7" class="form-control" name="PCod3" [(ngModel)]="papers.PCod3"></td>
+              <td><input type="text" size="20" class="form-control" name="PEnfer3" [(ngModel)]="papers.PEnfer3"></td>
+              <td><input type="date" size="10" class="form-control" name="PFechaD3" [(ngModel)]="papers.PFechaD3"></td>
+              <td><input type="text" size="10" class="form-control" name="PCond3" [(ngModel)]="papers.PCond3"></td>
+              <td><input type="text" size="10" class="form-control" name="PTrata3" [(ngModel)]="papers.PTrata3"></td>
+              <td><input type="text" size="10" class="form-control" name="POtros3" [(ngModel)]="papers.POtros3"></td>
+              <td><input type="text" size="20" class="form-control" name="PCNS3" [(ngModel)]="papers.PCNS3"></td>
+            </tr>
+            <tr>
+              <td><input type="text" size="20" class="form-control" name="PNom4" [(ngModel)]="papers.PNom4"> </td>
+              <td><input type="text" size="7" class="form-control" name="PCod4" [(ngModel)]="papers.PCod4"></td>
+              <td><input type="text" size="20" class="form-control" name="PEnfer4" [(ngModel)]="papers.PEnfer4"></td>
+              <td><input type="date" size="10" class="form-control" name="PFechaD4" [(ngModel)]="papers.PFechaD4"></td>
+              <td><input type="text" size="10" class="form-control" name="PCond4" [(ngModel)]="papers.PCond4"></td>
+              <td><input type="text" size="10" class="form-control" name="PTrata4" [(ngModel)]="papers.PTrata4"></td>
+              <td><input type="text" size="10" class="form-control" name="POtros4" [(ngModel)]="papers.POtros4"></td>
+              <td><input type="text" size="20" class="form-control" name="PCNS4" [(ngModel)]="papers.PCNS4"></td>
+            </tr>
+            <tr>
+              <td><input type="text" size="20" class="form-control" name="PNom5" [(ngModel)]="papers.PNom5"> </td>
+              <td><input type="text" size="7" class="form-control" name="PCod5" [(ngModel)]="papers.PCod5"></td>
+              <td><input type="text" size="20" class="form-control" name="PEnfer5" [(ngModel)]="papers.PEnfer5"></td>
+              <td><input type="date" size="10" class="form-control" name="PFechaD5" [(ngModel)]="papers.PFechaD5"></td>
+              <td><input type="text" size="10" class="form-control" name="PCond5" [(ngModel)]="papers.PCond5"></td>
+              <td><input type="text" size="10" class="form-control" name="PTrata5" [(ngModel)]="papers.PTrata5"></td>
+              <td><input type="text" size="10" class="form-control" name="POtros5" [(ngModel)]="papers.POtros5"></td>
+              <td><input type="text" size="20" class="form-control" name="PCNS5" [(ngModel)]="papers.PCNS5"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="form-group col-lg-12">
+      <label>Ingrese la fecha de Declaración: </label>
+      <input type="date" class="form-control" class="form-control" name="fechaDeclaracion"  [(ngModel)]="papers.fechaDeclaracion">
+    </div>
+    <div class="co-lg-12">
+      <legend>Declaración de asegurados</legend>
+      <div class="bs-component">
+        <table class="table table-hover">
+          <thead>
+            <tr  align="center">
+              <th scope="col">NOMBRE COMPLETO (Postura del Seguro o miembro del grupo familiar)</th>
+              <th scope="col">DIAGNÓSTICO </th>
+              <th scope="col">FECHA DE DIAGNÓSTICO Y/O DECLARACIÓN DE LA INVALIDEZ (Indicar mes y año)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="text" size="45" class="form-control" name="DNombre1" [(ngModel)]="papers.DNombre1"></td>
+              <td><input type="text" size="45" class="form-control" name="DDiag1" [(ngModel)]="papers.DDiag1"></td>
+              <td><input type="date" size="45" class="form-control" name="DFecha1" [(ngModel)]="papers.DFecha1"></td>
+            </tr>
+            <tr>
+              <td><input type="text" size="45" class="form-control" name="DNombre2" [(ngModel)]="papers.DNombre2"></td>
+              <td><input type="text" size="45" class="form-control" name="DDiag2" [(ngModel)]="papers.DDiag2"></td>
+              <td><input type="date" size="45" class="form-control" name="DFecha2" [(ngModel)]="papers.DFecha2"></td>
+            </tr>
+            <tr>
+              <td><input type="text" size="45" class="form-control" name="DNombre3" [(ngModel)]="papers.DNombre3"></td>
+              <td><input type="text" size="45" class="form-control" name="DDiag3" [(ngModel)]="papers.DDiag3"></td>
+              <td><input type="date" size="45" class="form-control" name="DFecha3" [(ngModel)]="papers.DFecha3"></td>>
+            </tr>
+            <tr>
+              <td><input type="text" size="45" class="form-control" name="DNombre4" [(ngModel)]="papers.DNombre4"></td>
+              <td><input type="text" size="45" class="form-control" name="DDiag4" [(ngModel)]="papers.DDiag4"></td>
+              <td><input type="date" size="45" class="form-control" name="DFecha4" [(ngModel)]="papers.DFecha4"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="col-lg-12">
+      <legend>Declaració obigatoria de actividades y desportes</legend>
+      <div class="form-group col-lg-12">
+        <label>a)¿Usted o alguien de su grupo familiar practica en forma habitual o esporádica alguno de los deportes detallados en el
+            listado siguiente?</label>  
+        <div class="custom-control custom-checkbox">
+          <input class="custom-control-input" id="ckSi3"  name="ckSi3" [(ngModel)]="papers.ckSi3" type="checkbox" (click)="ver4()">
+          <label class="custom-control-label" for="ckSi3">Si</label>
+        </div>
+        <div class="custom-control custom-checkbox">
+          <input class="custom-control-input" id="ckNo3"  name="ckNo3" [(ngModel)]="papers.ckNo3" type="checkbox" (click)="ver4()">
+          <label class="custom-control-label" for="ckNo3">No</label>
+        </div> 
+      </div>
+      <div class="form-group col-lg-12">
+        <label>b)¿Usted p alguien de su grupo familiar desarrolla alguna de las actividades detalladas en el listado siguiente?</label>  
+        <div class="custom-control custom-checkbox">
+          <input class="custom-control-input" id="ckSi4"  name="ckSi4" [(ngModel)]="papers.ckSi4" type="checkbox" (click)="ver5()">
+          <label class="custom-control-label" for="ckSi4">Si</label>
+        </div>
+        <div class="custom-control custom-checkbox">
+          <input class="custom-control-input" id="ckNo4"  name="ckNo4" [(ngModel)]="papers.ckNo4" type="checkbox" (click)="ver5()">
+          <label class="custom-control-label" for="ckNo4">No</label>
+        </div> 
+      </div>
+    </div>
+    <div class="col-lg-12">
+      <div class="bs-component">
+        <table class="table table-hover">
+          <thead>
+            <th colspan="6">LISTADO DE DEPORTES Y ACTIVIDADES</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1.</td>
+              <td>Alpinismo y Andinismo</td>
+              <td>9.</td>
+              <td>Deportes Acuáticos</td>
+              <td>17.</td>
+              <td>Inmersión Submarina</td>
+            </tr>
+            <tr>
+              <td>2.</td>
+              <td>Automovilismo y Afines</td>
+              <td>10.</td>
+              <td>Deportes Encuentres</td>
+              <td>18.</td>
+              <td>Manejo de Explosivo</td>
+            </tr>
+            <tr>
+              <td>3.</td>
+              <td>Bungee</td>
+              <td>11.</td>
+              <td>Jeep Fun Race</td>
+              <td>19.</td>
+              <td>Faenas Pesqueras</td>
+            </tr>
+            <tr>
+              <td>4.</td>
+              <td>Motociclismo y Afines</td>
+              <td>12.</td>
+              <td>Rally</td>
+              <td>20.</td>
+              <td>Faenas Forestales</td>
+            </tr>
+            <tr>
+              <td>5.</td>
+              <td>Alas Delta</td>
+              <td>13.</td>
+              <td>Bombero</td>
+              <td>21.</td>
+              <td>Faenadores de Animales</td>
+            </tr>
+            <tr>
+              <td>6.</td>
+              <td>Parapente</td>
+              <td>14.</td>
+              <td>Piloto Civil</td>
+              <td rowspan="3">22.</td>
+              <td rowspan="3">Fuerzas Armadas de Orden y Seguridad</td>
+            </tr>
+            <tr>
+              <td>7.</td>
+              <td>Deportes de Nieve</td>
+              <td>15.</td>
+              <td>Buceo</td>
+            </tr>
+            <tr>
+              <td>8.</td>
+              <td>Faenas de Minería</td>
+              <td>16.</td>
+              <td>Trabajos en altura o lineas de alta tensión</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div>
+      <div id="contentToConvert">
+        <div class="row div">
+          <div class="col-lg-8 div">
+            <p align="justify"> <font size="2"> IMPORTANTE: Usted está solicitando su incorporación como Asegurado a una
+                Póliza o Contrato de Seguros Colectivos cuyas condiciones han sido convenidas
+                por el Contratante, directamente con la Compañía de Seguros. Se sugiere la
+                impresión de esta Solicitud de incorporación en dos copias, para efectos que
+                el Asegurable y la Compañía cuenten con la debida Infirmación de respaldo.</font>
+            </p>
+            <table>
+              <tr>
+                <td class="fecha">Fecha Recepción de compañia</td>
+                <td class="fecha2"><input type="date" size="2" id="fechaRecepcion" class="form-control sin-borde" name="fechaRecepcion"  [(ngModel)]="papers.fechaRecepcion"></td>
+              </tr>
+            </table>
+          </div> 
+          <div class="col-lg-4">
+            <img id="imagen" src="../../../assets/logo.png">
+          </div>
+        </div>
+        <div class="div">
+          <h3><b>SOLICITUD DE INCORPORACIÓN SEGUROS DE VIDA Y SALUD COLECTIVOS</b></h3>
+          <label>(Plan sin cobertura de preexistencia)</label>
+        </div>
+        <div class="div row">
+          <div class="col-lg-4 row">
+            <div class="col-lg-8">
+                <label>Solicitud Inicial Asegurable Titular</label>
+            </div>   
+            <div class="col-lg-4">
+              <input type="checkbox" class="form-control" name="inicial" [(ngModel)]="papers.inicial">
+            </div> 
+          </div>
+          <div class="col-lg-4 row">
+            <div class="col-lg-8">
+              <label>Incorporación de Cargas</label>
+            </div>   
+            <div class="col-lg-4">
+              <input type="checkbox" class="form-control" name="incorporacion" [(ngModel)]="papers.incorporacion">
+            </div> 
+          </div>
+          <div class="col-lg-4 row">
+            <div class="col-lg-6">
+              <label>Modificación de Beneficiarios</label>
+            </div>   
+            <div class="col-lg-4">
+              <input type="checkbox" class="form-control" name="modificacion" [(ngModel)]="papers.modificacion">
+            </div>
+          </div>
+        </div>
+        <div class="div gris tam">
+          <h4>I. COBERTURAS (Marque las opciones correspondientes)</h4>
+        </div>
+        <div class="div">
+          <table id="coberturas">
+            <tr>
+              <td class="center">
+                <input type="radio" class="form-control" name="complementario" [(ngModel)]="papers.complementario">
+                <label for="complementario">Complementario Salud</label>
+                <input type="radio" class="form-control" name="ampliacion" [(ngModel)]="papers.ampliacion">
+                <label for="ampliacion">Ampliacion Cobertura Salud</label><br>
+              </td>
+              <td class="center">
+                <input type="radio" class="form-control" name="adicional" [(ngModel)]="papers.adicional">
+                <label for="adicional">Adicional Cobertura Dental</label>
+                <input type="radio" class="form-control" name="vida" [(ngModel)]="papers.vida">
+                <label for="vida">Vida</label>
+              </td>                
+            </tr>
+          </table>
+        </div>
+        <div class="div row">
+          <br>
+          <table id="tb2" width="80%" cellspacing="1" cellpadding="3" border="2" bgcolor="6b646b">
+            <tr>
+              <th class="gris">II. CONTRATANTE</th>
+              <th class="gris">R.U.T.</th>
+              <th class="gris">PÓLIZA</th>
+              <th class="gris">GRUPO</th>
+            </tr>
+            <tr>
+              <td bgcolor="white"><input type="text" size="32" class="form-control sin-borde" name="NombreContratante" [(ngModel)]="papers.NombreContratante"></td>
+              <td bgcolor="white"><input type="text" size="32" class="form-control sin-borde" name="Rut"  [(ngModel)]="papers.Rut"></td>
+              <td bgcolor="white"><input type="text" size="32" class="form-control sin-borde" name="Poliza"  [(ngModel)]="papers.Poliza"></td>
+              <td bgcolor="white"><input type="text" size="32" class="form-control sin-borde" name="Grupo"  [(ngModel)]="papers.Grupo"></td>
+            </tr>
+          </table>
+          <br>
+          <table id="tb3" width="80%" cellspacing="1" cellpadding="3" border="1" bgcolor="3c3c3c">
+            <tr>
+              <th class="gris" colspan="7">III. ASEGURABLE TITULAR</th>
+            </tr>
+            <tr bgcolor="white">
+              <td>
+                <label>R.U.T</label>  
+                <input type="text" class="form-control sin-borde" name="Rut"  [(ngModel)]="papers.Rut">
+              </td>
+              <td colspan="2">
+                <label>Apellido Paterno</label> <br> 
+                <input type="text" class="form-control sin-borde" name="ApellidoPaterno" [(ngModel)]="papers.ApellidoPaterno">
+              </td>
+              <td colspan="2">
+                <label>Apellido Materno</label> <br> 
+                <input type="text" class="form-control sin-borde" name="ApellidoMaterno" [(ngModel)]="papers.ApellidoMaterno">
+              </td>
+              <td colspan="2">
+                <label>Nombre</label> <br> 
+                <input type="text" class="form-control sin-borde" name="NombreTitular" [(ngModel)]="papers.NombreTitular">
+              </td>
+            </tr>
+            <tr bgcolor="white">
+              <td>
+                <label>Fecha Nacimiento</label> 
+                <input type="date" class="form-control sin-borde" name="FechaNacimiento"  [(ngModel)]="papers.FechaNacimiento">
+              </td>
+              <td>
+                <label>Sexo</label>  <br> 
+                <input type="text" size="10" class="form-control sin-borde" name="Sexo" [(ngModel)]="papers.Sexo">
+              </td>
+              <td>
+                <label>Estado Civil</label> <br> 
+                <input type="text" size="10" class="form-control sin-borde" name="EstadoCivil" [(ngModel)]="papers.EstadoCivil">
+              </td>
+              <td colspan="2">
+                <label>Sistema Previcional de Salud</label> <br> 
+                <input type="text" class="form-control sin-borde" name="SistemPrevSalud" [(ngModel)]="papers.SistemPrevSalud">
+              </td>
+              <td colspan="2">
+                <label>Actividad</label> <br> 
+                <input type="text" class="form-control sin-borde" name="Actividad" [(ngModel)]="papers.Actividad">
+              </td>
+            </tr>
+            <tr bgcolor="white">
+              <td colspan="3">
+                <label>Dirección Particular</label> <br>
+                <textarea rows="2" cols="75" class="form-control sin-borde" name="DireccionParticular" [(ngModel)]="papers.DireccionParticular"></textarea>
+              </td>
+              <td>
+                <label>N°</label> 
+                <input type="text" size="10" class="form-control sin-borde" name="Numero" [(ngModel)]="papers.Numero">
+              </td>
+              <td>
+                <label>Depto. </label>
+                <input type="text" size="10" class="form-control sin-borde" name="Departamento" [(ngModel)]="papers.Departamento">
+              </td>
+              <td colspan="2">
+                <label>Sector/Villa/Población</label> <br> 
+                <input type="text" class="form-control sin-borde" name="Sector" [(ngModel)]="papers.Sector">
+              </td>
+            </tr>
+            <tr bgcolor="white">
+              <td colspan="2">
+                <label>Comuna</label> <br> 
+                <input type="text" class="form-control sin-borde" name="Comuna" [(ngModel)]="papers.Comuna"> 
+              </td>
+              <td>
+                <label>Ciudad</label> <br> 
+                <input type="text" class="form-control sin-borde" name="Ciudad" [(ngModel)]="papers.Ciudad">
+              </td>
+              <td colspan="2">
+                <label>Cuenta Corriente</label> <br> 
+                <input type="text" class="form-control sin-borde" name="CuentaCorriente" [(ngModel)]="papers.CuentaCorriente">
+              </td>
+              <td colspan="2">
+                <label>Teléfono Celular</label> <br> 
+                <input type="text" class="form-control sin-borde" name="TelefonoCelular" [(ngModel)]="papers.TelefonoCelular">
+              </td>
+            </tr>
+            <tr bgcolor="white">
+              <td>
+                <label>Peso (Kg.)</label> <br> 
+                <input type="text" class="form-control sin-borde" name="Peso" [(ngModel)]="papers.Peso"> 
+              </td>
+              <td>
+                <label>Estatura (mts.)</label> <br> 
+                <input type="text" class="form-control sin-borde" name="Estatura" [(ngModel)]="papers.Estatura">
+              </td>
+              <td>
+                <label>E-mail</label> <br> 
+                <input type="text" class="form-control sin-borde" name="Email" [(ngModel)]="papers.Email">
+              </td>
+              <td colspan="2">
+                <label>Banco/Servipag</label> <br> 
+                <input type="text" class="form-control sin-borde" name="Banco" [(ngModel)]="papers.Banco">
+              </td>
+              <td colspan="2">
+                <label>Teléfono Fijo</label> <br> 
+                <input type="text" class="form-control sin-borde" name="TelefonoFijo" [(ngModel)]="papers.TelefonoFino">
+              </td>
+            </tr>
+            <tr bgcolor="white">
+              <td colspan="2">
+                <label>Fecha Vigencia</label> <br> 
+                <input type="date" class="form-control sin-borde" name="FechaVigencia"  [(ngModel)]="papers.FechaVigencia"> 
+              </td>
+              <td colspan="3">
+                <label>Fecha Ingreso a Empresa</label> <br> 
+                <input type="date" class="form-control sin-borde" name="FechaIgresoEmpresa"  [(ngModel)]="papers.FechaIngresoEmpresa">
+              </td>
+              <td>
+                <label>Capital U.F.</label> <br> 
+                <input type="text" size="15" class="form-control sin-borde" name="CapitalUF" [(ngModel)]="papers.CapitalUF">
+              </td>
+              <td>
+                <label>Renta</label> <br> 
+                <input type="text" size="15" class="form-control sin-borde" name="Renta" [(ngModel)]="papers.Renta">
+              </td>
+            </tr>
+          </table>
+          <br>
+          <table id="tb4" width="80%" cellspacing="1" cellpadding="1" border="1" bgcolor="3c3c3c">
+            <tr>
+              <th class="gris" colspan="7">IV. ASEGURABLES ADICIONALES</th>
+            </tr>
+            <tr bgcolor="white">
+              <td>
+                <label>Nombre Completo</label>
+              </td>
+              <td>
+                <label>R.U.T.</label>
+              </td>
+              <td>
+                <label>Fecha de Nacimiento</label>
+              </td>
+              <td>
+                <label>Relación Parentesco</label>
+              </td>
+              <td>
+                <label>Sistema Provicional de Salud</label>
+              </td>
+              <td>
+                <label>Peso (Kg.)</label>
+              </td>
+              <td>
+                <label>Estatura (mts.)</label>
+              </td>
+            </tr>
+            <tr bgcolor="white">
+              <td>
+                <input type="text" size="25" class="form-control sin-borde" name="AdNom1" [(ngModel)]="papers.AdNom1"> 
+              </td>
+              <td>
+                <input type="text" size="15" class="form-control sin-borde" name="AdRut1" [(ngModel)]="papers.AdRut1">
+              </td>
+              <td>
+                <input type="text" class="form-control sin-borde" name="AdFN1" [(ngModel)]="papers.AdFN1">
+              </td>
+              <td>
+                <input type="text" class="form-control sin-borde" name="AdParen1" [(ngModel)]="papers.AdParen1">
+              </td>
+              <td>
+                <input type="text" class="form-control sin-borde" name="AdSPS1" [(ngModel)]="papers.AdSPS1">
+              </td>
+              <td>
+                <input type="text" size="5" size="5" class="form-control sin-borde" name="AdPeso1" [(ngModel)]="papers.AdPeso1">
+              </td>
+              <td>
+                <input type="text" size="5" size="5" class="form-control sin-borde" name="AdEstatura1" [(ngModel)]="papers.AdEstatura1">
+              </td>
+            </tr>
+            <tr bgcolor="white">
+              <td>
+                <input type="text" size="25" class="form-control sin-borde" name="AdNom2" [(ngModel)]="papers.AdNom2"> 
+              </td>
+              <td>
+                <input type="text" size="15" class="form-control sin-borde" name="AdRut2" [(ngModel)]="papers.AdRut2">
+              </td>
+              <td>
+                <input type="text" class="form-control sin-borde" name="AdFN2" [(ngModel)]="papers.AdFN2">
+              </td>
+              <td>
+                <input type="text" class="form-control sin-borde" name="AdParen2" [(ngModel)]="papers.AdParen2">
+              </td>
+              <td>
+                <input type="text" class="form-control sin-borde" name="AdSPS2" [(ngModel)]="papers.AdSPS2">
+              </td>
+              <td>
+                <input type="text" size="5" size="5" class="form-control sin-borde" name="AdPeso2" [(ngModel)]="papers.AdPeso2">
+              </td>
+              <td>
+                <input type="text" size="5" size="5" class="form-control sin-borde" name="AdEstatura2" [(ngModel)]="papers.AdEstatura2">
+              </td>
+            </tr>
+            <tr bgcolor="white">
+              <td>
+                <input type="text" size="25" class="form-control sin-borde" name="AdNom3" [(ngModel)]="papers.AdNom3"> 
+              </td>
+              <td>
+                <input type="text" size="15" class="form-control sin-borde" name="AdRut3" [(ngModel)]="papers.AdRut3">
+              </td>
+              <td>
+                <input type="text" class="form-control sin-borde" name="AdFN3" [(ngModel)]="papers.AdFN3">
+              </td>
+              <td>
+                <input type="text" class="form-control sin-borde" name="AdParen3" [(ngModel)]="papers.AdParen3">
+              </td>
+              <td>
+                <input type="text" class="form-control sin-borde" name="AdSPS3" [(ngModel)]="papers.AdSPS3">
+              </td>
+              <td>
+                <input type="text" size="5" size="5" class="form-control sin-borde" name="AdPeso3" [(ngModel)]="papers.AdPeso3">
+              </td>
+              <td>
+                <input type="text" size="5" size="5" class="form-control sin-borde" name="AdEstatura3" [(ngModel)]="papers.AdEstatura3">
+              </td>
+            </tr>
+            <tr bgcolor="white">
+              <td>
+                <input type="text" size="25" class="form-control sin-borde" name="AdNom4" [(ngModel)]="papers.AdNom4"> 
+              </td>
+              <td>
+                <input type="text" size="15" class="form-control sin-borde" name="AdRut4" [(ngModel)]="papers.AdRut4">
+              </td>
+              <td>
+                <input type="text" class="form-control sin-borde" name="AdFN4" [(ngModel)]="papers.AdFN4">
+              </td>
+              <td>
+                <input type="text" class="form-control sin-borde" name="AdParen4" [(ngModel)]="papers.AdParen4">
+              </td>
+              <td>
+                <input type="text" class="form-control sin-borde" name="AdSPS4" [(ngModel)]="papers.AdSPS4">
+              </td>
+              <td>
+                <input type="text" size="5" size="5" class="form-control sin-borde" name="AdPeso4" [(ngModel)]="papers.AdPeso4">
+              </td>
+              <td>
+                <input type="text" size="5" size="5" class="form-control sin-borde" name="AdEstatura4" [(ngModel)]="papers.AdEstatura4">
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="div">
+          <div margin="center fondo" style="padding-left:5px; margin-bottom: 2%; margin-top: 1%;">
+            <p align="center"><b>IMPORTANTE</b></p>
+              Al contratar o incorporarse a este seguro de salud, usted debe tener presente lo siguiente: <br>
+              1. Este es un seguro voluntario, que reembolsa sólo los gastos médicos cubiertos por esta Póliza y de cargo del Asegurado. <br>
+              2. Este seguro, no sustituye la cobertura que otorga la Isapre o Fonasa y no necesariamente cubre las mismas prestaciones. <br>
+              3. Antes de contratar este seguro es importante que usted se informe y tenga claridad sobre los siguientes aspectos: <br>
+            <div style="padding-left:10px;">*Duración de este seguro. <br>
+                *Cómoy bajo qué condiciones se renueva este seguro. <br>
+                *De qué manera se va a reajustar el costo de este seguro, en caso de renovación. <br>
+                *En qué casos <b>NO SE PAGARÁ ESTE SEGURO.</b> <br>
+                <div style="page-break-after: always"></div>
+                *Los requisitos para cobrar el seguro.
+            </div>
+              1. En el siguiente cuadro se resumen algunos antecedentes importantes que usted debe considerar, al momento de contratar 
+              <br>este seguro:
+            <br>
+            <div style="padding-left:10px;">
+              <table id="tb5" width="80%" cellspacing="1" cellpadding="3" border="1" bgcolor="white">
+                <tr>
+                  <td>Este seguro: <br>
+                    <b>NO</b> contempla renovación garantizada. <br>
+                    <b>SÍ</b> podrá aumentar la prima (precio) en caso de renovación de la Póliza. <br>
+                    <b>NO</b> considera la siniestralidad individual para el aumento de la prima en caso de renovación. <br>
+                    <b>NO</b> cubre preexistencias.
+                  </td>
+                </tr>
+              </table>
+            </div>
+              2. <b>Las Condiciones Generales de este seguro se encuentran depositadas con el código POL 320131486 y Cláusula Adicional, si correspondiere, CAD 320131487.</b> <br>
+          </div>
+        </div>
+        <div class="div gris tam">
+          <h4>I. COBERTURAS (Marque las opciones correspondientes)</h4>
+        </div>
+        <div class="div">
+          a) ¿Usted o alguien de su grupo familiar padece o ha padecido alguna de las enfermedades, situaciones o condiciones de salud que se detallas en el Listado Genérico,
+          está embarazada o actualmente se encuentra sometido a un diagnóstico en estudio para alguna patología? 
+          <div class="row">
+            <div class="col-lg-3 left"> <label for="">SÍ</label></div>
+            <div class="col-lg-3">
+              <input type="checkbox" class="form-control wi" name="ckSi1" [(ngModel)]="papers.ckSi1"> 
+            </div>
+            <div class="col-lg-3 left"> <label for="">NO</label></div>
+            <div class="col-lg-3">
+              <input type="checkbox" class="form-control wi" name="ckNo1" [(ngModel)]="papers.ckNo1"> 
+            </div>
+          </div>
+          b) ¿Usted ha tenido un cambio o malestar físico en los ultimos tres (3) meses sin consulta médica o diagnóstico?
+          <div class="row">
+            <div class="col-lg-3 left"> <label for="">SÍ</label></div>
+            <div class="col-lg-3">
+              <input type="checkbox" class="form-control wi" name="ckSi2" [(ngModel)]="papers.ckSi2"> 
+            </div>
+            <div class="col-lg-3 left"> <label for="">NO</label></div>
+            <div class="col-lg-3">
+                <input type="checkbox" class="form-control wi" name="ckNo2" [(ngModel)]="papers.ckNo2"> 
+            </div>
+          </div>
+        </div>
+        <div class="div">
+          <table id="list">
+            <tr>
+              <th colspan="4">
+                <h3>LISTADO GENÉRICO (CÓDIGO)</h3>
+              </th>
+            </tr>
+            <tr>
+              <td>
+                1. Tumores. <br>
+                2. Cáncer. <br>
+                3. Enfermedades Cerebro Vasculares. <br>
+                4. Enfermedades Sistema Respiratorio. <br>
+                5. Enfermedades Sistema Cardiovascular. <br>
+                6. Enfermedades del Corazón. <br>
+                7. Enfermedades Sistema Circulatorio. <br>
+                8. Efermedades Sistema Digestivo. <br>
+                9. Enfermedades Renales. <br>
+              </td>
+              <td>
+                10. Enfermedades Sistema Genitourinario. <br>
+                11. Enfermedades Sistema Endocrino. <br>
+                12. Enfermedades Nutricionales. <br>
+                13. Enfermedades Metabólicas. <br>
+                14. Enfermedades Sistema Nervioso. <br>
+                15. Enfermedades Infecciosas.<br>
+                16. Enfermedades Parasitarias. <br>
+                17. Enfermedades de las Articulaciones. <br>
+                18. Enfermedades Musculares.<br>
+              </td>
+              <td>
+                19. Enfermedades de la Piel. <br>
+                20. Enfermedades Raumatológicas. <br>
+                21. Enfermedades de la sangre. <br>
+                22. Enfermedades de los Ganglios. <br>
+                23. Enfermedades Linfáticas. <br>
+                24. Enfermedades Mentales. <br>
+                25. Enfermedades Psiquiátricas. <br>
+                26. Enfermedades de Oído. <br>
+                27. Enfermedades de la Naríz. <br>
+              </td>
+              <td>
+                28. Efermedades de la Boca. <br>
+                29. Enfermedades de laGarganta. <br>
+                30. Enfermedades de los Ojos. <br>
+                31. Enfermedades Sistema Oseo. <br>
+                32. Obesidad. <br>
+                33. Embarazo. <br>
+                34. Licencias Médicas Reiteradas o mayor a un mes. <br>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="div">
+          <b>Si las respuestas en a) y/o b) son afirmativas, por favor complete el siguiente recuadro:</b> <br>
+        </div>
+      </div>
+    </div>
+    <div class="bs-component mx-auto text-center" id="content" #content>
+      <button class="btn btn-primary" style="margin-right: 2%;">Save</button>
+      <button class="btn btn-primary" (click)="resetForm(form3Form)">Clean</button>
+    </div>
+  </form>
+</div>
+
+  

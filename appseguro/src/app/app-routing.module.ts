@@ -7,6 +7,7 @@ import { NotFoundPageComponent } from './components/not-found-page/not-found-pag
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { Formulario1Component } from './components/formulario1/formulario1.component';
 import { Formulario2Component } from './components/formulario2/formulario2.component';
+import { Formulario3Component } from './components/formulario3/formulario3.component';
 
 const routes: Routes = [
   {path: '', redirectTo:'login', pathMatch:'full'},
@@ -17,6 +18,8 @@ const routes: Routes = [
   {path: 'formulario1/:id', component: Formulario1Component},
   {path: 'formulario2', component: Formulario2Component},
   {path: 'formulario2/:id', component: Formulario2Component},
+  {path: 'formulario3', component: Formulario3Component},
+  {path: 'formulario3/:id', component: Formulario3Component},
   {path: 'privado', component: PrivadoPageComponent},
   {path: '**', component: NotFoundPageComponent}
 ];

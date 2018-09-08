@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserService } from './services/user.service';
 import { SeleccionComponent } from './components/seleccion/seleccion.component';
+import { Formulario3Component } from './components/formulario3/formulario3.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { SeleccionComponent } from './components/seleccion/seleccion.component';
     UsuariosComponent,
     Formulario1Component,
     Formulario2Component,
-    SeleccionComponent
+    SeleccionComponent,
+    Formulario3Component
   ],
   imports: [
     BrowserModule,

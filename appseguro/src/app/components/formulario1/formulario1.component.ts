@@ -84,6 +84,24 @@ export class Formulario1Component implements OnInit {
     } 
   }
 
+  ver(){
+    if(this.papers.Farmacos== false){
+      this.papers.Farmacos2= false;
+    }
+    if(this.papers.Farmacos2== false){
+      this.papers.Farmacos= false;
+    }
+  }
+
+  ver2(){
+    if(this.papers.consulto== false){
+      this.papers.consulto2= false;
+    }
+    if(this.papers.consulto2== false){
+      this.papers.consulto= false;
+    }
+  }
+
   getForms() {
     this.formService.getForms1()
     .subscribe((res:any) => {
@@ -121,7 +139,7 @@ export class Formulario1Component implements OnInit {
       let pdf = new jsPDF('p', 'mm', 'a4'); // A4 size page of PDF
       var position = 5;
       pdf.addImage(contentDataURL, 'PNG', 5, position, imgWidth, imgHeight)
-      pdf.save('MYPdf.pdf'); // Generated PDF 
+      pdf.save('Informe medico tratante obesidad.pdf'); // Generated PDF 
     });
   }
 

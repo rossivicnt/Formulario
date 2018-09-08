@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Formulario2Service } from '../../services/formulario2.service';
+import { Formulario3Service } from '../../services/formulario3.service';
 import { NgForm } from '@angular/forms';
-import { Formulario2 } from '../../models/formulario2';
+import { Formulario3 } from '../../models/formulario3';
 import { Router, ActivatedRoute } from  '@angular/router';
 import { Export1 } from '../../models/export1';
 import * as jsPDF from 'jspdf';
@@ -9,15 +9,15 @@ import * as html2canvas from 'html2canvas';
 import { UserService } from '../../services/user.service';
 
 @Component({
-  selector: 'app-formulario2',
-  templateUrl: './formulario2.component.html',
-  styleUrls: ['./formulario2.component.scss']
+  selector: 'app-formulario3',
+  templateUrl: './formulario3.component.html',
+  styleUrls: ['./formulario3.component.scss']
 })
-export class Formulario2Component implements OnInit {
+export class Formulario3Component implements OnInit {
 
-  public papers: Formulario2 = new Formulario2();
+  public papers: Formulario3 = new Formulario3();
   public papers2: Export1 = new Export1();
-  public listPeriodico: Formulario2[];
+  public listPeriodico: Formulario3[];
   public list: Export1[];
   public today: Date = new Date();
   id: string;
@@ -25,7 +25,7 @@ export class Formulario2Component implements OnInit {
   mostrar: boolean;
   public _id: string;
 
-  constructor(private formService: Formulario2Service,public router: Router,public user: UserService,
+  constructor(private formService: Formulario3Service,public router: Router,public user: UserService,
     private route: ActivatedRoute,) { 
     this.user.user()
     .subscribe(
@@ -44,6 +44,56 @@ export class Formulario2Component implements OnInit {
    this.getForm(this._id);
   }
 
+  ver(){
+    if(this.papers.inicial== false){
+      this.papers.incorporacion= false;
+      this.papers.modificacion=false;
+    }
+    if(this.papers.incorporacion== false){
+      this.papers.inicial= false;
+      this.papers.modificacion=false;
+    }
+    if(this.papers.modificacion== false){
+      this.papers.incorporacion= false;
+      this.papers.inicial=false;
+    }
+  }
+
+  ver3(){
+    if(this.papers.ckSi1 == false){
+      this.papers.ckNo1= false;
+    }
+    if(this.papers.ckNo1== false){
+      this.papers.ckSi1= false;
+    }
+  }
+
+  ver2(){
+    if(this.papers.ckSi2== false){
+      this.papers.ckNo2= false;
+    }
+    if(this.papers.ckNo2== false){
+      this.papers.ckSi2= false;
+    }
+  }
+
+  ver4(){
+    if(this.papers.ckSi3== false){
+      this.papers.ckNo3= false;
+    }
+    if(this.papers.ckNo3== false){
+      this.papers.ckSi3= false;
+    }
+  }
+
+  ver5(){
+    if(this.papers.ckSi4== false){
+      this.papers.ckNo4= false;
+    }
+    if(this.papers.ckNo4== false){
+      this.papers.ckSi4= false;
+    }
+  }
 
   addName(data){
     console.log(data._id);
@@ -53,7 +103,7 @@ export class Formulario2Component implements OnInit {
   resetForm(form?: NgForm) {
     if (form) {
       form.reset();
-      this.formService.selectedForm1 = new Formulario2();
+      this.formService.selectedForm1 = new Formulario3();
       this.formService.selectedExoport1= new Export1();
     }
   }
@@ -73,7 +123,7 @@ export class Formulario2Component implements OnInit {
           this.formService.getId(form.value.Rut).subscribe((res:any) => {
             console.log(res[0]._id);
             this.id = res[0]._id;
-            this.formService.postExport(this.username, this.today ,"Informe medico tratante" , this.id)
+            this.formService.postExport(this.username, this.today ,"SIncorporacionVidaySaludColectivos(PlansincoberturadePreexistencias)" , this.id)
               .subscribe(res => {
                 this.getForms();
                 this.resetForm(form);
@@ -120,8 +170,16 @@ export class Formulario2Component implements OnInit {
       const contentDataURL = canvas.toDataURL('image/png')
       let pdf = new jsPDF('p', 'mm', 'a4'); // A4 size page of PDF
       var position = 5;
-      pdf.addImage(contentDataURL, 'PNG', 5, position, imgWidth, imgHeight)
-      pdf.save('Informe medico tratante.pdf'); // Generated PDF 
+      pdf.addImage(contentDataURL, 'PNG', 5, position, imgWidth, imgHeight);
+      heightLeft -= pageHeight;
+
+          while (heightLeft >= 0) {
+            position = heightLeft - imgHeight;
+            pdf.addPage();
+            pdf.addImage(contentDataURL, 'PNG', 5, position, imgWidth, imgHeight);
+            heightLeft -= pageHeight;
+          }
+      pdf.save('SIncorporacionVidaySaludColectivos(PlansincoberturadePreexistencias).pdf'); // Generated PDF 
     });
   }
 

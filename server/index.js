@@ -59,6 +59,7 @@ app.use(pass.initialize());
 app.use('/api/users',require('./routes/users.routes'));
 app.use('/api/form1',require('./routes/forms1.routes'));
 app.use('/api/form2',require('./routes/forms2.routes'));
+app.use('/api/form3',require('./routes/forms3.routes'));
 app.use('/api/export1',require('./routes/export1.routes'));
 
 //Starting server

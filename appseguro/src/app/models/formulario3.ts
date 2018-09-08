@@ -1,0 +1,283 @@
+export class Formulario3 {
+
+    constructor(_id= '', fechaRecepcion= new Date(), inicial= false , incorporacion= false, 
+        modificacion= false, complementario= false, ampliacion= false, adicional= false, vida= false,
+        NombreContratante= '', Rut = '', Poliza = '', Grupo = '', Rut2= '', ApellidoPaterno= '',
+        ApellidoMaterno= '', NombreTitular= '', FechaNacimiento= new Date(), Sexo= '',EstadoCivil= '',
+        SistemPrevSalud= '', Actividad= '', DireccionParticular= '', Numero= '', Departamento= '', 
+        Sector= '', Comuna= '', Ciudad= '', CuentaCorriente= '', TelefonoCelular= '', Peso= '',
+        Estatura= '', Email= '', Banco= '', TelefonoFijo= '', FechaVigencia= new Date(),
+        FechaIngresoEmpresa= new Date(), CapitalUF= '', Renta= '', AdNom1= '', AdNom2= '', AdNom3= '',
+        AdNom4= '', AdRut1= '', AdRut2= '', AdRut3= '', AdRut4= '', AdFN1= new Date(), AdFN2= new Date(),
+        AdFN3= new Date(), AdFN4= new Date(), AdParen1= '', AdParen2= '', AdParen3= '', AdParen4= '',
+        AdSPS1= '', AdSPS2= '', AdSPS3= '', AdSPS4= '', AdPeso1= '', AdPeso2= '', AdPeso3= '',
+        AdPeso4= '', AdEstatura1= '', AdEstatura2= '', AdEstatura3= '', AdEstatura4= '', ckSi1= false,
+        ckNo1= false, ckSi2= false, ckNo2= false, PNom1= '', PNom2= '', PNom3= '', PNom4= '', PNom5= '',
+        PCod1= '', PCod2= '', PCod3= '', PCod4= '', PCod5= '', PEnfer1= '', PEnfer2= '', PEnfer3= '',
+        PEnfer4= '', PEnfer5= '', PFechaD1= new Date(), PFechaD2= new Date(), PFechaD3= new Date(),
+        PFechaD4= new Date(), PFechaD5= new Date(), PCond1= '', PCond2= '', PCond3= '', PCond4= '',
+        PCond5= '', PTrata1= '', PTrata2= '',PTrata3= '', PTrata4= '', PTrata5= '', POtros1= '',
+        POtros2= '', POtros3= '', POtros4= '', POtros5= '', PCNS1= '', PCNS2= '', PCNS3= '', PCNS4= '',
+        PCNS5= '', fechaDeclaracion= new Date(), DNombre1= '', DNombre2= '', DNombre3= '', DNombre4= '',
+        DDiag1= '', DDiag2= '', DDiag3= '', DDiag4= '', DFecha1= new Date(), DFecha2= new Date(),
+        DFecha3= new Date(), DFecha4= new Date(), ckSi3= false, ckNo3= false, ckSi4= false,
+        ckNo4= false) {
+        this._id= _id;
+        this.fechaRecepcion= fechaRecepcion;
+        this.inicial= inicial;
+        this.incorporacion= incorporacion;
+        this.modificacion= modificacion;
+        this.complementario= complementario;
+        this.ampliacion= ampliacion;
+        this.adicional= adicional;
+        this.vida= vida;
+        this.NombreContratante= NombreContratante;
+        this.Rut= Rut;
+        this.Poliza= Poliza;
+        this.Grupo= Grupo;
+        this.Rut2= Rut2;
+        this.ApellidoPaterno= ApellidoPaterno;
+        this.ApellidoMaterno= ApellidoMaterno;
+        this.NombreTitular= NombreTitular;
+        this.FechaNacimiento= FechaNacimiento;
+        this.Sexo= Sexo;
+        this.EstadoCivil= EstadoCivil;
+        this.SistemPrevSalud= SistemPrevSalud;
+        this.Actividad= Actividad;
+        this.DireccionParticular= DireccionParticular;
+        this.Numero= Numero;
+        this.Departamento= Departamento;
+        this.Sector= Sector;
+        this.Comuna= Comuna;
+        this.Ciudad= Ciudad;
+        this.CuentaCorriente= CuentaCorriente;
+        this.TelefonoCelular= TelefonoCelular;
+        this.Peso= Peso;
+        this.Estatura= Estatura;
+        this.Email= Email;
+        this.Banco= Banco;
+        this.TelefonoFijo= TelefonoFijo;
+        this.FechaVigencia= FechaVigencia;
+        this.FechaIngresoEmpresa= FechaIngresoEmpresa;
+        this.CapitalUF= CapitalUF;
+        this.Renta= Renta;
+        this.AdNom1= AdNom1;
+        this.AdNom2= AdNom2;
+        this.AdNom3= AdNom3;
+        this.AdNom4= AdNom4;
+        this.AdRut1= AdRut1;
+        this.AdRut2= AdRut2;
+        this.AdRut3= AdRut3;
+        this.AdRut4= AdRut4;
+        this.AdFN1= AdFN1;
+        this.AdFN2= AdFN2;
+        this.AdFN3= AdFN3;
+        this.AdFN4= AdFN4;
+        this.AdParen1= AdParen1;
+        this.AdParen2= AdParen2;
+        this.AdParen3= AdParen3;
+        this.AdParen4= AdParen4;
+        this.AdSPS1= AdSPS1;
+        this.AdSPS2= AdSPS2;
+        this.AdSPS3= AdSPS3;
+        this.AdSPS4= AdSPS4;
+        this.AdPeso1= AdPeso1;
+        this.AdPeso2= AdPeso2;
+        this.AdPeso3= AdPeso3;
+        this.AdPeso4= AdPeso4;
+        this.AdEstatura1= AdEstatura1;
+        this.AdEstatura2= AdEstatura2;
+        this.AdEstatura3= AdEstatura3;
+        this.AdEstatura4= AdEstatura4;
+        this.ckSi1= ckSi1;
+        this.ckNo1= ckNo1;
+        this.ckSi2= ckSi2;
+        this.ckNo2= ckNo2;
+        this.PNom1= PNom1;
+        this.PNom2= PNom2;
+        this.PNom3= PNom3;
+        this.PNom4= PNom4;
+        this.PNom5= PNom5;
+        this.PCod1= PCod1;
+        this.PCod2= PCod2;
+        this.PCod3= PCod3;
+        this.PCod4= PCod4;
+        this.PCod5= PCod5;
+        this.PEnfer1= PEnfer1;
+        this.PEnfer2= PEnfer2;
+        this.PEnfer3= PEnfer3;
+        this.PEnfer4= PEnfer4;
+        this.PEnfer5= PEnfer5;
+        this.PFechaD1= PFechaD1;
+        this.PFechaD2= PFechaD2;
+        this.PFechaD3= PFechaD3;
+        this.PFechaD4= PFechaD4;
+        this.PFechaD5= PFechaD5;
+        this.PCond1= PCond1;
+        this.PCond2= PCond2;
+        this.PCond3= PCond3;
+        this.PCond4= PCond4;
+        this.PCond5= PCond5;
+        this.PTrata1= PTrata1;
+        this.PTrata2= PTrata2;
+        this.PTrata3= PTrata3;
+        this.PTrata4= PTrata4;
+        this.PTrata5= PTrata5;
+        this.POtros1= POtros1;
+        this.POtros2= POtros2;
+        this.POtros3= POtros3;
+        this.POtros4= POtros4;
+        this.POtros5= POtros5;
+        this.PCNS1= PCNS1;
+        this.PCNS2= PCNS2;
+        this.PCNS3= PCNS3;
+        this.PCNS4= PCNS4;
+        this.PCNS5= PCNS5;
+        this.fechaDeclaracion= fechaDeclaracion;
+        this.DNombre1= DNombre1;
+        this.DNombre2= DNombre2;
+        this.DNombre3= DNombre3;
+        this.DNombre4= DNombre4;
+        this.DDiag1= DDiag1;
+        this.DDiag2= DDiag2;
+        this.DDiag3= DDiag3;
+        this.DDiag4= DDiag4;
+        this.DFecha1= DFecha1;
+        this.DFecha2= DFecha2;
+        this.DFecha3= DFecha3;
+        this.DFecha4= DFecha4;
+        this.ckSi3= ckSi3;
+        this.ckNo3= ckNo3;
+        this.ckSi4= ckSi4;
+        this.ckNo4= ckNo4;
+    }
+
+    _id: string;
+    fechaRecepcion: Date;
+    inicial: Boolean;
+    incorporacion: Boolean;
+    modificacion: Boolean;
+    complementario: Boolean;
+    ampliacion: Boolean;
+    adicional: Boolean;
+    vida: Boolean;
+    NombreContratante: string;
+    Rut:  string;
+    Poliza:  string;
+    Grupo:  string;
+    Rut2: string;
+    ApellidoPaterno: string;
+    ApellidoMaterno: string;
+    NombreTitular: string;
+    FechaNacimiento: Date;
+    Sexo: string;
+    EstadoCivil: string;
+    SistemPrevSalud: string;
+    Actividad: string;
+    DireccionParticular: string;
+    Numero: string;
+    Departamento: string;
+    Sector: string;
+    Comuna: string;
+    Ciudad: string;
+    CuentaCorriente: string;
+    TelefonoCelular: string;
+    Peso: string;
+    Estatura: string;
+    Email: string;
+    Banco: string;
+    TelefonoFijo: string;
+    FechaVigencia: Date;
+    FechaIngresoEmpresa: Date;
+    CapitalUF: string;
+    Renta: string;
+    AdNom1: string;
+    AdNom2: string;
+    AdNom3: string;
+    AdNom4: string;
+    AdRut1: string;
+    AdRut2: string;
+    AdRut3: string;
+    AdRut4: string;
+    AdFN1: Date;
+    AdFN2: Date;
+    AdFN3: Date;
+    AdFN4: Date;
+    AdParen1: string;
+    AdParen2: string;
+    AdParen3: string;
+    AdParen4: string;
+    AdSPS1: string;
+    AdSPS2: string;
+    AdSPS3: string;
+    AdSPS4: string;
+    AdPeso1: string;
+    AdPeso2: string;
+    AdPeso3: string;
+    AdPeso4: string;
+    AdEstatura1: string;
+    AdEstatura2: string;
+    AdEstatura3: string;
+    AdEstatura4: string;
+    ckSi1: Boolean;
+    ckNo1: Boolean;
+    ckSi2: Boolean;
+    ckNo2: Boolean;
+    PNom1: string;
+    PNom2: string;
+    PNom3: string;
+    PNom4: string;
+    PNom5: string;
+    PCod1: string;
+    PCod2: string;
+    PCod3: string;
+    PCod4: string;
+    PCod5: string;
+    PEnfer1: string;
+    PEnfer2: string;
+    PEnfer3: string;
+    PEnfer4: string;
+    PEnfer5: string;
+    PFechaD1: Date;
+    PFechaD2: Date;
+    PFechaD3: Date;
+    PFechaD4: Date;
+    PFechaD5: Date;
+    PCond1: string;
+    PCond2: string;
+    PCond3: string;
+    PCond4: string;
+    PCond5: string;
+    PTrata1: string;
+    PTrata2: string;
+    PTrata3: string;
+    PTrata4: string;
+    PTrata5: string;
+    POtros1: string;
+    POtros2: string;
+    POtros3: string;
+    POtros4: string;
+    POtros5: string;
+    PCNS1: string;
+    PCNS2: string;
+    PCNS3: string;
+    PCNS4: string;
+    PCNS5: string;
+    fechaDeclaracion: Date;
+    DNombre1: string;
+    DNombre2: string;
+    DNombre3: string;
+    DNombre4: string;
+    DDiag1: string;
+    DDiag2: string;
+    DDiag3: string;
+    DDiag4: string;
+    DFecha1: Date;
+    DFecha2: Date;
+    DFecha3: Date;
+    DFecha4: Date;
+    ckSi3: Boolean;
+    ckNo3: Boolean;
+    ckSi4: Boolean;
+    ckNo4: Boolean;
+}

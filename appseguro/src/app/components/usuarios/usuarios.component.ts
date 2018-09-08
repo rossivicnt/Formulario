@@ -60,10 +60,12 @@ export class UsuariosComponent implements OnInit {
       if(form.value._id){
         this.auth.putUser(form.value).subscribe(res =>{
           this.auth.notifyPostAddition();
+          $("#modalEdit").modal('hide');
         });
       } else {
         this._user.register(form.value).subscribe(res =>{
         this.auth.notifyPostAddition();
+        $("#modalEdit").modal('hide');
         });
       }
     } else {
