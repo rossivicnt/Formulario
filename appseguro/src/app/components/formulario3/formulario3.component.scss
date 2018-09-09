@@ -1,35 +1,62 @@
 .div{
-    width: 90%;
+    width: 85%;
     margin: 0;
 }
 .fecha{
     border: 2px solid black;
+}
+.borde{
+    border: 1px solid black;
+}
+.tam2{
+    width: 90%;
 }
 .fecha2{
     border-right: 2px solid black;
     border-bottom: 2px solid black;
     border-top: 2px solid black;
 }
+.sigue{
+    width: 82%;
+}
 .sin-borde{
     border: none;
+}
+.borde-abajo{
+    border-bottom: 1px solid black;
+    border-right: none;
+    border-top: none;
+    border-left: none;
 }
 .gris{
     background: #6b646b;
     color: white;
 }
 .tam{
-    width: 75%;
+    width: 82%;
 }
 #coberturas{
     border: 0px;
-    width: 100%;
+    width: 90%;
+}
+.importante{
+    width: 82%;
+}
+.cober,#acep, .decla{
+    width: 82%;
 }
 .center{
     text-align: center;
 }
-#tb2,#tb3,#tb4{
+.tb6{
+    width: 96%;
+}
+.decla2{
+    width: 97%;
+}
+#tb2,#tb3,#tb4,#tb5{
     margin: 0;
-    width: 94%;
+    width: 96%;
     margin-bottom: 1%;
     margin-top: 1%;
 }
@@ -45,7 +72,11 @@
 }
 #list{
     margin-bottom: 2%;
-    width: 94%;
+    width: 99%;
     border: 1px solid black;
     margin-top: 2%;
+}
+#oculto{
+    overflow: hidden;
+    height: 0;
 }

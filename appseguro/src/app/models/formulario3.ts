@@ -21,7 +21,16 @@ export class Formulario3 {
         PCNS5= '', fechaDeclaracion= new Date(), DNombre1= '', DNombre2= '', DNombre3= '', DNombre4= '',
         DDiag1= '', DDiag2= '', DDiag3= '', DDiag4= '', DFecha1= new Date(), DFecha2= new Date(),
         DFecha3= new Date(), DFecha4= new Date(), ckSi3= false, ckNo3= false, ckSi4= false,
-        ckNo4= false) {
+        ckNo4= false, Quien1= '', Quien2= '', Deporte1= '', Deporte2='', RazonSocial= '', CRut= '',
+        NroPoliza= '', UF= '', NroRentas= '', CRut2= '', CNombre= '', CFecha= new Date(), BNombre1= '', 
+        BApellidoP1= '', BApellidoM1= '', BRut1= '', BRelacion1= '', BPorcentaje1= '', BMail1= '', BFono1= '',
+        BDir1= '', BNombre2= '', BApellidoP2= '', BApellidoM2= '', BRut2= '', BRelacion2= '', BPorcentaje2= '', 
+        BMail2= '', BFono2= '', BDir2= '', BNombre3= '', BApellidoP3= '', BApellidoM3= '', BRut3= '', 
+        BRelacion3= '', BPorcentaje3= '', BMail3= '', BFono3= '', BDir3= '', BNombre4= '', BApellidoP4= '', 
+        BApellidoM4= '', BRut4= '', BRelacion4= '', BPorcentaje4= '', BMail4= '', BFono4= '', BDir4= '',
+        BNombre5= '', BApellidoP5= '', BApellidoM5= '', BRut5= '', BRelacion5= '', BPorcentaje5= '', BMail5= '', 
+        BFono5= '', BDir5= '', ck= false, fechaf= new Date(), ckPolizaVida= false, ckPoliza= false, 
+        FechaIniVig= new Date(), Poliza1= '', Poliza2= '', CodPlanes= '') {
         this._id= _id;
         this.fechaRecepcion= fechaRecepcion;
         this.inicial= inicial;
@@ -150,6 +159,71 @@ export class Formulario3 {
         this.ckNo3= ckNo3;
         this.ckSi4= ckSi4;
         this.ckNo4= ckNo4;
+        this.Quien1= Quien1;
+        this.Quien2= Quien2;
+        this.Deporte1= Deporte1;
+        this.Deporte2= Deporte2;
+        this.RazonSocial= RazonSocial;
+        this.CRut= CRut;
+        this.NroPoliza= NroPoliza;
+        this.UF= UF;
+        this.NroRentas= NroRentas;
+        this.CRut2= CRut2;
+        this.CNombre= CNombre;
+        this.CFecha= CFecha;
+        this.BNombre1= BNombre1;
+        this.BApellidoP1= BApellidoP1;
+        this.BApellidoM1= BApellidoM1;
+        this.BRut1= BRut1;
+        this.BRelacion1= BRelacion1;
+        this.BPorcentaje1= BPorcentaje1;
+        this.BMail1= BMail1;
+        this.BFono1= BFono1;
+        this.BDir1= BDir1;
+        this.BNombre2= BNombre2;
+        this.BApellidoP2= BApellidoP2;
+        this.BApellidoM2= BApellidoM2;
+        this.BRut2= BRut2;
+        this.BRelacion2= BRelacion2;
+        this.BPorcentaje2= BPorcentaje2;
+        this.BMail2= BMail2;
+        this.BFono2= BFono2;
+        this.BDir2= BDir2;
+        this.BNombre3= BNombre3;
+        this.BApellidoP3= BApellidoP3;
+        this.BApellidoM3= BApellidoM3;
+        this.BRut3= BRut3;
+        this.BRelacion3= BRelacion3;
+        this.BPorcentaje3= BPorcentaje3;
+        this.BMail3= BMail3;
+        this.BFono3= BFono3;
+        this.BDir3= BDir3;
+        this.BNombre4= BNombre4;
+        this.BApellidoP4= BApellidoP4;
+        this.BApellidoM4= BApellidoM4;
+        this.BRut4= BRut4;
+        this.BRelacion4= BRelacion4;
+        this.BPorcentaje4= BPorcentaje4;
+        this.BMail4= BMail4;
+        this.BFono4= BFono4;
+        this.BDir4= BDir4;
+        this.BNombre5= BNombre5;
+        this.BApellidoP5= BApellidoP5;
+        this.BApellidoM5= BApellidoM5;
+        this.BRut5= BRut5;
+        this.BRelacion5= BRelacion5;
+        this.BPorcentaje5= BPorcentaje5;
+        this.BMail5= BMail5;
+        this.BFono5= BFono5;
+        this.BDir5= BDir5;
+        this.ck= ck;
+        this.fechaf= fechaf;
+        this.ckPolizaVida= ckPolizaVida;
+        this.ckPoliza= ckPoliza;
+        this.FechaIniVig= FechaIniVig;
+        this.Poliza1= Poliza1;
+        this.Poliza2= Poliza2;
+        this.CodPlanes= CodPlanes;
     }
 
     _id: string;
@@ -280,4 +354,69 @@ export class Formulario3 {
     ckNo3: Boolean;
     ckSi4: Boolean;
     ckNo4: Boolean;
+    Quien1: string;
+    Quien2: string;
+    Deporte1: string;
+    Deporte2: string;
+    RazonSocial: string;
+    CRut: string;
+    NroPoliza: string;
+    UF: string;
+    NroRentas: string;
+    CRut2: string;
+    CNombre: string;
+    CFecha: Date;
+    BNombre1: string;
+    BApellidoP1: string;
+    BApellidoM1: string;
+    BRut1: string;
+    BRelacion1: string;
+    BPorcentaje1: string;
+    BMail1: string;
+    BFono1: string;
+    BDir1: string;
+    BNombre2: string;
+    BApellidoP2: string;
+    BApellidoM2: string;
+    BRut2: string;
+    BRelacion2: string;
+    BPorcentaje2: string;
+    BMail2: string;
+    BFono2: string;
+    BDir2: string;
+    BNombre3: string;
+    BApellidoP3: string;
+    BApellidoM3: string;
+    BRut3: string;
+    BRelacion3: string;
+    BPorcentaje3: string;
+    BMail3: string;
+    BFono3: string;
+    BDir3: string;
+    BNombre4: string;
+    BApellidoP4: string;
+    BApellidoM4: string;
+    BRut4: string;
+    BRelacion4: string;
+    BPorcentaje4: string;
+    BMail4: string;
+    BFono4: string;
+    BDir4: string;
+    BNombre5: string;
+    BApellidoP5: string;
+    BApellidoM5: string;
+    BRut5: string;
+    BRelacion5: string;
+    BPorcentaje5: string;
+    BMail5: string;
+    BFono5: string;
+    BDir5: string;
+    ck: Boolean;
+    fechaf: Date;
+    ckPolizaVida: Boolean;
+    ckPoliza: Boolean;
+    FechaIniVig: Date;
+    Poliza1: string;
+    Poliza2: string;
+    CodPlanes: string;
 }

@@ -375,7 +375,7 @@
             <tr>
               <td><input type="text" size="45" class="form-control" name="DNombre3" [(ngModel)]="papers.DNombre3"></td>
               <td><input type="text" size="45" class="form-control" name="DDiag3" [(ngModel)]="papers.DDiag3"></td>
-              <td><input type="date" size="45" class="form-control" name="DFecha3" [(ngModel)]="papers.DFecha3"></td>>
+              <td><input type="date" size="45" class="form-control" name="DFecha3" [(ngModel)]="papers.DFecha3"></td>
             </tr>
             <tr>
               <td><input type="text" size="45" class="form-control" name="DNombre4" [(ngModel)]="papers.DNombre4"></td>
@@ -387,7 +387,7 @@
       </div>
     </div>
     <div class="col-lg-12">
-      <legend>Declaració obigatoria de actividades y desportes</legend>
+      <legend>Declaración obigatoria de actividades y desportes</legend>
       <div class="form-group col-lg-12">
         <label>a)¿Usted o alguien de su grupo familiar practica en forma habitual o esporádica alguno de los deportes detallados en el
             listado siguiente?</label>  
@@ -483,6 +483,211 @@
         </table>
       </div>
     </div>
+    <div class="col-lg-12">
+      <div class="col-lg-12">
+        <label>Si su respuesta en a) y/o b) son afirmativas, por favor complete el siguiente recuadro:</label>
+      </div>
+      <div class="col-lg-12 row">
+          <div class="form-group col-lg-6">
+            Identificar quién: <input type="text" size="57" class="form-control" name="Quien1" [(ngModel)]="papers.Quien1" placeholder="Ingrese Nombre">
+            Detallar deporte y frecuencia: <input type="text" size="48" class="form-control" name="Deporte1" [(ngModel)]="papers.Deporte1" placeholder="Ingrese Deporte y Frecuencia">
+          </div>
+          <div class="form-group col-lg-6">
+            Identificar quién: <input type="text" size="57" name="Quien2" class="form-control" [(ngModel)]="papers.Quien2" placeholder="Ingrese Nombre">
+            Detallar deporte y frecuencia: <input type="text" size="48" class="form-control" name="Deporte2" [(ngModel)]="papers.Deporte2" placeholder="Ingrese Deporte y Frecuencia">
+          </div>
+      </div>
+    </div>
+    <div class="col-lg-12" style="margin-bottom: 1%;">
+      <legend>Consentimiento y decaración de beneficiarios- Seguro de vida</legend>
+      <div class="col-lg-12">
+        <b>1.- DATOS CONTRATANTE</b><br>
+        Razón Social: <input type="text" size="60" class="form-control" name="RazonSocial" [(ngModel)]="papers.RazonSocial" placeholder="Ingrese Razon Social"> 
+        R.U.T.: <input type="text" size="65" class="form-control" name="CRut" [(ngModel)]="papers.CRut" placeholder="Ingrese RUT">
+        <table width="100%">
+          <tr>
+            <td>
+              N° de Póliza: <input type="text" size="30" class="form-control" name="NroPoliza" [(ngModel)]="papers.NroPoliza" placeholder="Ingrese Numero de Póliza">
+            </td>
+            <td align="right">
+              Capital Asegurado Vida:
+            </td>
+            <td>
+              <input type="text" size="10" class="form-control" style="margin-bottom: 1%;" name="UF" [(ngModel)]="papers.UF" placeholder="Ingrese UF">
+              <input type="text" size="10" class="form-control" name="NroRentas" [(ngModel)]="papers.NroRentas" placeholder="Ingrese Número de Rentas">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-lg-12">
+        <b>2.- CONSENTIMIENTO</b><br>
+        <div class="bs-component">
+          <table style="width: 100%;">
+            <tr>
+              <td>R.U.T.: <input type="text"size="58" class="form-control" name="CRut2" [(ngModel)]="papers.CRut2" placeholder="Ingrese RUT"> </td>
+              <td align="right">Nombre Completo: </td>
+              <td><input type="text" size="60" class="form-control" name="CNomrbe" [(ngModel)]="papers.CNombre" placeholder="Ingrese Nombre"></td>
+            </tr>
+            <tr>
+              <td>Fecha: <input type="date" size="58" class="form-control" name="CFecha" [(ngModel)]="papers.CFecha"> </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="col-lg-12" style="margin-top: 1%;">
+        <b>3. BENEFICIARIOS PARA EL SEGURO DE VIDA</b>
+        <br>
+        <div class="bs-component row">
+          <div class="col-lg-12">
+            <table class="borde" style="width: 100%;">
+              <tr>
+                <td>Nombre <br> <input type="text" size="30" class="form-control tam2" name="BNombre1" [(ngModel)]="papers.BNombre1" placeholder="Ingrese Nombre"> </td>
+                <td>Apellido Paterno <br> <input type="text" size="30" class="form-control tam2" name="BApellidoP1" [(ngModel)]="papers.BApellidoP1" placeholder="Ingrese Apellido Paterno"> </td>
+                <td>Apellido Materno <br> <input type="text" size="30" class="form-control tam2" name="BApellidoM1" [(ngModel)]="papers.BApellidoM1" placeholder="Ingrese Apellido Materno"> </td>
+                <td>R.U.T. <br> <input type="text" size="30" class="form-control tam2" name="BRut1" [(ngModel)]="papers.BRut1" placeholder="Ingrese RUT"> </td>
+              </tr>
+              <tr>
+                <td>Relación <br> <input type="text" size="30" class="form-control tam2" name="BRelacion1" [(ngModel)]="papers.BRelacion1" placeholder="Ingrese Relación"> </td>
+                <td>% de Beneficio<br> <input type="text" size="30" class="form-control tam2" name="BPorcentaje1" [(ngModel)]="papers.BPorcentaje1" placeholder="Ingrese % de Beneficio"> </td>
+                <td>Mail<br> <input type="text" size="30" class="form-control tam2" name="BMail1" [(ngModel)]="papers.BMail1" placeholder="Ingrese Mail"> </td>
+                <td>Fono<br> <input type="text" size="30" class="form-control tam2" name="BFono1" [(ngModel)]="papers.BFono1" placeholder="Ingrese Fono"> </td>
+              </tr>
+              <tr>
+                <td colspan="4">Dirección: <input type="text" size="145" class="form-control tam2" name="BDir1" [(ngModel)]="papers.BDir1" placeholder="Ingrese Dirección"> </td>
+              </tr>
+            </table>
+          </div>
+          <div class="col-lg-12">
+            <table class="borde" style="width: 100%;">
+              <tr>
+                <td>Nombre <br> <input type="text" size="30" class="form-control tam2" name="BNombre2" [(ngModel)]="papers.BNombre2" placeholder="Ingrese Nombre"> </td>
+                <td>Apellido Paterno <br> <input type="text" size="30" class="form-control tam2" name="BApellidoP2" [(ngModel)]="papers.BApellidoP2" placeholder="Ingrese Apellido Paterno"> </td>
+                <td>Apellido Materno <br> <input type="text" size="30" class="form-control tam2" name="BApellidoM2" [(ngModel)]="papers.BApellidoM2" placeholder="Ingrese Apellido Materno"> </td>
+                <td>R.U.T. <br> <input type="text" size="30" class="form-control tam2" name="BRut2" [(ngModel)]="papers.BRut2" placeholder="Ingrese RUT"> </td>
+              </tr>
+              <tr>
+                <td>Relación <br> <input type="text" size="30" class="form-control tam2" name="BRelacion2" [(ngModel)]="papers.BRelacion2" placeholder="Ingrese Relación"> </td>
+                <td>% de Beneficio<br> <input type="text" size="30" class="form-control tam2" name="BPorcentaje2" [(ngModel)]="papers.BPorcentaje2" placeholder="Ingrese % de Beneficio"> </td>
+                <td>Mail<br> <input type="text" size="30" class="form-control tam2" name="BMail2" [(ngModel)]="papers.BMail2" placeholder="Ingrese Mail"> </td>
+                <td>Fono<br> <input type="text" size="30" class="form-control tam2" name="BFono2" [(ngModel)]="papers.BFono2" placeholder="Ingrese Fono"> </td>
+              </tr>
+              <tr>
+                <td colspan="4">Dirección: <input type="text" size="145" class="form-control tam2" name="BDir2" [(ngModel)]="papers.BDir2" placeholder="Ingrese Dirección"> </td>
+              </tr>
+            </table>
+          </div>
+          <div class="col-lg-12">
+            <table class="borde" style="width: 100%;">
+              <tr>
+                <td>Nombre <br> <input type="text" size="30" class="form-control tam2" name="BNombre3" [(ngModel)]="papers.BNombre3" placeholder="Ingrese Nombre"> </td>
+                <td>Apellido Paterno <br> <input type="text" size="30" class="form-control tam2" name="BApellidoP3" [(ngModel)]="papers.BApellidoP3" placeholder="Ingrese Apellido Paterno"> </td>
+                <td>Apellido Materno <br> <input type="text" size="30" class="form-control tam2" name="BApellidoM3" [(ngModel)]="papers.BApellidoM3" placeholder="Ingrese Apellido Materno"> </td>
+                <td>R.U.T. <br> <input type="text" size="30" class="form-control tam2" name="BRut3" [(ngModel)]="papers.BRut3" placeholder="Ingrese RUT"> </td>
+              </tr>
+              <tr>
+                <td>Relación <br> <input type="text" size="30" class="form-control tam2" name="BRelacion3" [(ngModel)]="papers.BRelacion3" placeholder="Ingrese Relación"> </td>
+                <td>% de Beneficio<br> <input type="text" size="30" class="form-control tam2" name="BPorcentaje3" [(ngModel)]="papers.BPorcentaje3" placeholder="Ingrese % de Beneficio"> </td>
+                <td>Mail<br> <input type="text" size="30" class="form-control tam2" name="BMail3" [(ngModel)]="papers.BMail3" placeholder="Ingrese Mail"> </td>
+                <td>Fono<br> <input type="text" size="30" class="form-control tam2" name="BFono3" [(ngModel)]="papers.BFono3" placeholder="Ingrese Fono"> </td>
+              </tr>
+              <tr>
+                <td colspan="4">Dirección: <input type="text" size="145" class="form-control tam2" name="BDir3" [(ngModel)]="papers.BDir3" placeholder="Ingrese Dirección"> </td>
+              </tr>
+            </table>
+          </div>
+          <div class="col-lg-12">
+            <table class="borde" style="width: 100%;">
+              <tr>
+                <td>Nombre <br> <input type="text" size="30" class="form-control tam2" name="BNombre4" [(ngModel)]="papers.BNombre4" placeholder="Ingrese Nombre"> </td>
+                <td>Apellido Paterno <br> <input type="text" size="30" class="form-control tam2" name="BApellidoP4" [(ngModel)]="papers.BApellidoP4" placeholder="Ingrese Apellido Paterno"> </td>
+                <td>Apellido Materno <br> <input type="text" size="30" class="form-control tam2" name="BApellidoM4" [(ngModel)]="papers.BApellidoM4" placeholder="Ingrese Apellido Materno"> </td>
+                <td>R.U.T. <br> <input type="text" size="30" class="form-control tam2" name="BRut4" [(ngModel)]="papers.BRut4" placeholder="Ingrese RUT"> </td>
+              </tr>
+              <tr>
+                <td>Relación <br> <input type="text" size="30" class="form-control tam2" name="BRelacion4" [(ngModel)]="papers.BRelacion4" placeholder="Ingrese Relación"> </td>
+                <td>% de Beneficio<br> <input type="text" size="30" class="form-control tam2" name="BPorcentaje4" [(ngModel)]="papers.BPorcentaje4" placeholder="Ingrese % de Beneficio"> </td>
+                <td>Mail<br> <input type="text" size="30" class="form-control tam2" name="BMail4" [(ngModel)]="papers.BMail4" placeholder="Ingrese Mail"> </td>
+                <td>Fono<br> <input type="text" size="30" class="form-control tam2" name="BFono4" [(ngModel)]="papers.BFono4" placeholder="Ingrese Fono"> </td>
+              </tr>
+              <tr>
+                <td colspan="4">Dirección: <input type="text" size="145" class="form-control tam2" name="BDir4" [(ngModel)]="papers.BDir4" placeholder="Ingrese Dirección"> </td>
+              </tr>
+            </table>
+          </div>
+          <div class="col-lg-12">
+            <table class="borde" style="width: 100%;">
+              <tr>
+                <td>Nombre <br> <input type="text" size="30" class="form-control tam2" name="BNombre5" [(ngModel)]="papers.BNombre5" placeholder="Ingrese Nombre"> </td>
+                <td>Apellido Paterno <br> <input type="text" size="30" class="form-control tam2" name="BApellidoP5" [(ngModel)]="papers.BApellidoP5" placeholder="Ingrese Apellido Paterno"> </td>
+                <td>Apellido Materno <br> <input type="text" size="30" class="form-control tam2" name="BApellidoM5" [(ngModel)]="papers.BApellidoM5" placeholder="Ingrese Apellido Materno"> </td>
+                <td>R.U.T. <br> <input type="text" size="30" class="form-control tam2" name="BRut5" [(ngModel)]="papers.BRut5" placeholder="Ingrese RUT"> </td>
+              </tr>
+              <tr>
+                <td>Relación <br> <input type="text" size="30" class="form-control tam2" name="BRelacion5" [(ngModel)]="papers.BRelacion5" placeholder="Ingrese Relación"> </td>
+                <td>% de Beneficio<br> <input type="text" size="30" class="form-control tam2" name="BPorcentaje5" [(ngModel)]="papers.BPorcentaje5" placeholder="Ingrese % de Beneficio"> </td>
+                <td>Mail<br> <input type="text" size="30" class="form-control tam2" name="BMail5" [(ngModel)]="papers.BMail5" placeholder="Ingrese Mail"> </td>
+                <td>Fono<br> <input type="text" size="30" class="form-control tam2" name="BFono5" [(ngModel)]="papers.BFono5" placeholder="Ingrese Fono"> </td>
+              </tr>
+              <tr>
+                <td colspan="4">Dirección: <input type="text" size="145" class="form-control tam2" name="BDir5" [(ngModel)]="papers.BDir5" placeholder="Ingrese Dirección"> </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-12">
+      <legend>Declaraciones y autorizaciones</legend>
+      <div class="form-group col-lg-12">
+        <div class="custom-control custom-checkbox">
+          <label class="custom-control-label" for="ck"><b>Si Ud. no desea recibir sus comunicaciones, notificaciones y demás antecedentes anteriormente mencionados a través
+              de su correo electrónico marque la casilla</b> </label>
+          <input type="checkbox" class="custom-control-input" id="ck" name="ck" [(ngModel)]="papers.ck">
+        </div>
+      </div>
+      <div class="form-group col-lg-12">
+        <label>Fecha: </label>
+        <input type="date" class="form-control" name="fechaf"  [(ngModel)]="papers.fechaf">
+      </div>
+      <div class="bs-component">
+        <table style="width: 100%;">
+          <tr>
+            <td>
+              Uso Interno: (Canal de Ventas)
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="form-group co-lg-12">
+                  <div class="custom-control custom-checkbox">
+                    <label class="custom-control-label" for="ckPolizaVida">Póliza Vida</label>
+                    <input type="checkbox" class="custom-control-input" id="ckPolizaVida" name="ckPolizaVida" [(ngModel)]="papers.ckPolizaVida">
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                    <label class="custom-control-label" for="ckPoliza">Póliza Salud </label>
+                    <input type="checkbox" class="custom-control-input" id="ckPoliza" name="ckPoliza" [(ngModel)]="papers.ckPoliza">
+                  </div>
+              </div>
+            </td>
+            <td colspan="2" align="right">
+              Fecha Inicio Vigencia <input type="date"size="5" class="form-control" name="FechaIniVig"  [(ngModel)]="papers.FechaIniVig">
+            </td>
+          </tr>
+          <tr>
+            <td>Póliza N°</td>
+            <td colspan="2">Póliza N°</td>
+          </tr>
+          <tr>
+            <td> <input type="text" class="form-control tam" name="Poliza1"  [(ngModel)]="papers.Poliza1" placeholder="Ingrese Número de Póliza"> <br><br></td>
+            <td colspan="2"> <input type="text tam" class="form-control" name="Poliza2"  [(ngModel)]="papers.Poliza2" placeholder="Ingrese Número de Póliza"> <br><br> </td>
+          </tr>
+        </table>
+      </div>
+      <div class="form-group col-lg-12">
+        <label>Códigos de Planes a utilizar (Canal de Ventas)</label>
+        <input type="text"size="40" class="form-control" name="CodPlanes"  [(ngModel)]="papers.CodPlanes">
+      </div>
+    </div>
     <div>
       <div id="contentToConvert">
         <div class="row div">
@@ -549,7 +754,7 @@
               <td class="center">
                 <input type="radio" class="form-control" name="adicional" [(ngModel)]="papers.adicional">
                 <label for="adicional">Adicional Cobertura Dental</label>
-                <input type="radio" class="form-control" name="vida" [(ngModel)]="papers.vida">
+                <input type="radio" class="" name="vida" [(ngModel)]="papers.vida">
                 <label for="vida">Vida</label>
               </td>                
             </tr>
@@ -557,7 +762,7 @@
         </div>
         <div class="div row">
           <br>
-          <table id="tb2" width="80%" cellspacing="1" cellpadding="3" border="2" bgcolor="6b646b">
+          <table id="tb2" cellspacing="1" cellpadding="1" border="2" bgcolor="6b646b">
             <tr>
               <th class="gris">II. CONTRATANTE</th>
               <th class="gris">R.U.T.</th>
@@ -565,136 +770,136 @@
               <th class="gris">GRUPO</th>
             </tr>
             <tr>
-              <td bgcolor="white"><input type="text" size="32" class="form-control sin-borde" name="NombreContratante" [(ngModel)]="papers.NombreContratante"></td>
-              <td bgcolor="white"><input type="text" size="32" class="form-control sin-borde" name="Rut"  [(ngModel)]="papers.Rut"></td>
-              <td bgcolor="white"><input type="text" size="32" class="form-control sin-borde" name="Poliza"  [(ngModel)]="papers.Poliza"></td>
-              <td bgcolor="white"><input type="text" size="32" class="form-control sin-borde" name="Grupo"  [(ngModel)]="papers.Grupo"></td>
+              <td bgcolor="white"><input type="text" size="30" class=" sin-borde" name="NombreContratante" [(ngModel)]="papers.NombreContratante"></td>
+              <td bgcolor="white"><input type="text" size="32" class=" sin-borde" name="Rut"  [(ngModel)]="papers.Rut"></td>
+              <td bgcolor="white"><input type="text" size="32" class=" sin-borde" name="Poliza"  [(ngModel)]="papers.Poliza"></td>
+              <td bgcolor="white"><input type="text" size="32" class=" sin-borde" name="Grupo"  [(ngModel)]="papers.Grupo"></td>
             </tr>
           </table>
           <br>
-          <table id="tb3" width="80%" cellspacing="1" cellpadding="3" border="1" bgcolor="3c3c3c">
+          <table id="tb3" cellspacing="1" cellpadding="1" border="1" bgcolor="3c3c3c">
             <tr>
               <th class="gris" colspan="7">III. ASEGURABLE TITULAR</th>
             </tr>
             <tr bgcolor="white">
               <td>
                 <label>R.U.T</label>  
-                <input type="text" class="form-control sin-borde" name="Rut"  [(ngModel)]="papers.Rut">
+                <input type="text" class=" sin-borde" name="Rut"  [(ngModel)]="papers.Rut">
               </td>
               <td colspan="2">
                 <label>Apellido Paterno</label> <br> 
-                <input type="text" class="form-control sin-borde" name="ApellidoPaterno" [(ngModel)]="papers.ApellidoPaterno">
+                <input type="text" class=" sin-borde" name="ApellidoPaterno" [(ngModel)]="papers.ApellidoPaterno">
               </td>
               <td colspan="2">
                 <label>Apellido Materno</label> <br> 
-                <input type="text" class="form-control sin-borde" name="ApellidoMaterno" [(ngModel)]="papers.ApellidoMaterno">
+                <input type="text" class=" sin-borde" name="ApellidoMaterno" [(ngModel)]="papers.ApellidoMaterno">
               </td>
               <td colspan="2">
                 <label>Nombre</label> <br> 
-                <input type="text" class="form-control sin-borde" name="NombreTitular" [(ngModel)]="papers.NombreTitular">
+                <input type="text" class=" sin-borde" name="NombreTitular" [(ngModel)]="papers.NombreTitular">
               </td>
             </tr>
             <tr bgcolor="white">
               <td>
                 <label>Fecha Nacimiento</label> 
-                <input type="date" class="form-control sin-borde" name="FechaNacimiento"  [(ngModel)]="papers.FechaNacimiento">
+                <input type="date" class=" sin-borde" name="FechaNacimiento"  [(ngModel)]="papers.FechaNacimiento">
               </td>
               <td>
                 <label>Sexo</label>  <br> 
-                <input type="text" size="10" class="form-control sin-borde" name="Sexo" [(ngModel)]="papers.Sexo">
+                <input type="text" size="10" class=" sin-borde" name="Sexo" [(ngModel)]="papers.Sexo">
               </td>
               <td>
                 <label>Estado Civil</label> <br> 
-                <input type="text" size="10" class="form-control sin-borde" name="EstadoCivil" [(ngModel)]="papers.EstadoCivil">
+                <input type="text" size="10" class=" sin-borde" name="EstadoCivil" [(ngModel)]="papers.EstadoCivil">
               </td>
               <td colspan="2">
                 <label>Sistema Previcional de Salud</label> <br> 
-                <input type="text" class="form-control sin-borde" name="SistemPrevSalud" [(ngModel)]="papers.SistemPrevSalud">
+                <input type="text" class=" sin-borde" name="SistemPrevSalud" [(ngModel)]="papers.SistemPrevSalud">
               </td>
               <td colspan="2">
                 <label>Actividad</label> <br> 
-                <input type="text" class="form-control sin-borde" name="Actividad" [(ngModel)]="papers.Actividad">
+                <input type="text" class=" sin-borde" name="Actividad" [(ngModel)]="papers.Actividad">
               </td>
             </tr>
             <tr bgcolor="white">
               <td colspan="3">
                 <label>Dirección Particular</label> <br>
-                <textarea rows="2" cols="75" class="form-control sin-borde" name="DireccionParticular" [(ngModel)]="papers.DireccionParticular"></textarea>
+                <textarea rows="2" cols="73" class=" sin-borde" name="DireccionParticular" [(ngModel)]="papers.DireccionParticular"></textarea>
               </td>
               <td>
                 <label>N°</label> 
-                <input type="text" size="10" class="form-control sin-borde" name="Numero" [(ngModel)]="papers.Numero">
+                <input type="text" size="10" class=" sin-borde" name="Numero" [(ngModel)]="papers.Numero">
               </td>
               <td>
                 <label>Depto. </label>
-                <input type="text" size="10" class="form-control sin-borde" name="Departamento" [(ngModel)]="papers.Departamento">
+                <input type="text" size="10" class=" sin-borde" name="Departamento" [(ngModel)]="papers.Departamento">
               </td>
               <td colspan="2">
                 <label>Sector/Villa/Población</label> <br> 
-                <input type="text" class="form-control sin-borde" name="Sector" [(ngModel)]="papers.Sector">
+                <input type="text" class=" sin-borde" name="Sector" [(ngModel)]="papers.Sector">
               </td>
             </tr>
             <tr bgcolor="white">
               <td colspan="2">
                 <label>Comuna</label> <br> 
-                <input type="text" class="form-control sin-borde" name="Comuna" [(ngModel)]="papers.Comuna"> 
+                <input type="text" class=" sin-borde" name="Comuna" [(ngModel)]="papers.Comuna"> 
               </td>
               <td>
                 <label>Ciudad</label> <br> 
-                <input type="text" class="form-control sin-borde" name="Ciudad" [(ngModel)]="papers.Ciudad">
+                <input type="text" class=" sin-borde" name="Ciudad" [(ngModel)]="papers.Ciudad">
               </td>
               <td colspan="2">
                 <label>Cuenta Corriente</label> <br> 
-                <input type="text" class="form-control sin-borde" name="CuentaCorriente" [(ngModel)]="papers.CuentaCorriente">
+                <input type="text" class=" sin-borde" name="CuentaCorriente" [(ngModel)]="papers.CuentaCorriente">
               </td>
               <td colspan="2">
                 <label>Teléfono Celular</label> <br> 
-                <input type="text" class="form-control sin-borde" name="TelefonoCelular" [(ngModel)]="papers.TelefonoCelular">
+                <input type="text" class=" sin-borde" name="TelefonoCelular" [(ngModel)]="papers.TelefonoCelular">
               </td>
             </tr>
             <tr bgcolor="white">
               <td>
                 <label>Peso (Kg.)</label> <br> 
-                <input type="text" class="form-control sin-borde" name="Peso" [(ngModel)]="papers.Peso"> 
+                <input type="text" class=" sin-borde" name="Peso" [(ngModel)]="papers.Peso"> 
               </td>
               <td>
                 <label>Estatura (mts.)</label> <br> 
-                <input type="text" class="form-control sin-borde" name="Estatura" [(ngModel)]="papers.Estatura">
+                <input type="text" class=" sin-borde" name="Estatura" [(ngModel)]="papers.Estatura">
               </td>
               <td>
                 <label>E-mail</label> <br> 
-                <input type="text" class="form-control sin-borde" name="Email" [(ngModel)]="papers.Email">
+                <input type="text" class=" sin-borde" name="Email" [(ngModel)]="papers.Email">
               </td>
               <td colspan="2">
                 <label>Banco/Servipag</label> <br> 
-                <input type="text" class="form-control sin-borde" name="Banco" [(ngModel)]="papers.Banco">
+                <input type="text" class=" sin-borde" name="Banco" [(ngModel)]="papers.Banco">
               </td>
               <td colspan="2">
                 <label>Teléfono Fijo</label> <br> 
-                <input type="text" class="form-control sin-borde" name="TelefonoFijo" [(ngModel)]="papers.TelefonoFino">
+                <input type="text" class=" sin-borde" name="TelefonoFijo" [(ngModel)]="papers.TelefonoFino">
               </td>
             </tr>
             <tr bgcolor="white">
               <td colspan="2">
                 <label>Fecha Vigencia</label> <br> 
-                <input type="date" class="form-control sin-borde" name="FechaVigencia"  [(ngModel)]="papers.FechaVigencia"> 
+                <input type="date" class=" sin-borde" name="FechaVigencia"  [(ngModel)]="papers.FechaVigencia"> 
               </td>
               <td colspan="3">
                 <label>Fecha Ingreso a Empresa</label> <br> 
-                <input type="date" class="form-control sin-borde" name="FechaIgresoEmpresa"  [(ngModel)]="papers.FechaIngresoEmpresa">
+                <input type="date" class=" sin-borde" name="FechaIgresoEmpresa"  [(ngModel)]="papers.FechaIngresoEmpresa">
               </td>
               <td>
                 <label>Capital U.F.</label> <br> 
-                <input type="text" size="15" class="form-control sin-borde" name="CapitalUF" [(ngModel)]="papers.CapitalUF">
+                <input type="text" size="15" class=" sin-borde" name="CapitalUF" [(ngModel)]="papers.CapitalUF">
               </td>
               <td>
                 <label>Renta</label> <br> 
-                <input type="text" size="15" class="form-control sin-borde" name="Renta" [(ngModel)]="papers.Renta">
+                <input type="text" size="15" class=" sin-borde" name="Renta" [(ngModel)]="papers.Renta">
               </td>
             </tr>
           </table>
           <br>
-          <table id="tb4" width="80%" cellspacing="1" cellpadding="1" border="1" bgcolor="3c3c3c">
+          <table id="tb4" cellspacing="1" cellpadding="1" border="1" bgcolor="3c3c3c">
             <tr>
               <th class="gris" colspan="7">IV. ASEGURABLES ADICIONALES</th>
             </tr>
@@ -723,99 +928,99 @@
             </tr>
             <tr bgcolor="white">
               <td>
-                <input type="text" size="25" class="form-control sin-borde" name="AdNom1" [(ngModel)]="papers.AdNom1"> 
+                <input type="text" size="25" class=" sin-borde" name="AdNom1" [(ngModel)]="papers.AdNom1"> 
               </td>
               <td>
-                <input type="text" size="15" class="form-control sin-borde" name="AdRut1" [(ngModel)]="papers.AdRut1">
+                <input type="text" size="15" class=" sin-borde" name="AdRut1" [(ngModel)]="papers.AdRut1">
               </td>
               <td>
-                <input type="text" class="form-control sin-borde" name="AdFN1" [(ngModel)]="papers.AdFN1">
+                <input type="text" class=" sin-borde" name="AdFN1" [(ngModel)]="papers.AdFN1">
               </td>
               <td>
-                <input type="text" class="form-control sin-borde" name="AdParen1" [(ngModel)]="papers.AdParen1">
+                <input type="text" class=" sin-borde" name="AdParen1" [(ngModel)]="papers.AdParen1">
               </td>
               <td>
-                <input type="text" class="form-control sin-borde" name="AdSPS1" [(ngModel)]="papers.AdSPS1">
+                <input type="text" class=" sin-borde" name="AdSPS1" [(ngModel)]="papers.AdSPS1">
               </td>
               <td>
-                <input type="text" size="5" size="5" class="form-control sin-borde" name="AdPeso1" [(ngModel)]="papers.AdPeso1">
+                <input type="text" size="8" class=" sin-borde" name="AdPeso1" [(ngModel)]="papers.AdPeso1">
               </td>
               <td>
-                <input type="text" size="5" size="5" class="form-control sin-borde" name="AdEstatura1" [(ngModel)]="papers.AdEstatura1">
-              </td>
-            </tr>
-            <tr bgcolor="white">
-              <td>
-                <input type="text" size="25" class="form-control sin-borde" name="AdNom2" [(ngModel)]="papers.AdNom2"> 
-              </td>
-              <td>
-                <input type="text" size="15" class="form-control sin-borde" name="AdRut2" [(ngModel)]="papers.AdRut2">
-              </td>
-              <td>
-                <input type="text" class="form-control sin-borde" name="AdFN2" [(ngModel)]="papers.AdFN2">
-              </td>
-              <td>
-                <input type="text" class="form-control sin-borde" name="AdParen2" [(ngModel)]="papers.AdParen2">
-              </td>
-              <td>
-                <input type="text" class="form-control sin-borde" name="AdSPS2" [(ngModel)]="papers.AdSPS2">
-              </td>
-              <td>
-                <input type="text" size="5" size="5" class="form-control sin-borde" name="AdPeso2" [(ngModel)]="papers.AdPeso2">
-              </td>
-              <td>
-                <input type="text" size="5" size="5" class="form-control sin-borde" name="AdEstatura2" [(ngModel)]="papers.AdEstatura2">
+                <input type="text" size="8" class=" sin-borde" name="AdEstatura1" [(ngModel)]="papers.AdEstatura1">
               </td>
             </tr>
             <tr bgcolor="white">
               <td>
-                <input type="text" size="25" class="form-control sin-borde" name="AdNom3" [(ngModel)]="papers.AdNom3"> 
+                <input type="text" size="25" class=" sin-borde" name="AdNom2" [(ngModel)]="papers.AdNom2"> 
               </td>
               <td>
-                <input type="text" size="15" class="form-control sin-borde" name="AdRut3" [(ngModel)]="papers.AdRut3">
+                <input type="text" size="15" class=" sin-borde" name="AdRut2" [(ngModel)]="papers.AdRut2">
               </td>
               <td>
-                <input type="text" class="form-control sin-borde" name="AdFN3" [(ngModel)]="papers.AdFN3">
+                <input type="text" class=" sin-borde" name="AdFN2" [(ngModel)]="papers.AdFN2">
               </td>
               <td>
-                <input type="text" class="form-control sin-borde" name="AdParen3" [(ngModel)]="papers.AdParen3">
+                <input type="text" class=" sin-borde" name="AdParen2" [(ngModel)]="papers.AdParen2">
               </td>
               <td>
-                <input type="text" class="form-control sin-borde" name="AdSPS3" [(ngModel)]="papers.AdSPS3">
+                <input type="text" class=" sin-borde" name="AdSPS2" [(ngModel)]="papers.AdSPS2">
               </td>
               <td>
-                <input type="text" size="5" size="5" class="form-control sin-borde" name="AdPeso3" [(ngModel)]="papers.AdPeso3">
+                <input type="text" size="8" class=" sin-borde" name="AdPeso2" [(ngModel)]="papers.AdPeso2">
               </td>
               <td>
-                <input type="text" size="5" size="5" class="form-control sin-borde" name="AdEstatura3" [(ngModel)]="papers.AdEstatura3">
+                <input type="text" size="8" class=" sin-borde" name="AdEstatura2" [(ngModel)]="papers.AdEstatura2">
               </td>
             </tr>
             <tr bgcolor="white">
               <td>
-                <input type="text" size="25" class="form-control sin-borde" name="AdNom4" [(ngModel)]="papers.AdNom4"> 
+                <input type="text" size="25" class=" sin-borde" name="AdNom3" [(ngModel)]="papers.AdNom3"> 
               </td>
               <td>
-                <input type="text" size="15" class="form-control sin-borde" name="AdRut4" [(ngModel)]="papers.AdRut4">
+                <input type="text" size="15" class=" sin-borde" name="AdRut3" [(ngModel)]="papers.AdRut3">
               </td>
               <td>
-                <input type="text" class="form-control sin-borde" name="AdFN4" [(ngModel)]="papers.AdFN4">
+                <input type="text" class=" sin-borde" name="AdFN3" [(ngModel)]="papers.AdFN3">
               </td>
               <td>
-                <input type="text" class="form-control sin-borde" name="AdParen4" [(ngModel)]="papers.AdParen4">
+                <input type="text" class=" sin-borde" name="AdParen3" [(ngModel)]="papers.AdParen3">
               </td>
               <td>
-                <input type="text" class="form-control sin-borde" name="AdSPS4" [(ngModel)]="papers.AdSPS4">
+                <input type="text" class=" sin-borde" name="AdSPS3" [(ngModel)]="papers.AdSPS3">
               </td>
               <td>
-                <input type="text" size="5" size="5" class="form-control sin-borde" name="AdPeso4" [(ngModel)]="papers.AdPeso4">
+                <input type="text" size="8" class=" sin-borde" name="AdPeso3" [(ngModel)]="papers.AdPeso3">
               </td>
               <td>
-                <input type="text" size="5" size="5" class="form-control sin-borde" name="AdEstatura4" [(ngModel)]="papers.AdEstatura4">
+                <input type="text" size="8" class=" sin-borde" name="AdEstatura3" [(ngModel)]="papers.AdEstatura3">
+              </td>
+            </tr>
+            <tr bgcolor="white">
+              <td>
+                <input type="text" size="25" class=" sin-borde" name="AdNom4" [(ngModel)]="papers.AdNom4"> 
+              </td>
+              <td>
+                <input type="text" size="15" class=" sin-borde" name="AdRut4" [(ngModel)]="papers.AdRut4">
+              </td>
+              <td>
+                <input type="text" class=" sin-borde" name="AdFN4" [(ngModel)]="papers.AdFN4">
+              </td>
+              <td>
+                <input type="text" class=" sin-borde" name="AdParen4" [(ngModel)]="papers.AdParen4">
+              </td>
+              <td>
+                <input type="text" class=" sin-borde" name="AdSPS4" [(ngModel)]="papers.AdSPS4">
+              </td>
+              <td>
+                <input type="text" size="8" class=" sin-borde" name="AdPeso4" [(ngModel)]="papers.AdPeso4">
+              </td>
+              <td>
+                <input type="text" size="8" class=" sin-borde" name="AdEstatura4" [(ngModel)]="papers.AdEstatura4">
               </td>
             </tr>
           </table>
         </div>
-        <div class="div">
+        <div class="importante">
           <div margin="center" class="fondo">
             <p align="center"><b>IMPORTANTE</b></p>
               Al contratar o incorporarse a este seguro de salud, usted debe tener presente lo siguiente: <br>
@@ -833,7 +1038,7 @@
               <br>este seguro:
             <br>
             <div style="padding-left:10px;">
-              <table id="tb5" width="80%" cellspacing="1" cellpadding="3" border="1" bgcolor="white">
+              <table id="tb5" width="80%" cellspacing="1" cellpadding="1" border="1" bgcolor="white">
                 <tr>
                   <td>Este seguro: <br>
                     <b>NO</b> contempla renovación garantizada. <br>
@@ -850,32 +1055,32 @@
         <div class="div gris tam">
           <h4>I. COBERTURAS (Marque las opciones correspondientes)</h4>
         </div>
-        <div class="div">
+        <div class="cober">
           a) ¿Usted o alguien de su grupo familiar padece o ha padecido alguna de las enfermedades, situaciones o condiciones de salud que se detallas en el Listado Genérico,
           está embarazada o actualmente se encuentra sometido a un diagnóstico en estudio para alguna patología? 
           <div class="row">
             <div class="col-lg-3 left"> <label for="">SÍ</label></div>
             <div class="col-lg-3">
-              <input type="checkbox" class="form-control wi" name="ckSi1" [(ngModel)]="papers.ckSi1"> 
+              <input type="checkbox" class=" wi" name="ckSi1" [(ngModel)]="papers.ckSi1"> 
             </div>
             <div class="col-lg-3 left"> <label for="">NO</label></div>
             <div class="col-lg-3">
-              <input type="checkbox" class="form-control wi" name="ckNo1" [(ngModel)]="papers.ckNo1"> 
+              <input type="checkbox" class=" wi" name="ckNo1" [(ngModel)]="papers.ckNo1"> 
             </div>
           </div>
           b) ¿Usted ha tenido un cambio o malestar físico en los ultimos tres (3) meses sin consulta médica o diagnóstico?
           <div class="row">
             <div class="col-lg-3 left"> <label for="">SÍ</label></div>
             <div class="col-lg-3">
-              <input type="checkbox" class="form-control wi" name="ckSi2" [(ngModel)]="papers.ckSi2"> 
+              <input type="checkbox" class=" wi" name="ckSi2" [(ngModel)]="papers.ckSi2"> 
             </div>
             <div class="col-lg-3 left"> <label for="">NO</label></div>
             <div class="col-lg-3">
-                <input type="checkbox" class="form-control wi" name="ckNo2" [(ngModel)]="papers.ckNo2"> 
+                <input type="checkbox" class=" wi" name="ckNo2" [(ngModel)]="papers.ckNo2"> 
             </div>
           </div>
         </div>
-        <div class="div">
+        <div class="sigue">
           <table id="list">
             <tr>
               <th colspan="4">
@@ -930,6 +1135,551 @@
         </div>
         <div class="div">
           <b>Si las respuestas en a) y/o b) son afirmativas, por favor complete el siguiente recuadro:</b> <br>
+        </div>
+        <div class="div">
+          <table id="tb5" border="2"  cellspacing="1" cellpadding="1">
+            <tr>
+                <td align="center">Nombre Completo <br><br></td>
+                <td align="center">Código <br> <br></td>
+                <td align="center">Enfermedas y/o Situación de<br>Saludy/o Sintomatología</td>
+                <td align="center">Fecha de<br>Diagnóstico<br></td>
+                <td align="center">Condición<br>Actual<br></td>
+                <td align="center">Tratamiento<br>(Especificar<br>cuál(es))</td>
+                <td align="center">Otros<br>Antecedentes</td>
+                <td align="center">USO EXCLUSIVO DE<br>CNS</td>
+            </tr>
+            <tr>
+                <td><input type="text" size="17" class="sin-borde" name="PNom1" [(ngModel)]="papers.PNom1"> </td>
+                <td><input type="text" size="7" class="sin-borde" name="PCod1" [(ngModel)]="papers.PCod1"></td>
+                <td><input type="text" size="19" class="sin-borde" name="PEnfer1" [(ngModel)]="papers.PEnfer1"></td>
+                <td><input type="date" size="10" class="sin-borde" name="PFechaD1" [(ngModel)]="papers.PFechaD1"></td>
+                <td><input type="text" size="10" class="sin-borde" name="PCond1" [(ngModel)]="papers.PCond1"></td>
+                <td><input type="text" size="10" class="sin-borde" name="PTrata1" [(ngModel)]="papers.PTrata1"></td>
+                <td><input type="text" size="10" class="sin-borde" name="POtros1" [(ngModel)]="papers.POtros1"></td>
+                <td><input type="text" size="17" class="sin-borde" name="PCNS1" [(ngModel)]="papers.PCNS1"></td>
+              </tr>
+              <tr>
+                <td><input type="text" size="17" class="sin-borde" name="PNom2" [(ngModel)]="papers.PNom2"> </td>
+                <td><input type="text" size="7" class="sin-borde" name="PCod2" [(ngModel)]="papers.PCod2"></td>
+                <td><input type="text" size="19" class="sin-borde" name="PEnfer2" [(ngModel)]="papers.PEnfer2"></td>
+                <td><input type="date" size="10" class="sin-borde" name="PFechaD2" [(ngModel)]="papers.PFechaD2"></td>
+                <td><input type="text" size="10" class="sin-borde" name="PCond2" [(ngModel)]="papers.PCond2"></td>
+                <td><input type="text" size="10" class="sin-borde" name="PTrata2" [(ngModel)]="papers.PTrata2"></td>
+                <td><input type="text" size="10" class="sin-borde" name="POtros2" [(ngModel)]="papers.POtros2"></td>
+                <td><input type="text" size="17" class="sin-borde" name="PCNS2" [(ngModel)]="papers.PCNS2"></td>
+              </tr>
+              <tr>
+                <td><input type="text" size="17" class="sin-borde" name="PNom3" [(ngModel)]="papers.PNom3"> </td>
+                <td><input type="text" size="7" class="sin-borde" name="PCod3" [(ngModel)]="papers.PCod3"></td>
+                <td><input type="text" size="19" class="sin-borde" name="PEnfer3" [(ngModel)]="papers.PEnfer3"></td>
+                <td><input type="date" size="10" class="sin-borde" name="PFechaD3" [(ngModel)]="papers.PFechaD3"></td>
+                <td><input type="text" size="10" class="sin-borde" name="PCond3" [(ngModel)]="papers.PCond3"></td>
+                <td><input type="text" size="10" class="sin-borde" name="PTrata3" [(ngModel)]="papers.PTrata3"></td>
+                <td><input type="text" size="10" class="sin-borde" name="POtros3" [(ngModel)]="papers.POtros3"></td>
+                <td><input type="text" size="17" class="sin-borde" name="PCNS3" [(ngModel)]="papers.PCNS3"></td>
+              </tr>
+              <tr>
+                <td><input type="text" size="17" class="sin-borde" name="PNom4" [(ngModel)]="papers.PNom4"> </td>
+                <td><input type="text" size="7" class="sin-borde" name="PCod4" [(ngModel)]="papers.PCod4"></td>
+                <td><input type="text" size="19" class="sin-borde" name="PEnfer4" [(ngModel)]="papers.PEnfer4"></td>
+                <td><input type="date" size="10" class="sin-borde" name="PFechaD4" [(ngModel)]="papers.PFechaD4"></td>
+                <td><input type="text" size="10" class="sin-borde" name="PCond4" [(ngModel)]="papers.PCond4"></td>
+                <td><input type="text" size="10" class="sin-borde" name="PTrata4" [(ngModel)]="papers.PTrata4"></td>
+                <td><input type="text" size="10" class="sin-borde" name="POtros4" [(ngModel)]="papers.POtros4"></td>
+                <td><input type="text" size="17" class="sin-borde" name="PCNS4" [(ngModel)]="papers.PCNS4"></td>
+              </tr>
+              <tr>
+                <td><input type="text" size="17" class="sin-borde" name="PNom5" [(ngModel)]="papers.PNom5"> </td>
+                <td><input type="text" size="7" class="sin-borde" name="PCod5" [(ngModel)]="papers.PCod5"></td>
+                <td><input type="text" size="19" class="sin-borde" name="PEnfer5" [(ngModel)]="papers.PEnfer5"></td>
+                <td><input type="date" size="10" class="sin-borde" name="PFechaD5" [(ngModel)]="papers.PFechaD5"></td>
+                <td><input type="text" size="10" class="sin-borde" name="PCond5" [(ngModel)]="papers.PCond5"></td>
+                <td><input type="text" size="10" class="sin-borde" name="PTrata5" [(ngModel)]="papers.PTrata5"></td>
+                <td><input type="text" size="10" class="sin-borde" name="POtros5" [(ngModel)]="papers.POtros5"></td>
+                <td><input type="text" size="17" class="sin-borde" name="PCNS5" [(ngModel)]="papers.PCNS5"></td>
+              </tr>
+          </table>
+        </div>
+        <div id="acep">
+          <b>ACEPTACIÓN ESPECIAL</b><br>
+          Tomo conocimiento y acepto expresamente que toda enfermedad preexistente y/o situación de salud preexistente declarada
+          precedentemente implica que respecto de ella(s), los beneficios de este seguro no operarán si la causa de siniestro fuere
+          producto de una de las enfermedades preexistentes o situaciones de salud preexistentes señaladas expresamente por mi en
+          este formulario.<br><br>
+          También acepto que en caso de no declarar, en este formulario, mis enfermedades preexistentes o la situaciones de salud
+          preexistentes, asi como las de mi grupo familiar, significará que la cobertura del seguro no operará si la causa del siniestro
+          fuese producto de una de las enfermedades o situaciones de salud comprendidas en el listado precedente.<br>
+        </div>
+        <div id="Cont_FR">
+          <table id="tb7" width="100%" cellspacing="1" cellpadding="1" border="0">
+            <tr>
+              <td>
+                <div class="col-lg-10 row">
+                  <div class="col-lg-4">
+                      Fecha Declaración
+                  </div>
+                  <div class="col-lg-6">
+                      <input type="date" class="sin-borde"  name="fechaDeclaracion"  [(ngModel)]="papers.fechaDeclaracion">
+                  </div>
+                </div>
+              </td>
+              <td>
+                  <input type="text" name="firma" style="width: 58%;" class="borde-abajo" id="firma">
+                  <p>Firma Declaración de Salud y Aceptación Especial</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="div gris tam">
+          <h4>VI. DECLARACIÓN DE ASEGURADOS</h4>
+        </div>
+        <div class="decla">
+            <p align="justify">¿Usted o alguno de sus Asegurables ha tenido algún diagnóstico o está en conocimiento o se encuentra en proceso de
+            estudio, por enfermedades, padecimientos o malformaciones congénitas y/o cromosomopatías, o se encuentra con calidad
+            de cargar inválida (dupio) en alguna Caja de Compensación de Asignación Familiar (CCAF) u otro Organismo Competente?
+          </p>
+        </div>
+        <div class="div">
+          <table id="tb4" width="80%" cellspacing="1" cellpadding="1" border="1">
+            <tr  align="center">
+                <th class="gris">NOMBRE COMPLETO<br>(Postura del Seguro o<br>miembro del grupo familiar)<br></th>
+                <th class="gris">DIAGNÓSTICO<br><br></th>
+                <th class="gris">FECHA DE DIAGNÓSTICO<br>Y/O DECLARACIÓN DE LA INVALIDEZ<br>(Indicar mes y año)</th>
+            </tr>
+            <tr>
+                <td><input type="text" size="45" class=" sin-borde" name="DNombre1" [(ngModel)]="papers.DNombre1"></td>
+                <td><input type="text" size="45" class=" sin-borde" name="DDiag1" [(ngModel)]="papers.DDiag1"></td>
+                <td><input type="date" size="45" class=" sin-borde" name="DFecha1" [(ngModel)]="papers.DFecha1"></td>
+              </tr>
+              <tr>
+                <td><input type="text" size="45" class=" sin-borde" name="DNombre2" [(ngModel)]="papers.DNombre2"></td>
+                <td><input type="text" size="45" class=" sin-borde" name="DDiag2" [(ngModel)]="papers.DDiag2"></td>
+                <td><input type="date" size="45" class=" sin-borde" name="DFecha2" [(ngModel)]="papers.DFecha2"></td>
+              </tr>
+              <tr>
+                <td><input type="text" size="45" class=" sin-borde" name="DNombre3" [(ngModel)]="papers.DNombre3"></td>
+                <td><input type="text" size="45" class=" sin-borde" name="DDiag3" [(ngModel)]="papers.DDiag3"></td>
+                <td><input type="date" size="45" class=" sin-borde" name="DFecha3" [(ngModel)]="papers.DFecha3"></td>
+              </tr>
+              <tr>
+                <td><input type="text" size="45" class=" sin-borde" name="DNombre4" [(ngModel)]="papers.DNombre4"></td>
+                <td><input type="text" size="45" class=" sin-borde" name="DDiag4" [(ngModel)]="papers.DDiag4"></td>
+                <td><input type="date" size="45" class=" sin-borde" name="DFecha4" [(ngModel)]="papers.DFecha4"></td>
+              </tr>
+          </table>
+        </div>
+        <div class="decla" style="margin-bottom: 2%;">
+          <p align="justify">Tomo conocimiento y acepto expresamente que een caso de que los Asegurados indentificados en esta Solicitud de Incorporación
+            hubiesen declarado enfermedades, padecimiento o malformaciones congénitas y/o cromosomopatías o cargas iválidas, éstos
+            no serán incorporados en la Póliza.
+          </p>
+          Firma Declarante: <input type="text" name="firma2" style="width: 58%;" class="borde-abajo" id="firma2">
+        </div>
+        <div class="div gris tam">
+          <h4>VII. DECLARACIÓN DE OBLIGATORIA DE ACTIVIDADES Y DEPORTES</h4>
+        </div>
+        <div class="col-lg-12 row">
+          <div class="col-lg-8">
+            <label>a)¿Usted o alguien de su grupo familiar practica en forma habitual o esporádica alguno de los deportes detallados en el
+                listado siguiente?</label> 
+          </div>
+          <div class="col-g-2 row">
+            <div class="col-lg-6">
+              <input class="custom-control-input" id="ckSi3"  name="ckSi3" [(ngModel)]="papers.ckSi3" type="checkbox" (click)="ver4()">
+              <label class="custom-control-label" for="ckSi3">Si</label>
+            </div>
+            <div class="col-lg-6">
+              <input class="custom-control-input" id="ckNo3"  name="ckNo3" [(ngModel)]="papers.ckNo3" type="checkbox" (click)="ver4()">
+              <label class="custom-control-label" for="ckNo3">No</label> 
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-12 row">
+          <div class="col-lg-8">
+            <label>b)¿Usted p alguien de su grupo familiar desarrolla alguna de las actividades detalladas en el listado siguiente?</label> 
+          </div>
+          <div class="col-g-2 row">
+            <div class="col-lg-6">
+              <input class="custom-control-input" id="ckSi4"  name="ckSi4" [(ngModel)]="papers.ckSi4" type="checkbox" (click)="ver5()">
+              <label class="custom-control-label" for="ckSi4">Si</label>
+            </div>
+            <div class="col-lg-6">
+              <input class="custom-control-input" id="ckNo4"  name="ckNo4" [(ngModel)]="papers.ckNo4" type="checkbox" (click)="ver5()">
+              <label class="custom-control-label" for="ckNo4">No</label> 
+            </div>
+          </div>
+        </div>
+        <div class="decla" style="margin-bottom: 1%;">
+          <b>LISTADO DE DEPORTES Y ACTIVIDADES</b>
+          <table width="100%" cellspacing="1" cellpadding="1" border="2" >
+            <tr >
+                <td>1.</td>
+                <td>Alpinismo y Andinismo</td>
+                <td>9.</td>
+                <td>Deportes Acuáticos</td>
+                <td>17.</td>
+                <td>Inmersión Submarina</td>
+            </tr>
+            <tr >
+              <td>2.</td>
+              <td>Automovilismo y Afines</td>
+              <td>10.</td>
+              <td>Deportes Encuentres</td>
+              <td>18.</td>
+              <td>Manejo de Explosivo</td>
+            </tr>
+            <tr >
+              <td>3.</td>
+              <td>Bungee</td>
+              <td>11.</td>
+              <td>Jeep Fun Race</td>
+              <td>19.</td>
+              <td>Faenas Pesqueras</td>
+            </tr>
+            <tr >
+              <td>4.</td>
+              <td>Motociclismo y Afines</td>
+              <td>12.</td>
+              <td>Rally</td>
+              <td>20.</td>
+              <td>Faenas Forestales</td>
+            </tr>
+            <tr >
+              <td>5.</td>
+              <td>Alas Delta</td>
+              <td>13.</td>
+              <td>Bombero</td>
+              <td>21.</td>
+              <td>Faenadores de Animales</td>
+            </tr>
+            <tr >
+              <td>6.</td>
+              <td>Parapente</td>
+              <td>14.</td>
+              <td>Piloto Civil</td>
+              <td rowspan="3">22.</td>
+              <td rowspan="3">Fuerzas Armadas de Orden y Seguridad</td>
+            </tr>
+            <tr >
+              <td>7.</td>
+              <td>Deportes de Nieve</td>
+              <td>15.</td>
+              <td>Buceo</td>
+            </tr>
+            <tr >
+              <td>8.</td>
+              <td>Faenas de Minería</td>
+              <td>16.</td>
+              <td>Trabajos en altura o lineas de alta tensión</td>
+            </tr>
+          </table>
+        </div>
+        <div class="decla" style="margin-bottom: 1%;">
+          <b>Si su respuesta en a) y/o b) son afirmativas, por favor complete el siguiente recuadro:</b>
+        </div>
+        <div class="decla" style="margin-bottom: 1%;">
+          <div class="row" style="margin-bottom: 1%;">
+              <div class="col-lg-6">
+                <div class="row">
+                  <div class="col-lg-4" style="margin-bottom: 1%;">
+                    Identificar quién: 
+                  </div>
+                  <div class="col-lg-8" style="margin-bottom: 1%;">
+                    <input type="text" size="40" class="borde-abajo" name="Quien1" [(ngModel)]="papers.Quien1" >
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-6" style="margin-bottom: 1%;">
+                    Detallar deporte y frecuencia: 
+                  </div>
+                  <div class="col-lg-6" style="margin-bottom: 1%;">
+                    <input type="text" size="28" class="borde-abajo" name="Deporte1" [(ngModel)]="papers.Deporte1" >
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                  <div class="row">
+                      <div class="col-lg-4" style="margin-bottom: 1%;">
+                        Identificar quién: 
+                      </div>
+                      <div class="col-lg-8" style="margin-bottom: 1%;">
+                        <input type="text" size="40" name="Quien2" class="borde-abajo" [(ngModel)]="papers.Quien2" >
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-6" style="margin-bottom: 1%;">
+                        Detallar deporte y frecuencia: 
+                      </div>
+                      <div class="col-lg-6" style="margin-bottom: 1%;">
+                        <input type="text" size="28" class="borde-abajo" name="Deporte2" [(ngModel)]="papers.Deporte2" >
+                      </div>
+                    </div>
+              </div>
+          </div>
+          <p align="identify">Tomo conocimiento y acepto expresamente que los deportes y actividades riesgosas declaradas no tienen cobertura en el
+            seguro, y sólo serán cubiertos cuándo la Comáñia Aseguradora los haya aprobado de forma expresa. De no existir la aprobación
+            de la Compañía, o si no de hubieren declarado las actividades o deportes riesgosos del Asegurado o desu grupo familiar, la
+            dobertura del seguro no operará si la causa del siniestro corresponde a alguna de dichas actividades o deportes riesgosos.</p>
+          <br>Firma Declarante: <input type="text" name="firma3" style="width: 58%;" class="borde-abajo" id="firma3">
+        </div>
+        <div class="div gris tam">
+          <h4>VIII. CONSENTIMIENTO Y DECLARACIÓN DE BENEFICIARIOS - SEGURO DE VIDA</h4>
+        </div>
+      </div>
+      <div class="div">
+        <b>1.- DATOS CONTRATANTE</b><br>
+        <div class="row" style="margin-bottom: 1%;">
+          <div class="col-lg-6 row">
+            <div class="col-lg-3">
+              Razón Social: 
+            </div>
+            <div class="col-lg-9">
+              <input type="text" size="36" class="sin-borde" name="RazonSocial" [(ngModel)]="papers.RazonSocial">
+            </div>
+          </div>
+          <div class="col-lg-6 row">
+            <div class="col-lg-2">
+              R.U.T.: 
+            </div>
+            <div class="col-lg-10">
+              <input type="text" size="40" class="sin-borde" name="CRut" [(ngModel)]="papers.CRut">
+            </div>
+          </div>
+        </div>
+        <div class="row" style="margin-bottom: 1%;">
+          <div class="col-lg-6 row">
+            <div class="col-lg-3">
+               N° de Póliza:
+            </div>
+            <div class="col-lg-9">
+              <input type="text" size="30" class="sin-borde" name="NroPoliza" [(ngModel)]="papers.NroPoliza" >
+            </div>
+          </div>
+          <div class="col-lg-6 row">
+            <div class="col-lg-5">
+               Capital Asegurado Vida:
+            </div>
+            <div class="col-lg-7">
+              <input type="text" size="20" class="sin-borde" style="margin-bottom: 1%;" name="UF" [(ngModel)]="papers.UF" >U.F.
+              <input type="text" size="14" class="sin-borde" name="NroRentas" [(ngModel)]="papers.NroRentas"> Número de Rentas
+            </div>
+          </div>
+        </div>
+        <div class="">
+          <b>2.- CONSENTIMIENTO</b><br>
+          <p align="identify">Por este instrumento autorizo mi incorporación como Asegurado al Seguro Colectivo de Vida contratado por el Tomador y/o
+          Contratante antes individualizado con la Compañía de Seguros de Vida Cámara S.A.<br>Para tal efecto, proporciono los siguientes datos: </p>
+          <table id="tb4" width=100% cellspacing="1" cellpadding="1" border="1">
+            <tr>
+              <td>
+                <div class="row">
+                  <div class="col-lg-2">
+                      R.U.T.: 
+                  </div>
+                  <div class="col-lg-10">
+                    <input type="text"size="33" class="sin-borde" name="CRut2" [(ngModel)]="papers.CRut2">
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="row">
+                  <div class="col-lg-3">
+                      Nombre Completo:
+                  </div>
+                  <div class="col-lg-9">
+                      <input type="text" size="60" class="sin-borde" name="CNomrbe" [(ngModel)]="papers.CNombre" >
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="row">
+                  <div class="col-lg-2" style="margin-top: 1%;">
+                      Fecha: 
+                  </div>
+                  <div class="col-lg-10">
+                      <input type="date" size="58" class="sin-borde" name="CFecha" [(ngModel)]="papers.CFecha">
+                  </div>
+                </div>
+              </td>
+              <td>
+                Firma asegurable:
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div style="margin-bottom: 1%; margin-top: 2%;">
+            <b>3. BENEFICIARIOS PARA EL SEGURO DE VIDA</b>
+            <table cellspacing="1" cellpadding="1" border="1" class="tb6" style="margin-top:1%; ">
+              <tr>
+                <td>Nombre <br> <input type="text" size="30" class="sin-borde tam2" name="BNombre1" [(ngModel)]="papers.BNombre1" > </td>
+                <td>Apellido Paterno <br> <input type="text" size="30" class="sin-borde tam2" name="BApellidoP1" [(ngModel)]="papers.BApellidoP1"> </td>
+                <td>Apellido Materno <br> <input type="text" size="30" class="sin-borde tam2" name="BApellidoM1" [(ngModel)]="papers.BApellidoM1" > </td>
+                <td>R.U.T. <br> <input type="text" size="30" class="sin-borde tam2" name="BRut1" [(ngModel)]="papers.BRut1"> </td>
+              </tr>
+              <tr>
+                <td>Relación <br> <input type="text" size="30" class="sin-borde tam2" name="BRelacion1" [(ngModel)]="papers.BRelacion1"> </td>
+                <td>% de Beneficio<br> <input type="text" size="30" class="sin-borde tam2" name="BPorcentaje1" [(ngModel)]="papers.BPorcentaje1"> </td>
+                <td>Mail<br> <input type="text" size="30" class="sin-borde tam2" name="BMail1" [(ngModel)]="papers.BMail1"> </td>
+                <td>Fono<br> <input type="text" size="30" class="sin-borde tam2" name="BFono1" [(ngModel)]="papers.BFono1"> </td>
+              </tr>
+              <tr>
+                <td colspan="4">Dirección: <input type="text" size="145" class="sin-borde tam2" name="BDir1" [(ngModel)]="papers.BDir1"> </td>
+              </tr>
+            </table>
+            <table cellspacing="1" cellpadding="1" border="1" class="tb6">
+              <tr>
+                <td>Nombre <br> <input type="text" size="30" class="sin-borde tam2" name="BNombre2" [(ngModel)]="papers.BNombre2" > </td>
+                <td>Apellido Paterno <br> <input type="text" size="30" class="sin-borde tam2" name="BApellidoP2" [(ngModel)]="papers.BApellidoP2"> </td>
+                <td>Apellido Materno <br> <input type="text" size="30" class="sin-borde tam2" name="BApellidoM2" [(ngModel)]="papers.BApellidoM2" > </td>
+                <td>R.U.T. <br> <input type="text" size="30" class="sin-borde tam2" name="BRut2" [(ngModel)]="papers.BRut2"> </td>
+              </tr>
+              <tr>
+                <td>Relación <br> <input type="text" size="30" class="sin-borde tam2" name="BRelacion2" [(ngModel)]="papers.BRelacion2"> </td>
+                <td>% de Beneficio<br> <input type="text" size="30" class="sin-borde tam2" name="BPorcentaje2" [(ngModel)]="papers.BPorcentaje2"> </td>
+                <td>Mail<br> <input type="text" size="30" class="sin-borde tam2" name="BMail2" [(ngModel)]="papers.BMail2"> </td>
+                <td>Fono<br> <input type="text" size="30" class="sin-borde tam2" name="BFono2" [(ngModel)]="papers.BFono2"> </td>
+              </tr>
+              <tr>
+                <td colspan="4">Dirección: <input type="text" size="145" class="sin-borde tam2" name="BDir2" [(ngModel)]="papers.BDir2"> </td>
+              </tr>
+            </table>
+            <table cellspacing="1" cellpadding="1" border="1" class="tb6">
+              <tr>
+                <td>Nombre <br> <input type="text" size="30" class="sin-borde tam2" name="BNombre3" [(ngModel)]="papers.BNombre3" > </td>
+                <td>Apellido Paterno <br> <input type="text" size="30" class="sin-borde tam2" name="BApellidoP3" [(ngModel)]="papers.BApellidoP3"> </td>
+                <td>Apellido Materno <br> <input type="text" size="30" class="sin-borde tam2" name="BApellidoM3" [(ngModel)]="papers.BApellidoM3" > </td>
+                <td>R.U.T. <br> <input type="text" size="30" class="sin-borde tam2" name="BRut3" [(ngModel)]="papers.BRut3"> </td>
+              </tr>
+              <tr>
+                <td>Relación <br> <input type="text" size="30" class="sin-borde tam2" name="BRelacion3" [(ngModel)]="papers.BRelacion3"> </td>
+                <td>% de Beneficio<br> <input type="text" size="30" class="sin-borde tam2" name="BPorcentaje3" [(ngModel)]="papers.BPorcentaje3"> </td>
+                <td>Mail<br> <input type="text" size="30" class="sin-borde tam2" name="BMail3" [(ngModel)]="papers.BMail3"> </td>
+                <td>Fono<br> <input type="text" size="30" class="sin-borde tam2" name="BFono3" [(ngModel)]="papers.BFono3"> </td>
+              </tr>
+              <tr>
+                <td colspan="4">Dirección: <input type="text" size="145" class="sin-borde tam2" name="BDir3" [(ngModel)]="papers.BDir3"> </td>
+              </tr>
+            </table>
+            <table cellspacing="1" cellpadding="1" border="1" class="tb6">
+              <tr>
+                <td>Nombre <br> <input type="text" size="30" class="sin-borde tam2" name="BNombre4" [(ngModel)]="papers.BNombre4" > </td>
+                <td>Apellido Paterno <br> <input type="text" size="30" class="sin-borde tam2" name="BApellidoP4" [(ngModel)]="papers.BApellidoP4"> </td>
+                <td>Apellido Materno <br> <input type="text" size="30" class="sin-borde tam2" name="BApellidoM4" [(ngModel)]="papers.BApellidoM4" > </td>
+                <td>R.U.T. <br> <input type="text" size="30" class="sin-borde tam2" name="BRut4" [(ngModel)]="papers.BRut4"> </td>
+              </tr>
+              <tr>
+                <td>Relación <br> <input type="text" size="30" class="sin-borde tam2" name="BRelacion4" [(ngModel)]="papers.BRelacion4"> </td>
+                <td>% de Beneficio<br> <input type="text" size="30" class="sin-borde tam2" name="BPorcentaje4" [(ngModel)]="papers.BPorcentaje4"> </td>
+                <td>Mail<br> <input type="text" size="30" class="sin-borde tam2" name="BMail4" [(ngModel)]="papers.BMail4"> </td>
+                <td>Fono<br> <input type="text" size="30" class="sin-borde tam2" name="BFono4" [(ngModel)]="papers.BFono4"> </td>
+              </tr>
+              <tr>
+                <td colspan="4">Dirección: <input type="text" size="145" class="sin-borde tam2" name="BDir4" [(ngModel)]="papers.BDir4"> </td>
+              </tr>
+            </table>
+            <table cellspacing="1" cellpadding="1" border="1" class="tb6">
+              <tr>
+                <td>Nombre <br> <input type="text" size="30" class="sin-borde tam2" name="BNombre5" [(ngModel)]="papers.BNombre5" > </td>
+                <td>Apellido Paterno <br> <input type="text" size="30" class="sin-borde tam2" name="BApellidoP5" [(ngModel)]="papers.BApellidoP5"> </td>
+                <td>Apellido Materno <br> <input type="text" size="30" class="sin-borde tam2" name="BApellidoM5" [(ngModel)]="papers.BApellidoM5" > </td>
+                <td>R.U.T. <br> <input type="text" size="30" class="sin-borde tam2" name="BRut5" [(ngModel)]="papers.BRut5"> </td>
+              </tr>
+              <tr>
+                <td>Relación <br> <input type="text" size="30" class="sin-borde tam2" name="BRelacion5" [(ngModel)]="papers.BRelacion5"> </td>
+                <td>% de Beneficio<br> <input type="text" size="30" class="sin-borde tam2" name="BPorcentaje5" [(ngModel)]="papers.BPorcentaje5"> </td>
+                <td>Mail<br> <input type="text" size="30" class="sin-borde tam2" name="BMail5" [(ngModel)]="papers.BMail5"> </td>
+                <td>Fono<br> <input type="text" size="30" class="sin-borde tam2" name="BFono5" [(ngModel)]="papers.BFono5"> </td>
+              </tr>
+              <tr>
+                <td colspan="4">Dirección: <input type="text" size="145" class="sin-borde tam2" name="BDir5" [(ngModel)]="papers.BDir5"> </td>
+              </tr>
+            </table>
+        </div>
+        <div class="decla2">
+            Puede designarse como Beneficiario a cualquier persona o personas. <br>
+            En la designación de más de un Beneficiario, deberá señalarse el porcentaje de indemnización que corresponde a cada uno
+            debiendo la suma de todos los porcentajes ser igual a ciel (100). Si el Asegurado hace una designación sin porcentaje de
+            indemnización, ésta se distribuirá por partes iguales entre aquellos que hubieran sido designados.<br>
+        </div>
+        <div class="decla2" style="padding-left:20px">
+            * A falta de designación de Beneficiario por parte del Asegurado, se entenderá como tales a los herederos legales de éste.<br>
+            * Los Asegurados podrán cambiar de Beneficiaros cuando lo estimen conveniente, dando aviso por escrito al Asegurador
+            mediante este formulario o carta certificada. <br>
+            * Compañía de Seguros Vida Cámara S.A. pagará válidamente a los Beneficiarios indicados en este instrumento y con ello,
+            quedará liberada de sus obligaciones, pues no le será oponible ningún cambio de Beneficiario, realizado en testamento
+            o fuera de él, que no le hubiese sido notificado por escrito con aterioridad a la ocurrencia del siniestro. <br>
+            * Esta designación, una vez notificada a Compañía de Seguros Vida Cámara S.A. reemplaza, cualquier otra anterior. <br>
+        </div>
+        <div class="decla2">
+          <b>RECOMENDACIÓN</b><br>
+          Recomendamos para una mayor agilidad en el pago del siniestro, dejar como Beneficiarios a personas mayores de 18 años,
+          dado que según nuestra ley, los hijos menores de 18 años son incapaces de administrar sus bienes y necesariamente deben
+          actuar representados por personas mayores de edad.
+        </div>
+        <div class="div gris decla2" style="margin-top: 1%;">
+          <h4>IX. DECLARACIONES Y AUTORIZACIONES</h4>
+        </div>
+        <div class="decla2">
+          <p align="justify">
+            Autorizo expresamente a cualquier médico, profesional de la salud, institución de salud pública o privada, tribunales de justicia,
+            juez árbitro y a cualquier otra persona natural o jurídica, pública o privada que cuente con datos, información o antecedentes
+            relativos a mi estado de salud física o psíquica, tales como fichas clínicas, antecedentes clínicos, informes médicos y análisis
+            o exámenes de laboratorios clínicos, a entregar dichos datos, información o antecedentes a la Compañía de Seguros de Vida
+            Cámara S A. cuando ésta así lo solicite, por lo cual otorgo mi expreso consentimiento conforme lo disponible en la Ley N°19.628
+            y el Artículo 127 del Código Sanitario. La presente autorización y consentimiento se otorga en forma irrevocable y por toda la
+            vigencia del seguro, incluyendo la evaluación y liquidación del mismo. Por otra parte la Compañía de Seguros de Vida Cámara S.A. se
+            obliga a guardar absoluta reserva y confidencialidad respecto de la información recibida.
+            <br><br>
+            Por este acto, y según lo dispuesto en la ley N°19.628 sobre Protección de la Vida Privada y sus modificaciones, doy mi
+            consentimiento y autorización expresa para que Compañía de Seguros de Vida Cámara S.A. y sus representantes, sucesores
+            o cesionarios, puedan proceder a la transmisión o transferencia de todos o parte de los datos personales e información que
+            declaro haber entregado voluntariamente a su disposición, a cualesquiera terceros prestadores de servicios que estuvieran
+            ubicados dentro o fuera de Chile, para efectos de poder hacer efectivo el(los) beneficio(s) que pueden estar asociados al seguro
+            contratado, así como para efecto de almacenamiento de la información.
+            <br><br>
+            Confirmo en mi nombre, y en el nombre de mi grupo familiar, la exactitud y veracidad de las declaraciones arriba expresados
+            y que nada he ocultado, omitido o disimulado.
+            <br><br>
+            Autorizo a la Compañía de Seguros de Vida Cámara S.A. a solicitar todos aquellos antecedentes y exámenes médicos que
+            consideren necesarios para la evaluación del riesgo propuesto.
+            <br><br>
+            Declaro conocer y autorizar que cualquier comunicación, declaración o notificación que deba efectuar la Compañía de seguros
+            al Asegurado con motivo de la póliza se efectuará a la dirección de correo electrónico anteriormente señalada, razón por la
+            cual me obligo a mantenerla debidamente actualizada. Igualmente, autorizo expresamente a la Compañía de Seguros para
+            que, directamente o, a través del contratante del seguro, me envíe y haga entrega de la póliza o del certificado de cobertura
+            correspondiente a la dirección de correo electrónico previamente indicada.
+            <br><br>
+            <b>Si Ud. no desea recibir sus comunicaciones, notificaciones y demás antecedentes anteriormente mencionados a través
+              de su correo electrónico marque con una X:<input type="checkbox" class="custom-control-input" id="ck" name="ck" [(ngModel)]="papers.ck"></b>
+          </p>
+        </div>
+        <div class="col-lg-12 row">
+          <div class="col-lg-6">
+              <table cellspacing="1" cellpadding="1" border="0">
+                <tr>
+                  <td>Fecha</td>
+                  <td>
+                    <input type="date" class="sin-borde" name="fechaf"  [(ngModel)]="papers.fechaf">
+                  </td>
+                </tr>
+              </table>
+          </div>
+          <div class="col-lg-6">
+            <table cellspacing="1" cellpadding="1" border="1">
+              <tr>
+                <td>
+                    <input type="text" name="firma6" style="width: 58%;" class="borde-abajo" id="firma6">
+                    <p>Firma Declaración de Salud y Aceptación Especial</p>
+                </td>
+                <td>
+                    <input type="text" name="firma7" style="width: 58%;" class="borde-abajo" id="firma7">
+                    <p>Firma Declaración de Salud y Aceptación Especial</p>
+                </td>
+              </tr>
+            </table>
+          </div>
         </div>
       </div>
     </div>
