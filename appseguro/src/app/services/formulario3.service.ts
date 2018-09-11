@@ -18,7 +18,7 @@ export class Formulario3Service {
   public post_to_be_edited;
   public post_to_be_edited2;
 
-  readonly URL_API = 'http://localhost:3000/api/form1';
+  readonly URL_API = 'http://localhost:3000/api/form3';
   readonly URL_AP2 = 'http://localhost:3000/api/export1';
 
   constructor (private http: HttpClient){
@@ -45,7 +45,7 @@ export class Formulario3Service {
   }
 
   getForm1(_id: String){
-    return this.http.get('http://localhost:3000/api/form1/id' + `/${_id}`)
+    return this.http.get('http://localhost:3000/api/form3/id' + `/${_id}`)
   }
 
   postForm(form1: Formulario3) {

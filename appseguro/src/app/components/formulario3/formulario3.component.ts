@@ -40,7 +40,6 @@ export class Formulario3Component implements OnInit {
           this._id = params['id']; 
       }
    });
-   console.log(this._id);
    this.getForm(this._id);
   }
 
@@ -92,6 +91,15 @@ export class Formulario3Component implements OnInit {
     }
     if(this.papers.ckNo4== false){
       this.papers.ckSi4= false;
+    }
+  }
+  
+  ver6(){
+    if(this.papers.ckPolizaVida== false){
+      this.papers.ckPoliza= false;
+    }
+    if(this.papers.ckPoliza== false){
+      this.papers.ckPolizaVida= false;
     }
   }
 
@@ -159,28 +167,62 @@ export class Formulario3Component implements OnInit {
   }
 
   public onClick(){
-    var data = document.getElementById('contentToConvert');
+    var img1= '';
+    var img2= '';
+    var img3= '';
+    var img4= '';
+    var pdf= new jsPDF('p', 'mm', 'a4');
+    html2canvas(document.querySelector("#contentToConvert")).then(canvas=>{
+      img1  = canvas.toDataURL('image/png');
+      var imgHeight = canvas.height * 210 / canvas.width;
+      console.log(imgHeight);
+      html2canvas(document.querySelector("#contentToConvert2")).then(canvas=>{
+        img2= canvas.toDataURL('image/png');
+        var imgHeight2 = canvas.height * 210 / canvas.width;
+        console.log(imgHeight2);
+        html2canvas(document.querySelector("#contentToConvert3")).then(canvas=>{
+          img3= canvas.toDataURL('image/png');
+          var imgHeight3 = canvas.height * 210 / canvas.width;
+          console.log(imgHeight3);
+          html2canvas(document.querySelector("#contentToConvert4")).then(canvas=>{
+            img4= canvas.toDataURL('image/png');
+            var imgHeight4 = canvas.height * 210 / canvas.width;
+            console.log(imgHeight4);
+            pdf.addImage(img1, 'PNG',10, 5, 240, imgHeight);
+            pdf.addPage();
+            pdf.addImage(img2, 'PNG',10,5,240,imgHeight2);
+            pdf.addPage();
+            pdf.addImage(img3, 'PNG',10,5,240,imgHeight3);
+            pdf.addPage();
+            pdf.addImage(img4, 'PNG',10,5,240,imgHeight4);
+            pdf.save('SIncorporacionVidaySaludColectivos(PlansincoberturadePreexistencias).pdf');
+          });
+        });
+      });
+    });
+    /*var data = document.getElementById('contentToConvert');
     html2canvas(data).then(canvas => {
       // Few necessary setting options
       var imgWidth = 240; 
-      var pageHeight = 299;  
+      var pageHeight = 500;  
       var imgHeight = canvas.height * imgWidth / canvas.width;
       var heightLeft = imgHeight;
 
       const contentDataURL = canvas.toDataURL('image/png')
       let pdf = new jsPDF('p', 'mm', 'a4'); // A4 size page of PDF
       var position = 5;
-      pdf.addImage(contentDataURL, 'PNG', 5, position, imgWidth, imgHeight);
-      heightLeft -= pageHeight;
+      pdf.addImage(contentDataURL, 'PNG', 5, position, imgWidth, 299);
+      heightLeft = -pageHeight;
 
           while (heightLeft >= 0) {
             position = heightLeft - imgHeight;
             pdf.addPage();
-            pdf.addImage(contentDataURL, 'PNG', 5, position, imgWidth, imgHeight);
+            pdf.addImage(contentDataURL, 'PNG', 5, position, imgWidth, 299);
             heightLeft -= pageHeight;
+            console.log(heightLeft);
           }
       pdf.save('SIncorporacionVidaySaludColectivos(PlansincoberturadePreexistencias).pdf'); // Generated PDF 
-    });
+    });*/
   }
 
 }

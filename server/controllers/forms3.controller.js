@@ -8,7 +8,7 @@ form3Ctrl.getformularios3 = async (req, res) => {
 };
 
 form3Ctrl.createformulario3 = async (req, res) => {
-    console.log(req.body.patologia);
+    console.log(req.body.FechaIngresoEmpresa);
     const forms= new formulario3 ({
         fechaRecepcion:req.body.fechaRecepcion,
         inicial: req.body.inicial,
@@ -147,7 +147,7 @@ form3Ctrl.createformulario3 = async (req, res) => {
         UF: req.body.UF,
         NroRentas: req.body.NroRentas,
         CRut2: req.body.CRut2,
-        CNomrbe: req.body.CNomrbe,
+        CNombre: req.body.CNombre,
         CFecha: req.body.CFecha,
         BNombre1: req.body.BNombre1,
         BApellidoP1: req.body.BApellidoP1,
@@ -365,7 +365,7 @@ form3Ctrl.editformulario3 = async (req, res) => {
         UF: req.body.UF,
         NroRentas: req.body.NroRentas,
         CRut2: req.body.CRut2,
-        CNomrbe: req.body.CNomrbe,
+        CNombre: req.body.CNombre,
         CFecha: req.body.CFecha,
         BNombre1: req.body.BNombre1,
         BApellidoP1: req.body.BApellidoP1,
