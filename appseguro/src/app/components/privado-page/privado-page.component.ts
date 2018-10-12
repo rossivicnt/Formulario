@@ -81,7 +81,7 @@ export class PrivadoPageComponent implements OnInit{
         .subscribe(res => {
           this.form1Service.deleteExport(_id)
             .subscribe(res => {
-              this.getForms();
+              this._router.navigate(['/privado']);
             });
         });
     }

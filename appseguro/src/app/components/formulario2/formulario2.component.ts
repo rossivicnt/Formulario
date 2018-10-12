@@ -59,7 +59,6 @@ export class Formulario2Component implements OnInit {
   }
 
   addForm(form?: NgForm) {
-    this.onClick();
     if(form.value._id) {
       this.formService.putForm(form.value)
         .subscribe(res => {
@@ -70,8 +69,8 @@ export class Formulario2Component implements OnInit {
     } else {
      this.formService.postForm(form.value)
         .subscribe(res => {
+          this.onClick();
           this.formService.getId(form.value.Rut).subscribe((res:any) => {
-            console.log(res[0]._id);
             this.id = res[0]._id;
             this.formService.postExport(this.username, this.today ,"Informe medico tratante" , this.id)
               .subscribe(res => {

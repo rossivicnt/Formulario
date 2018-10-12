@@ -19,7 +19,7 @@ export class Formulario1Component implements OnInit {
   public papers2: Export1 = new Export1();
   public listPeriodico: Formulario1[];
   public list: Export1[];
-  public today: Date = new Date();
+  public today= new Date();
   id: string;
   username:string;
   mostrar: boolean;
@@ -40,7 +40,6 @@ export class Formulario1Component implements OnInit {
           this._id = params['id']; 
       }
    });
-   console.log(this._id);
    this.getForm(this._id);
   }
 
@@ -69,13 +68,12 @@ export class Formulario1Component implements OnInit {
     } else {
      this.formService.postForm(form.value)
         .subscribe(res => {
+          this.onClick();
           this.formService.getId(form.value.Rut).subscribe((res:any) => {
-            console.log(res[0]._id);
             this.id = res[0]._id;
             this.formService.postExport(this.username, this.today ,"Informe medico tratante obesidad" , this.id)
               .subscribe(res => {
                 this.getForms();
-                this.onClick();
                 this.resetForm(form);
                 this.router.navigate(['/privado']);
             });
@@ -138,7 +136,7 @@ export class Formulario1Component implements OnInit {
       const contentDataURL = canvas.toDataURL('image/png')
       let pdf = new jsPDF('p', 'mm', 'a4'); // A4 size page of PDF
       var position = 5;
-      pdf.addImage(contentDataURL, 'PNG', 5, position, imgWidth, imgHeight)
+      pdf.addImage(contentDataURL, 'PNG', 10, position, imgWidth, imgHeight)
       pdf.save('Informe medico tratante obesidad.pdf'); // Generated PDF 
     });
   }
