@@ -10,17 +10,29 @@ import { FormGroup,FormControl,Validators } from '@angular/forms';
   providers: [UserService]
 })
 export class LoginPageComponent implements OnInit {
+  probar: Object;
   loginForm : FormGroup=new FormGroup({
     email:new FormControl(null,[Validators.email,Validators.required]),
     password:new FormControl(null, Validators.required)
   });
-
-  constructor(
-    private _user:UserService,
-    private _router: Router
-  ) { } 
+  registerForm: FormGroup= new FormGroup({
+    name: new FormControl('Administrador',Validators.required),
+    email: new FormControl('admin@gmail.com',[Validators.email,Validators.required]),
+    password: new FormControl('123456',Validators.required),
+    permiso: new FormControl('Admin',Validators.required)
+  })
+  constructor(private _user:UserService,private _router: Router) { 
+    this.probar= this._user.primerusuario('admin@gmail.com');
+    console.log(this.probar);
+    if(this.probar){
+      this._user.register(JSON.stringify(this.registerForm.value));
+    }else{
+      console.log("hola");
+    }
+  } 
 
   ngOnInit() {
+    
   }
 
   login(){

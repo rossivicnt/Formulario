@@ -3,7 +3,10 @@ const User= require('../models/users');
 const userCtrl= {};
 
 userCtrl.getUser = async (req, res) => {
-    const user = await User.find();
+    const email= {
+        email: req.params.email
+    }
+    const user = await User.find(email).sort({$natural:-1}).limit(1);
     res.json(user);
 };
 

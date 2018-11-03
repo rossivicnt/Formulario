@@ -9,6 +9,10 @@ export class UserService {
   
   constructor(private _http:HttpClient) { }
 
+  primerusuario(email){
+    return this._http.get('http://localhost:3000/api/users/users'+ `/${email}`);
+  }
+
   register(body:any){
     return this._http.post('http://127.0.0.1:3000/api/users/register',body,{
       observe:'body',

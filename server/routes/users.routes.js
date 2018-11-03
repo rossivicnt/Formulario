@@ -51,7 +51,7 @@ router.get('/logout',isValidUser, function(req,res,next){
 
 router.put('/:id',user.editUser);
 router.delete('/:id',user.deleteUser);
-router.get('/users' ,user.getUser);
+router.get('/users/:email' ,user.getUser);
 
 function isValidUser(req,res,next){
     if(req.isAuthenticated()) next();
