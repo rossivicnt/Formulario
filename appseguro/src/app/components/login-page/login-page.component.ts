@@ -22,13 +22,13 @@ export class LoginPageComponent implements OnInit {
     permiso: new FormControl('Admin',Validators.required)
   })
   constructor(private _user:UserService,private _router: Router) { 
-    this.probar= this._user.primerusuario('admin@gmail.com');
-    console.log(this.probar);
-    if(this.probar){
-      this._user.register(JSON.stringify(this.registerForm.value));
-    }else{
-      console.log("hola");
-    }
+    this._user.primerusuario('admin@gmail.com').subscribe(
+      data=>{console.log(data)} ,
+      error=>this._user.register(JSON.stringify(this.registerForm.value)).subscribe(
+        data=>{console.log(data);} ,
+        error=>console.error(error)
+      )
+    )
   } 
 
   ngOnInit() {
