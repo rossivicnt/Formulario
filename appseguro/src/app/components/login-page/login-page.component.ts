@@ -23,11 +23,13 @@ export class LoginPageComponent implements OnInit {
   })
   constructor(private _user:UserService,private _router: Router) { 
     this._user.primerusuario('admin@gmail.com').subscribe(
-      data=>{console.log(data)} ,
-      error=>this._user.register(JSON.stringify(this.registerForm.value)).subscribe(
-        data=>{console.log(data);} ,
-        error=>console.error(error)
-      )
+      data=>{
+        if(data.length==0){
+          this._user.register(JSON.stringify(this.registerForm.value)).subscribe(
+            res=>{console.log(res);} ,
+            error=>console.error(error))
+        }
+      }
     )
   } 
 
